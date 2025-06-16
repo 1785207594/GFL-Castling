@@ -1166,7 +1166,7 @@ class GFLairstrike : Tracker {
                     //扫射终点的起点与终点（就生成弹头的终点的起始位置与终止位置）
                     //依据扫射位置偏移单位距离而设置的扫射次数
                     int strike_time = int(getAimUnitDistance(1,start_pos,end_pos)/strike_didis);
-                    Vector3 endPos = c_pos.add(Vector3(0,1.0,0));
+                    Vector3 endPos = start_pos.add(Vector3(0,1.0,0));
 
                     for(int i=0;i<=strike_time;i++){
                         //水平偏移
