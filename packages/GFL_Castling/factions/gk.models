@@ -3139,5 +3139,7 @@
     <model filename="gkd_ar_cmr30.xml">
         <requirement class="weapon" key="gkw_cmr30.weapon" slot="0" />
     </model>    
-
+    <model filename="gkd_ar_stg940.xml">
+        <requirement class="weapon" key="gkw_stg940.weapon" slot="0" />
+    </model>    
 </models> 
