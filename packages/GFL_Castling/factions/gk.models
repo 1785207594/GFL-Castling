@@ -2692,6 +2692,12 @@
     <model filename="gkd_sg_rmb93_4309.xml">
         <requirement class="weapon" key="gkw_rmb93mod3_4309.weapon" slot="0" />
     </model>
+    <model filename="gkd_sg_rmb93_10807.xml">
+        <requirement class="weapon" key="gkw_rmb93_10807.weapon" slot="0" />
+    </model>
+    <model filename="gkd_sg_rmb93_10807.xml">
+        <requirement class="weapon" key="gkw_rmb93mod3_10807.weapon" slot="0" />
+    </model>    
     <model filename="gkd_hg_357_8107.xml">
         <requirement class="weapon" key="gkw_357_8107.weapon" slot="0" />
     </model>
