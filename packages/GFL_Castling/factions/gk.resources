@@ -1181,6 +1181,7 @@
     <weapon key="gkw_mp41.weapon" />    
     <weapon key="gkw_mp41mod3.weapon" />  
     <weapon key="gkw_cmr30.weapon" />
+	<weapon key="gkw_l85a1.weapon"/>
 
     <!-- 重装梯队 -->
     <weapon key="gkw_hvy_qlz04.weapon" />
