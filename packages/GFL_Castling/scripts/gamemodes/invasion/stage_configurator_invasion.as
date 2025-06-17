@@ -185,6 +185,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void setupNormalStages() {	
+        addStage(setupStagePolarizedLight01()); //
 		addStage(setupStage1_rust());     // map2_c by diling
 		// addStage(setupStageRace());          // DEJAHU
 		addStage(setupStage10());         // map10
@@ -1091,6 +1092,64 @@ class StageConfiguratorInvasion : StageConfigurator {
 		return stage;
 	}
 
+	protected Stage@ setupStagePolarizedLight01() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "Labyrinthine Defense";
+		stage.m_mapInfo.m_path = "media/packages/GFL_Castling/maps/map107";
+		stage.m_mapInfo.m_id = "map107";
+
+		stage.m_maxSoldiers = 120;
+		stage.m_soldierCapacityModel = "constant";
+		stage.m_playerAiCompensation = 4;
+        stage.m_playerAiReduction = 0;
+		stage.m_fogOffset= 28;
+		stage.m_fogRange= 28.5;
+		stage.m_minRandomCrates = 3; 
+		stage.m_maxRandomCrates = 5;
+
+		stage.m_defenseWinTime = 600; 
+		stage.m_defenseWinTimeMode = "custom";
+		stage.addTracker(PausingKothTimer(m_metagame, stage.m_defenseWinTime,false,false));
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.3, 0.5));                                            
+			f.m_capacityOffset = 0; 
+			f.m_capacityMultiplier = 0.85;
+			f.m_bases = 1;
+			stage.m_factions.insertLast(f);
+		}
+		{
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "sf_assault.call", "sf_assault_sub.call", array<string> = {""}, false,false,false,"infantry"));
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "sf_mecha.call", "sf_mecha_sub.call", array<string> = {""}, false,false,false,"infantry"));
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "sf_mecha_inf.call", "sf_mecha_inf_sub.call", array<string> = {""}, false,false,false,"infantry"));
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "sf_mecha_manticore.call", "sf_mecha_manticore_sub.call", array<string> = {""}, false,false,false,"infantry"));
+
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "kcco_assault.call", "kcco_assault_sub.call", array<string> = {""}, false,false,false,"infantry"));
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "kcco_zircon.call", "kcco_zircon_sub.call", array<string> = {""}, false,false,false,"infantry"));
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "kcco_zircon1.call", "kcco_zircon1_sub.call", array<string> = {""}, false,false,false,"infantry"));
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "kcco_dog.call", "kcco_dog_sub.call", array<string> = {""}, false,false,false,"infantry"));
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "kcco_quartz.call", "kcco_quartz_sub.call", array<string> = {""}, false,false,false,"infantry"));		
+		}
+
+		{
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "kcco_deploy_coeus.call", "kcco_deploy_coeus_sub.call", array<string> = {""}, false,true,false,"vehicle"));
+			stage.addTracker(SpawnInBaseCallHandler(m_metagame, "kcco_deploy_typhon.call", "kcco_deploy_typhon_sub.call", array<string> = {""}, false,true,false,"vehicle"));	
+            stage.addTracker(SpawnInBaseCallHandler(m_metagame, "kcco_deploy_k25.call", "kcco_deploy_k25_sub.call", array<string> = {""}, false,true,false,"vehicle"));					
+            stage.addTracker(SpawnInBaseCallHandler(m_metagame, "kcco_deploy_k25_boss.call", "kcco_deploy_k25_boss_sub.call", array<string> = {""}, false,true,false,"vehicle"));
+		}			
+		{
+			Faction f(FactionConfig(1, "kcco.xml", "KCCO", "0.43 0.49 0.18", "kcco.xml"), createCommanderAiCommand(1, 0.1, 0.05));             
+			f.m_overCapacity = 100;                                             
+            f.m_capacityOffset = 50;
+			f.m_capacityMultiplier = 1.0;
+			stage.m_factions.insertLast(f);                                    
+		}
+		// metadata
+		stage.m_primaryObjective = "koth";
+		stage.m_kothTargetBase = "HQ";
+
+		return stage;
+	} 	
 	protected Stage@ setupStage1() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Keepsake Bay";
