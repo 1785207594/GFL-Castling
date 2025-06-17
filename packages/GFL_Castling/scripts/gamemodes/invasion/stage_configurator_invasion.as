@@ -1094,6 +1094,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	protected Stage@ setupStagePolarizedLight01() {
 		Stage@ stage = createStage();
+        array<string> baseNames = {"HQ Rearguard Exit Path"};
 		stage.m_mapInfo.m_name = "Labyrinthine Defense";
 		stage.m_mapInfo.m_path = "media/packages/GFL_Castling/maps/map107";
 		stage.m_mapInfo.m_id = "map107";
@@ -1107,15 +1108,26 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_minRandomCrates = 3; 
 		stage.m_maxRandomCrates = 5;
 
-		stage.m_defenseWinTime = 600; 
+		stage.m_defenseWinTime = 720; 
 		stage.m_defenseWinTimeMode = "custom";
-		stage.addTracker(PausingKothTimer(m_metagame, stage.m_defenseWinTime,false,false));
+        stage.addTracker(PausingKothTimer_Target(m_metagame, stage.m_defenseWinTime, baseNames,false));
+
+		array<string> order = {
+			"North East Harju Town",
+			"Contact Point",
+			"Girl's Frontline",
+			"North West Harju Town",
+			"South East Harju Town",
+			"Forest",
+			"South West Harju Town",
+            "HQ Rearguard Exit Path"
+		};
+        stage.addTracker(AttackTargetOrder(m_metagame, 1, order));
 
 		{
 			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.3, 0.5));                                            
-			f.m_capacityOffset = 0; 
-			f.m_capacityMultiplier = 0.85;
-			f.m_bases = 1;
+			f.m_capacityOffset = 20; 
+			f.m_capacityMultiplier = 1.0;
 			stage.m_factions.insertLast(f);
 		}
 		{
