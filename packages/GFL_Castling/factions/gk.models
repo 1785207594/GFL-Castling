@@ -2995,6 +2995,9 @@
     <model filename="gkd_ar_cr21.xml">
         <requirement class="weapon" key="gkw_cr21.weapon" slot="0" />
     </model>
+    <model filename="gkd_ar_cr21mod3.xml">
+        <requirement class="weapon" key="gkw_cr21mod3.weapon" slot="0" />
+    </model>    
     <model filename="gkd_ar_cz805.xml">
         <requirement class="weapon" key="gkw_cz805.weapon" slot="0" />
     </model>
