@@ -95,6 +95,16 @@ class PausingKothTimer_Target : Tracker {
 	// ----------------------------------------------------
     protected void handleBaseOwnerChangeEvent(const XmlElement@ event) {
 		refresh();
+        string baseName = event.getStringAttribute("base_key");
+        int ownerId = event.getIntAttribute("owner_id");
+
+        // 如果该基地在目标列表中，且它现在不属于 faction 0，则立即失败（或胜利给敌方）
+        for (uint i = 0; i < m_targetBaseNames.size(); ++i) {
+            if (baseName == m_targetBaseNames[i] && ownerId != 0) {
+                m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
+                break;
+            }
+        }        
     }
 
 	// --------------------------------------------

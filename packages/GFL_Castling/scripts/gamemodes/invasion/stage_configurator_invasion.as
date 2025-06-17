@@ -8,6 +8,10 @@
 #include "phase_controller_deadzone.as"
 
 #include "pausing_koth_timer.as"
+#include "pausing_koth_timer_target.as"
+#include "attack_target_order.as"
+
+
 #include "spawn_at_node.as"
 #include "comms_capacity_handler.as"
 #include "attack_defense_handler_map16.as"
