@@ -8,7 +8,7 @@
             slot="0"
             magazine_size="30"
             name="M4A1(MOD3)-[Girl`s Balloon Roaming]"
-            spread_range="0.35"
+            spread_range="0.3"
             projectile_speed="240" 
             retrigger_time="0.086"
             suppressed="1"
@@ -62,8 +62,8 @@
         <stance state_key="walking" accuracy="0.6" />
         <stance state_key="crouch_moving" accuracy="0.9" />
         <stance state_key="prone_moving" accuracy="0.9" />
-        <stance state_key="standing" accuracy="0.93" />
-        <stance state_key="crouching" accuracy="0.98" />
+        <stance state_key="standing" accuracy="0.99" />
+        <stance state_key="crouching" accuracy="1.0" />
         <stance state_key="prone" accuracy="1" />
         <stance state_key="over_wall" accuracy="1" />
         <modifier class="speed" value="0.1" />

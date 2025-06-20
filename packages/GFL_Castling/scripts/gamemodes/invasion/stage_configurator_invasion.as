@@ -1103,7 +1103,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/GFL_Castling/maps/map107";
 		stage.m_mapInfo.m_id = "map107";
 
-		stage.m_maxSoldiers = 120;
+		stage.m_maxSoldiers = 140;
 		stage.m_soldierCapacityModel = "constant";
 		stage.m_playerAiCompensation = 4;
         stage.m_playerAiReduction = 0;
@@ -1112,26 +1112,37 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_minRandomCrates = 3; 
 		stage.m_maxRandomCrates = 5;
 
-		stage.m_defenseWinTime = 720; 
+		stage.m_defenseWinTime = 1080; 
 		stage.m_defenseWinTimeMode = "custom";
+
+        stage.addTracker(Overtime(m_metagame, 0,10));
         stage.addTracker(PausingKothTimer_Target(m_metagame, stage.m_defenseWinTime, baseNames,false));
+
+        XmlElement command("command");
+        command.setStringAttribute("class", "commander_ai");
+        command.setIntAttribute("faction_id", 1);
+        command.setFloatAttribute("side_base_attack_probability", 0.65);
+        command.setIntAttribute("minimum_squad_size_to_send_to_side_base_attack", 1);
+
+        
+        stage.addTracker(RunAtStart(m_metagame, command));
 
 		array<string> order = {
 			"North East Harju Town",
 			"Contact Point",
 			"Girl's Frontline",
 			"North West Harju Town",
-			"South East Harju Town",
 			"Forest",
-			"South West Harju Town",
-            "HQ Rearguard Exit Path"
+            "HQ Rearguard Exit Path",
+			"South East Harju Town",
+			"South West Harju Town"
 		};
         stage.addTracker(AttackTargetOrder(m_metagame, 1, order));
 
 		{
 			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.3, 0.5));                                            
 			f.m_capacityOffset = 20; 
-			f.m_capacityMultiplier = 1.0;
+			f.m_capacityMultiplier = 0.95;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -1156,8 +1167,8 @@ class StageConfiguratorInvasion : StageConfigurator {
 		{
 			Faction f(FactionConfig(1, "kcco.xml", "KCCO", "0.43 0.49 0.18", "kcco.xml"), createCommanderAiCommand(1, 0.1, 0.05));             
 			f.m_overCapacity = 100;                                             
-            f.m_capacityOffset = 50;
-			f.m_capacityMultiplier = 1.0;
+            f.m_capacityOffset = 60;
+			f.m_capacityMultiplier = 1.15;
 			stage.m_factions.insertLast(f);                                    
 		}
 		// metadata
