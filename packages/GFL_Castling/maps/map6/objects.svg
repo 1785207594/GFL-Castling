@@ -16651,7 +16651,7 @@ backline =1;</desc>
        style="display:inline;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#ffff00;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1;enable-background:new">
       <desc
          id="desc16653-2-9-3-3-2-6">name = barbwire; 
-static_object_type_key=barbed_wire_obstacle.static_object;
+static_object_type_key=barbed_wire.static_object;
 mesh_name = barbwire.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 1 9 16 16; collision_model_type = 1; collision_model_size = 1.4 1.4 2.8; collision_model_offset = 0 0 0; walkable = 0; alpha_blend = 1; penetrability = 0.8; see_through = 1;</desc>
     </rect>
     <flowRoot
