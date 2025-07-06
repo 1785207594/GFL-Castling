@@ -435,154 +435,154 @@ class ItemDropEvent : Tracker {
                     )){
                         giveDigimindItem(cId, pId, "gkw_88typemod3_6503.weapon", "type88");
                     }
-                    else if (checkQueue(pId,"aa12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_aa12.weapon" || itemKey=="gkw_aa12_skill.weapon")){
+                    else if ( (checkQueue(pId,"aa12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_aa12.weapon" || itemKey=="gkw_aa12_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_aa12_only.weapon", "aa12");
                     }
-                    else if (checkQueue(pId,"aa12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_aa12_4401.weapon" || itemKey=="gkw_aa12_4401_skill.weapon")){
+                    else if ( (checkQueue(pId,"aa12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_aa12_4401.weapon" || itemKey=="gkw_aa12_4401_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_aa12_4401_only.weapon", "aa12");
                     }
-                    else if (checkQueue(pId,"aa12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_aa12_2403.weapon" || itemKey=="gkw_aa12_2403_skill.weapon")){
+                    else if ( (checkQueue(pId,"aa12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_aa12_2403.weapon" || itemKey=="gkw_aa12_2403_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_aa12_2403_only.weapon", "aa12");
                     }                    
-                    else if (checkQueue(pId,"m1garand") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1.weapon" || itemKey=="gkw_m1_skill.weapon")){
+                    else if ( (checkQueue(pId,"m1garand") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1.weapon" || itemKey=="gkw_m1_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1_sf.weapon", "m1garand");
                     }
-                    else if (checkQueue(pId,"m1garand") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1_1106.weapon" || itemKey=="gkw_m1_1106_skill.weapon")){
+                    else if ( (checkQueue(pId,"m1garand") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1_1106.weapon" || itemKey=="gkw_m1_1106_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1_sf_1106.weapon", "m1garand");
                     }
-                    else if (checkQueue(pId,"m1garand") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1_6907.weapon" || itemKey=="gkw_m1_6907_skill.weapon")){
+                    else if ( (checkQueue(pId,"m1garand") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1_6907.weapon" || itemKey=="gkw_m1_6907_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1_sf_6907.weapon", "m1garand");
                     }
-                    else if (checkQueue(pId,"m1garand") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1_10008.weapon" || itemKey=="gkw_m1_10008_skill.weapon")){
+                    else if ( (checkQueue(pId,"m1garand") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1_10008.weapon" || itemKey=="gkw_m1_10008_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1_sf_10008.weapon", "m1garand");
                     }                    
-                    else if (checkQueue(pId,"fg42") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_fg42.weapon" || itemKey=="gkw_fg42_skill.weapon")){
+                    else if ( (checkQueue(pId,"fg42") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_fg42.weapon" || itemKey=="gkw_fg42_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_fg42_only.weapon", "fg42");
                     }
-                    else if (checkQueue(pId,"g41") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g41.weapon" || itemKey=="gkw_g41_skill.weapon")){
+                    else if ( (checkQueue(pId,"g41") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g41.weapon" || itemKey=="gkw_g41_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_g41_only.weapon", "g41");
                     }
-                    else if (checkQueue(pId,"g41") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g41_2401.weapon" || itemKey=="gkw_g41_2401_skill.weapon")){
+                    else if ( (checkQueue(pId,"g41") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g41_2401.weapon" || itemKey=="gkw_g41_2401_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_g41_2401_only.weapon", "g41");
                     }
-                    else if (checkQueue(pId,"g41") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g41_7406.weapon" || itemKey=="gkw_g41_7406_skill.weapon")){
+                    else if ( (checkQueue(pId,"g41") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g41_7406.weapon" || itemKey=="gkw_g41_7406_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_g41_7406_only.weapon", "g41");
                     }
-                    else if (checkQueue(pId,"vz61") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_vz61.weapon")){
+                    else if ( (checkQueue(pId,"vz61") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_vz61.weapon")){
                         giveDigimindItem(cId, pId, "gkw_vz61_only.weapon", "vz61");
                     }
-                    else if (checkQueue(pId,"m1903_1") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903.weapon")){
+                    else if ( (checkQueue(pId,"m1903_1") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1903_only.weapon", "m1903_1");
                     }
-                    else if (checkQueue(pId,"m1903_2") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903.weapon")){
+                    else if ( (checkQueue(pId,"m1903_2") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1903_exp.weapon", "m1903_2");
                     }
-                    else if (checkQueue(pId,"m1903_1") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903_302.weapon")){
+                    else if ( (checkQueue(pId,"m1903_1") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903_302.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1903_302_only.weapon", "m1903_1");
                     }
-                    else if (checkQueue(pId,"m1903_2") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903_302.weapon")){
+                    else if ( (checkQueue(pId,"m1903_2") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903_302.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1903_302_exp.weapon", "m1903_2");
                     }
-                    else if (checkQueue(pId,"m1903_1") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903_1107.weapon")){
+                    else if ( (checkQueue(pId,"m1903_1") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903_1107.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1903_1107_only.weapon", "m1903_1");
                     }
-                    else if (checkQueue(pId,"m1903_2") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903_1107.weapon")){
+                    else if ( (checkQueue(pId,"m1903_2") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1903_1107.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1903_1107_exp.weapon", "m1903_2");
                     }
-                    else if (checkQueue(pId,"fn49") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_fn49.weapon")){
+                    else if ( (checkQueue(pId,"fn49") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_fn49.weapon")){
                         giveDigimindItem(cId, pId, "gkw_fn49mod3.weapon", "fn49");
                     }                                        
-                    else if (checkQueue(pId,"fn49") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_fn49_4709.weapon")){
+                    else if ( (checkQueue(pId,"fn49") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_fn49_4709.weapon")){
                         giveDigimindItem(cId, pId, "gkw_fn49mod3_4709.weapon", "fn49");
                     }           
-                    else if (checkQueue(pId,"9a91") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_9a91.weapon")){
+                    else if ( (checkQueue(pId,"9a91") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_9a91.weapon")){
                         giveDigimindItem(cId, pId, "gkw_9a91_only.weapon", "9a91");
                     }   
-                    else if (checkQueue(pId,"9a91") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_9a91_1302.weapon")){
+                    else if ( (checkQueue(pId,"9a91") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_9a91_1302.weapon")){
                         giveDigimindItem(cId, pId, "gkw_9a91_1302_only.weapon", "9a91");
                     }
-                    else if (checkQueue(pId,"9a91") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_9a91_8304.weapon")){
+                    else if ( (checkQueue(pId,"9a91") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_9a91_8304.weapon")){
                         giveDigimindItem(cId, pId, "gkw_9a91_8304_only.weapon", "9a91");
                     }
-                    else if (checkQueue(pId,"m14") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m14.weapon")){
+                    else if ( (checkQueue(pId,"m14") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m14.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m14mod3.weapon", "m14");
                     }
-                    else if (checkQueue(pId,"m14") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m14_303.weapon")){
+                    else if ( (checkQueue(pId,"m14") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m14_303.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m14mod3_303.weapon", "m14");
                     }                    
-                    else if (checkQueue(pId,"g3") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g3.weapon")){
+                    else if ( (checkQueue(pId,"g3") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g3.weapon")){
                         giveDigimindItem(cId, pId, "gkw_g3mod3.weapon", "g3");
                     }
-                    else if (checkQueue(pId,"g3") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g3_1303.weapon")){
+                    else if ( (checkQueue(pId,"g3") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g3_1303.weapon")){
                         giveDigimindItem(cId, pId, "gkw_g3mod3_1303.weapon", "g3");
                     }
-                    else if (checkQueue(pId,"m1897") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1897.weapon" || itemKey=="gkw_m1897_skill.weapon")){
+                    else if ( (checkQueue(pId,"m1897") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1897.weapon" || itemKey=="gkw_m1897_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1897mod3.weapon", "m1897");
                     }         
-                    else if (checkQueue(pId,"m1897") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1897_2505.weapon" || itemKey=="gkw_m1897_2505_skill.weapon")){
+                    else if ( (checkQueue(pId,"m1897") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_m1897_2505.weapon" || itemKey=="gkw_m1897_2505_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_m1897mod3_2505.weapon", "m1897");
                     }                      
-                    else if (checkQueue(pId,"stg44") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_stg44.weapon")){
+                    else if ( (checkQueue(pId,"stg44") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_stg44.weapon")){
                         giveDigimindItem(cId, pId, "gkw_stg44mod3.weapon", "stg44");
                     }
-                    else if (checkQueue(pId,"stg44") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_stg44_8612.weapon")){
+                    else if ( (checkQueue(pId,"stg44") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_stg44_8612.weapon")){
                         giveDigimindItem(cId, pId, "gkw_stg44mod3_8612.weapon", "stg44");
                     }                    
-                    else if (checkQueue(pId,"stg44") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g43.weapon")){
+                    else if ( (checkQueue(pId,"stg44") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g43.weapon")){
                         giveDigimindItem(cId, pId, "gkw_g43_kurz.weapon", "stg44");
                     }                   
-                    else if (checkQueue(pId,"stg44") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g43_7607.weapon")){
+                    else if ( (checkQueue(pId,"stg44") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_g43_7607.weapon")){
                         giveDigimindItem(cId, pId, "gkw_g43_7607_kurz.weapon", "stg44");
                     }                                
-                    else if (checkQueue(pId,"wa2000") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_wa2000.weapon")){
+                    else if ( (checkQueue(pId,"wa2000") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_wa2000.weapon")){
                         giveDigimindItem(cId, pId, "gkw_wa2000_only.weapon", "wa2000");
                     }
-                    else if (checkQueue(pId,"wa2000") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_wa2000_306.weapon")){
+                    else if ( (checkQueue(pId,"wa2000") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_wa2000_306.weapon")){
                         giveDigimindItem(cId, pId, "gkw_wa2000_306_only.weapon", "wa2000");
                     }        
-                    else if (checkQueue(pId,"wa2000") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_wa2000_1108.weapon")){
+                    else if ( (checkQueue(pId,"wa2000") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_wa2000_1108.weapon")){
                         giveDigimindItem(cId, pId, "gkw_wa2000_1108_only.weapon", "wa2000");
                     }                            
-                    else if (checkQueue(pId,"pkp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_pkp.weapon" || itemKey=="gkw_pkp_skill.weapon")){
+                    else if ( (checkQueue(pId,"pkp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_pkp.weapon" || itemKey=="gkw_pkp_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_pkp_only.weapon", "pkp");
                     }
-                    else if (checkQueue(pId,"pkp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_pkp_4203.weapon" || itemKey=="gkw_pkp_4203_skill.weapon")){
+                    else if ( (checkQueue(pId,"pkp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_pkp_4203.weapon" || itemKey=="gkw_pkp_4203_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_pkp_4203_only.weapon", "pkp");
                     }
-                    else if (checkQueue(pId,"pkp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_pkp_5904.weapon" || itemKey=="gkw_pkp_5904_skill.weapon")){
+                    else if ( (checkQueue(pId,"pkp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_pkp_5904.weapon" || itemKey=="gkw_pkp_5904_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_pkp_5904_only.weapon", "pkp");
                     }                            
-                    else if (checkQueue(pId,"scarl") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_scarl.weapon")){
+                    else if ( (checkQueue(pId,"scarl") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_scarl.weapon")){
                         giveDigimindItem(cId, pId, "gkw_scarl_only.weapon", "scarl");
                     }
-                    else if (checkQueue(pId,"scarh") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_scarh.weapon")){
+                    else if ( (checkQueue(pId,"scarh") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_scarh.weapon")){
                         giveDigimindItem(cId, pId, "gkw_scarh_only.weapon", "scarh");
                     }
-                    else if (checkQueue(pId,"cso") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_svd.weapon" || itemKey=="gkw_svd_skill.weapon")){
+                    else if ( (checkQueue(pId,"cso") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_svd.weapon" || itemKey=="gkw_svd_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_svdex.weapon", "cso");
                     }                    
-                    else if (checkQueue(pId,"cso") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_svd_5506.weapon" || itemKey=="gkw_svd_5506_skill.weapon")){
+                    else if ( (checkQueue(pId,"cso") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_svd_5506.weapon" || itemKey=="gkw_svd_5506_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_svdex_5506.weapon", "cso");
                     }   
-                    else if (checkQueue(pId,"cso") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_ak47.weapon")){
+                    else if ( (checkQueue(pId,"cso") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_ak47.weapon")){
                         giveDigimindItem(cId, pId, "gkw_ak47_60r.weapon", "cso");
                     }
-                    else if (checkQueue(pId,"cso") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_ak47_501.weapon")){
+                    else if ( (checkQueue(pId,"cso") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_ak47_501.weapon")){
                         giveDigimindItem(cId, pId, "gkw_ak47_60r_501.weapon", "cso");
                     }     
-                    else if (checkQueue(pId,"type4") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_4type.weapon")){
+                    else if ( (checkQueue(pId,"type4") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_4type.weapon")){
                         giveDigimindItem(cId, pId, "gkw_4type_only.weapon", "type4");
                     }
-                    else if (checkQueue(pId,"sr3mp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_sr3mp.weapon" || itemKey=="gkw_sr3mp_skill.weapon")){
+                    else if ( (checkQueue(pId,"sr3mp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_sr3mp.weapon" || itemKey=="gkw_sr3mp_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_sr3mp_only.weapon", "sr3mp");
                     }
-                    else if (checkQueue(pId,"sr3mp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_sr3mp_4101.weapon" || itemKey=="gkw_sr3mp_4101_skill.weapon")){
+                    else if ( (checkQueue(pId,"sr3mp") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_sr3mp_4101.weapon" || itemKey=="gkw_sr3mp_4101_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_sr3mp_4101_only.weapon", "sr3mp");
                     }
-                    else if (checkQueue(pId,"usas12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_usas12.weapon" || itemKey=="gkw_usas12_skill.weapon")){
+                    else if ( (checkQueue(pId,"usas12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_usas12.weapon" || itemKey=="gkw_usas12_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_usas12_only.weapon", "usas12");
                     }
-                    else if (checkQueue(pId,"usas12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_usas12_2704.weapon" || itemKey=="gkw_usas12_2704_skill.weapon")){
+                    else if ( (checkQueue(pId,"usas12") || checkQueue(pId,"masterkey") ) && (itemKey=="gkw_usas12_2704.weapon" || itemKey=="gkw_usas12_2704_skill.weapon")){
                         giveDigimindItem(cId, pId, "gkw_usas12_2704_only.weapon", "usas12");
                     }                                        
                     break;

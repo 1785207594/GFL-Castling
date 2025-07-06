@@ -472,7 +472,6 @@ class GFLskill : Tracker {
 				Vector3 _pos = getCharacterPosition(character);
 				killCharacter(m_metagame,characterId);
 				spawnStaticProjectile(m_metagame,"cl.projectile",_pos,characterId,factionid);
-				spawnStaticProjectile(m_metagame,"cl_1.projectile",_pos,characterId,factionid);
 				break;			
 			}
 
