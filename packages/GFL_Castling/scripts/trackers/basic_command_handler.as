@@ -728,33 +728,6 @@ class BasicCommandHandler : Tracker {
 				" position='" + pos.toString() + "'" +
 				" character_id='" + playerInfo.getIntAttribute("character_id") + "'/>";				
 			m_metagame.getComms().send(c);								      
-		} else if (checkCommand(message, "dc")) {
-			spawnInstanceNearPlayer(senderId, "cover_resource.weapon", "weapon");
-		} else if (checkCommand(message, "dgl")) {
-			spawnInstanceNearPlayer(senderId, "gl_resource.weapon", "weapon");
-		} else if (checkCommand(message, "dmg")) {
-			spawnInstanceNearPlayer(senderId, "mg_resource.weapon", "weapon");
-		} else if (checkCommand(message, "milkor")) {
-			spawnInstanceNearPlayer(senderId, "milkor_mgl.weapon", "weapon");
-		} else if (checkCommand(message, "m72")) {
-			spawnInstanceNearPlayer(senderId, "m72_law.weapon", "weapon");
-			spawnInstanceNearPlayer(senderId, "m72_law.weapon", "weapon");
-			spawnInstanceNearPlayer(senderId, "m72_law.weapon", "weapon");
-			spawnInstanceNearPlayer(senderId, "m72_law.weapon", "weapon");
-		} else if (checkCommand(message, "cargo")) {
-			spawnInstanceNearPlayer(senderId, "cargo_truck.vehicle", "vehicle", 1);
-		} else if (checkCommand(message, "tank")) {
-			spawnInstanceNearPlayer(senderId, "tank.vehicle", "vehicle", 0);
-		} else if (checkCommand(message, "apc")) {
-			spawnInstanceNearPlayer(senderId, "apc.vehicle", "vehicle", 0);
-		} else if (checkCommand(message, "tow")) {
-			spawnInstanceNearPlayer(senderId, "tow.vehicle", "vehicle", 1);
-		} else if (checkCommand(message, "teddy")) {
-			spawnInstanceNearPlayer(senderId, "teddy.carry_item", "carry_item", 0);
-		} else if (checkCommand(message, "briefcase")) {
-			spawnInstanceNearPlayer(senderId, "suitcase.carry_item", "carry_item", 0);
-		} else if (checkCommand(message, "friend")) {
-			spawnInstanceNearPlayer(senderId, "default", "soldier", 0);
         } else if (checkCommand(message, "squad")) {
 			spawnInstanceNearPlayer(senderId, "default", "soldier", 0);
             spawnInstanceNearPlayer(senderId, "default", "soldier", 0);
@@ -805,6 +778,10 @@ class BasicCommandHandler : Tracker {
 		} else if (checkCommand(message, "gb5")) {
 			spawnInstanceNearPlayer(senderId, "black_card.carry_item", "carry_item", 0); 
             spawnInstanceNearPlayer(senderId, "black_card.carry_item", "carry_item", 0);
+		} else if (checkCommand(message, "gb6")) {
+			spawnInstanceNearPlayer(senderId, "upgrade_masterkey.carry_item", "carry_item", 0); 
+            spawnInstanceNearPlayer(senderId, "upgrade_masterkey.carry_item", "carry_item", 0);
+            spawnInstanceNearPlayer(senderId, "upgrade_masterkey.carry_item", "carry_item", 0);
 		} else if (checkCommand(message, "cb2")) {
 			spawnInstanceNearPlayer(senderId, "sf_box.carry_item", "carry_item", 0);
             spawnInstanceNearPlayer(senderId, "sf_box.carry_item", "carry_item", 0);

@@ -284,11 +284,11 @@
 
     dictionary itemDropFileIndex = {
         // 空
-        {"",0},
 
         {"firecontrol.carry_item",1},       // 火控核心
         {"core_mask.carry_item",2},         // 真核面具  
         {"black_card.carry_item",114},         // 黑卡  
+        {"upgrade_masterkey.carry_item",514}, //
 
         {"upgrade_type88.carry_item",3},    // 汉阳造加速线圈
         {"upgrade_aa12.carry_item",4},      // AA12独头弹
