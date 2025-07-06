@@ -4584,10 +4584,12 @@ class CommandSkill : Tracker {
                     // }
 
                     int count = g_playerInfo_Buck.getKillSkillCountbyName(player_name,"Type82");
-                    int jud = (characters.length()>0)?(1+characters.length()/10):0;
+                    int jud = 1 + ((characters.length()>0) ? characters.length()/10 : 0);  // 基础1层+额外层数
+                    jud = min(jud, 6-count);  // 限制总层数不超过6
+                    if(jud > 0) {
+                        g_playerInfo_Buck.addKillSkillCountbyName(player_name,"Type82",jud);
+                    }
                     count += jud;
-                    jud = min(jud+1,6-count);
-                    g_playerInfo_Buck.addKillSkillCountbyName(player_name,"Type82",jud);
 
                     dictionary a;
                     a["%count"] = ""+(count/2);
