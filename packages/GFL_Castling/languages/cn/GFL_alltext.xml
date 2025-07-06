@@ -242,6 +242,7 @@
     <text key="shelter" text="掩体"/>
     <text key="Bunker" text="碉堡"/>    
     <text key="ELMO" text="ELMO 艾莫号"/>    
+    <text key="ELMO? Store" text="艾莫号?补给车"/>    
     <text key="Mortar Truck - The Guer" text="迫击炮卡车 - 古尔号"/>
     <text key="Sidecar Motorcycle" text="边三轮机车"/>
     

@@ -860,6 +860,8 @@ class BasicCommandHandler : Tracker {
 			spawnInstanceNearPlayer(senderId, "coeus.vehicle", "vehicle", 0);
 		} else  if(checkCommand(message, "spawn is2")) {
 			spawnInstanceNearPlayer(senderId, "is2_m1895.vehicle", "vehicle", 0);
+		} else  if(checkCommand(message, "spawnelmos")) {
+			spawnInstanceNearPlayer(senderId, "elmostore.vehicle", "vehicle", 0);
 		} else  if(checkCommand(message, "spawntyphon")) {
 			spawnInstanceNearPlayer(senderId, "typhon.vehicle", "vehicle", 0);
 		} else  if(checkCommand(message, "spawnaek")) {

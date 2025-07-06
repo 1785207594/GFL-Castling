@@ -50,6 +50,7 @@
 	<vehicle file="gk_martina.vehicle" />
 	<vehicle file="shelter.vehicle"/>
 	<vehicle file="GK_Amos_boss.vehicle"/>
+	<vehicle file="gk_amos_store.vehicle"/>
 
 	<vehicle file="t14_gk.vehicle" />
 
