@@ -692,8 +692,16 @@ void killCharactersNearPosition(Metagame@ metagame, const Vector3@ position, int
 }
 
 void killCharacter(Metagame@ metagame, int characterId, bool preserveItems = false) {
-	string command = "<command class='update_character' id='" + characterId + "' dead='1' preserve_items='" + (preserveItems ? 1 : 0) + "' />";
-	metagame.getComms().send(command);
+    string command;
+    if(preserveItems)
+    {
+        command = "<command class='update_character' id='" + characterId + "' dead='1' preserve_items='" + (preserveItems ? 1 : 0) + "' />";
+    }
+    else
+    {
+        command = "<command class='update_character' id='" + characterId + "' dead='1'/>";
+    }
+	metagame.getComms().send(command); 
 }
 
 // --------------------------------------------------------

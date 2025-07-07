@@ -1128,14 +1128,14 @@ class StageConfiguratorInvasion : StageConfigurator {
         stage.addTracker(RunAtStart(m_metagame, command));
 
 		array<string> order = {
-			"North East Harju Town",
 			"Contact Point",
 			"Girl's Frontline",
-			"North West Harju Town",
-			"Forest",
-            "HQ Rearguard Exit Path",
 			"South East Harju Town",
-			"South West Harju Town"
+			"North East Harju Town",
+			"North West Harju Town",
+			"South West Harju Town",
+			"Forest",
+            "HQ Rearguard Exit Path"
 		};
         stage.addTracker(AttackTargetOrder(m_metagame, 1, order));
 

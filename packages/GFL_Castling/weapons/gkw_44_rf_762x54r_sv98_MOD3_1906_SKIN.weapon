@@ -24,7 +24,7 @@
         burst_shots="1"
         last_burst_retrigger_time="1.0"
         slot="0"/>
-        <inventory encumbrance="35.0" buy_price="198.0" sell_price="98.0"/>
+        <inventory encumbrance="35.0" buy_price="298.0" sell_price="198.0"/>
         <commonness value="0" in_stock="0" can_respawn_with="1"/>
         <next_in_chain key="gkw_sv98mod3_1906_skill.weapon" share_ammo="1"/>
         <animation key="recoil" animation_key="recoil1"/>
