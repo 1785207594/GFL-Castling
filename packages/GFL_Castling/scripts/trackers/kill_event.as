@@ -637,7 +637,7 @@ class kill_event : Tracker {
                 int i = findSkillIndex(characterId,"PPKMOD3");
                 if(i >=0){
                     SkillArray[i].m_time-=1.0;
-                    if(KillerWeaponKey=="gkw_ppkmod3.weapon" || KillerWeaponKey=="gkw_ppkmod3_3905.weapon" || KillerWeaponKey=="gkw_ppkmod3_6109.weapon"){
+                    if(KillerWeaponKey == c_weaponType){
                         SkillArray[i].m_time-=1.0;
                     }
                 }
@@ -646,7 +646,7 @@ class kill_event : Tracker {
                 int i = findSkillIndex(characterId,"C96");
                 if(i >=0){
                     SkillArray[i].m_time-=1.0;
-                    if(KillerWeaponKey=="gkw_c96mod3.weapon" || KillerWeaponKey=="gkw_c96mod3_8405.weapon"){
+                    if(KillerWeaponKey == c_weaponType){
                         SkillArray[i].m_time-=1.0;
                     }
                 }
@@ -661,6 +661,10 @@ class kill_event : Tracker {
                 int i = findSkillIndex(characterId,"Nagant");
                 if(i >=0){
                     SkillArray[i].m_time-=2.0;
+                    if(KillerWeaponKey == c_weaponType)
+                    {
+                        SkillArray[i].m_time-=3.0;
+                    }
                 }
             }
             // 护甲判断

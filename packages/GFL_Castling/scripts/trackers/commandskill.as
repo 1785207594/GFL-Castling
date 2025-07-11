@@ -4145,6 +4145,7 @@ class CommandSkill : Tracker {
                     if (count <=1){
                         healRangedCharacters(m_metagame,c_pos,factionid,20.0,10);
                         spawnVehicle(m_metagame,1,factionid,target_pos.add(Vector3(0,5,0)),Orientation(0,1,0,0),"para_spawn.vehicle");
+                        addCooldown("Nagant",300,characterId,modifer);
                     }
                     if (count == 2){
                         Vector3 c_pos1 = target_pos.add(Vector3(3,0,3));
@@ -4158,8 +4159,9 @@ class CommandSkill : Tracker {
                         insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(0,40,0)),target_pos);
                         insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(3,40,3)),target_pos.add(Vector3(3,0,3)));
                         insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(-3,40,-3)),target_pos.add(Vector3(-3,0,-3)));
+                        addCooldown("Nagant",300,characterId,modifer);
                     }
-                    if (count == 3 ){
+                    if (count >= 3 ){
                         int is2_exist = getNumberedVehicle(m_metagame,factionid,"is2_m1895.vehicle");
                         if (is2_exist < 2)
                         {
@@ -4167,6 +4169,7 @@ class CommandSkill : Tracker {
                             u_pos = u_pos.add(Vector3(0,25,0));
                             float ori4 = getAimOrientation4(c_pos,target_pos);
                             spawnVehicle(m_metagame,1,factionid,u_pos,Orientation(0,1,0,ori4),"is2_m1895.vehicle"); 
+                            addCooldown("Nagant",300,characterId,modifer);
                         }
                         else
                         {
@@ -4181,25 +4184,10 @@ class CommandSkill : Tracker {
                             spawnSoldier(m_metagame,1,factionid,c_pos4,"ar_58_ak47");
                             insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(0,40,0)),target_pos);
                             insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(3,40,3)),target_pos.add(Vector3(3,0,3)));
-                            insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(-3,40,-3)),target_pos.add(Vector3(-3,0,-3)));                                
+                            insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(-3,40,-3)),target_pos.add(Vector3(-3,0,-3)));
+                            addCooldown("Nagant",120,characterId,modifer);                                
                         }
                     }
-                    if (count > 3)
-                    {
-                        healRangedCharacters(m_metagame,c_pos,factionid,20.0,10);
-                        Vector3 c_pos1 = target_pos.add(Vector3(3,0,3));
-                        Vector3 c_pos2 = target_pos.add(Vector3(-3,0,-3));
-                        Vector3 c_pos3 = target_pos.add(Vector3(-3,0,3));
-                        Vector3 c_pos4 = target_pos.add(Vector3(3,0,-3));                        
-                        spawnSoldier(m_metagame,1,factionid,c_pos1,"smg_21_ppsh");
-                        spawnSoldier(m_metagame,1,factionid,c_pos2,"smg_21_ppsh");
-                        spawnSoldier(m_metagame,1,factionid,c_pos3,"ar_58_ak47");
-                        spawnSoldier(m_metagame,1,factionid,c_pos4,"ar_58_ak47");
-                        insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(0,40,0)),target_pos);
-                        insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(3,40,3)),target_pos.add(Vector3(3,0,3)));
-                        insertCommonStrike(characterId,factionid,15,target_pos.add(Vector3(-3,40,-3)),target_pos.add(Vector3(-3,0,-3))); 
-                    }
-                    addCooldown("Nagant",240,characterId,modifer);
                 }
             }
         }        

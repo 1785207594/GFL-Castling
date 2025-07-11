@@ -28,7 +28,8 @@
 	<next_in_chain key="ff_alchemist_skill.weapon" share_ammo="1" />
 	
 	<!--Animations-->
-	
+    <inventory encumbrance="20.0" buy_price="2000.0" sell_price="648.0"/>
+
 	<animation state_key="recoil"	animation_key="high recoil, pistol dual 1" />
 	<animation state_key="recoil"	animation_key="high recoil, pistol dual 2" />
 	<animation state_key="recoil" stance_key="over_wall" animation_key="recoil, overwall dual" />
@@ -111,7 +112,8 @@
 	stab_enabled="1"/>
 
 	<next_in_chain key="ff_alchemist.weapon" share_ammo="1" />
-	
+    <inventory encumbrance="20.0" buy_price="2000.0" sell_price="648.0"/>
+
 	<!--Animations-->
 	
 	<animation state_key="recoil"	animation_key="high recoil, pistol dual 1" />
