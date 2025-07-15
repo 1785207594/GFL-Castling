@@ -12,7 +12,7 @@
 </weapon>
 <weapon file="deployable.base_weapon" key="deployable_hvy_store.weapon" radius="0.25" >
     <specification
-	name="IOP Supply-HVY T-Doll"
+	name="IOP HVY Deploy"
     spawn_instance_class="vehicle" 
     spawn_instance_key="hvy_store" 
 	/>

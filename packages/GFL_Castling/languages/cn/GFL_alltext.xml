@@ -102,7 +102,7 @@
     <text key="Request IOP Supply" text="投放IOP安全贮藏箱"/>
     <text key="IOP Stash Chest" text="IOP安全箱"/>
     <text key="IOP Supply Chest" text="IOP补给箱"/>
-    <text key="IOP Supply-HVY T-Doll" text="IOP重装人形补给箱"/>
+    <text key="IOP HVY Chest" text="IOP重装工事补给箱"/>
     <text key="T6 Equipment Shop" text="Tier 6 装备商店"/>    
     <text key="IOP Supply Deploy" text="IOP补给箱部署包"/>
     <text key="Tough Battle Supply Box" text="绝境歼殛物资箱"/>
