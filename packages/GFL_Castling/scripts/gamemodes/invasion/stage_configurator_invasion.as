@@ -1495,13 +1495,13 @@ class StageConfiguratorInvasion : StageConfigurator {
 			stage.m_factions.insertLast(f);
 		}
 		{
-			Faction f(getFactionConfigs()[FactionIndex[0]], createCommanderAiCommand(2, 0.38, 0.1));           // was 0.1, 0.1 in 1.65
+			Faction f(FactionConfig(1, "kcco.xml", "KCCO", "0.43 0.49 0.18", "kcco.xml"), createCommanderAiCommand(1, 0.20, 0.10));             
 			f.m_overCapacity = 20;                                              // was 0 (test2)
 			f.m_capacityOffset = 35;                                                             // was 0 in 1.65
 			stage.m_factions.insertLast(f);
 		}
 		{
-			Faction f(getFactionConfigs()[FactionIndex[1]], createCommanderAiCommand(1, 0.38, 0.1));           // was 0.1, 0.1 in 1.65
+			Faction f(FactionConfig(2, "paradeus.xml", "Paradeus", "1 1 1", "paradeus.xml"), createCommanderAiCommand(2, 0.20, 0.10));             
             f.m_overCapacity = 20;                                              // was 0 (test2)
 			f.m_capacityOffset = 35;                                                             // was 0 in 1.65
 			stage.m_factions.insertLast(f);
