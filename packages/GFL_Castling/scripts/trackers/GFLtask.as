@@ -312,6 +312,97 @@ class DelayP2PProjectileSet :Task{
 	}
 }
 
+//task点对点定高弹头，单次,POS1 POS2 重力g 高度h
+class DelayP2PProjectileSet_H :Task{
+	protected Metagame@ m_metagame;
+	protected float m_time;
+    protected int m_character_id;
+    protected int m_faction_id;
+    protected string m_key;
+	protected float m_timeLeft;
+	protected Vector3 m_pos1;
+	protected Vector3 m_pos2;
+    protected float m_gspeed;
+    protected float m_height;
+
+	DelayP2PProjectileSet_H(Metagame@ metagame, float time, int cId,int fId,string key,Vector3 pos1,Vector3 pos2,float gspeed,float height) {
+		@m_metagame = metagame;
+		m_time = time;
+		m_character_id = cId;
+		m_faction_id =fId;
+		m_key=key;
+		m_pos1=pos1;
+        m_pos2=pos2;
+        m_gspeed = gspeed;
+        m_height= height;
+	}
+
+	void start() {
+		m_timeLeft=m_time;
+	}
+
+	void update(float time) {
+		m_timeLeft -= time;
+		if (m_timeLeft < 0)
+		{
+            CreateProjectile_H(m_metagame,m_pos1,m_pos2,m_key,m_character_id,m_faction_id,m_gspeed,m_height);
+		}
+	}
+
+    bool hasEnded() const {
+		if (m_timeLeft < 0) {
+			return true;
+		}
+		return false;
+	}
+}
+
+//task人对点定高弹头，单次,POS1 POS2 重力g 高度h
+class DelayC2PProjectileSet_H :Task{
+	protected Metagame@ m_metagame;
+	protected float m_time;
+    protected int m_character_id;
+    protected int m_faction_id;
+    protected string m_key;
+	protected float m_timeLeft;
+	protected Vector3 m_pos;
+    protected float m_gspeed;
+    protected float m_height;
+
+	DelayC2PProjectileSet_H(Metagame@ metagame, float time, int cId,int fId,string key,Vector3 pos,float gspeed,float height) {
+		@m_metagame = metagame;
+		m_time = time;
+		m_character_id = cId;
+		m_faction_id =fId;
+		m_key=key;
+		m_pos=pos;
+        m_gspeed = gspeed;
+        m_height= height;
+	}
+
+	void start() {
+		m_timeLeft=m_time;
+	}
+
+	void update(float time) {
+		m_timeLeft -= time;
+		if (m_timeLeft < 0)
+		{
+            const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
+            if (checkCharacterDead(character)) return;
+            Vector3 c_pos = getCharacterPosition(character); 
+            c_pos=c_pos.add(Vector3(0,1.5,0));
+            CreateProjectile_H(m_metagame,c_pos,m_pos,m_key,m_character_id,m_faction_id,m_gspeed,m_height);
+		}
+	}
+
+    bool hasEnded() const {
+		if (m_timeLeft < 0) {
+			return true;
+		}
+		return false;
+	}
+}
 class ConstantStaticProjectileEvent :Task{
 	protected Metagame@ m_metagame;
 	protected float m_time; 

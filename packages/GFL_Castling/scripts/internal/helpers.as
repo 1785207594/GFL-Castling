@@ -423,6 +423,18 @@ class Vector3 {
 		m_values[2] = z;
 	}
 
+    float x()
+    {
+        return m_values[0];
+    }
+    float y()
+    {
+        return m_values[1];
+    }
+    float z()
+    {
+        return m_values[2];
+    }
 	// --------------------------------------------
 	string toString() const {
 		array<string> strings;

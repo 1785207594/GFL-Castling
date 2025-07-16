@@ -327,6 +327,7 @@ float getOrientation4(Vector3 a) {
 	return (dir*(-1.0)-1.57)*(-1.0);
 }
 
+//向量相乘
 Vector3 getMultiplicationVector(Vector3 s_pos, Vector3 scale) {
 	float x = s_pos.m_values[0]*scale.m_values[0];
 	float y = s_pos.m_values[1]*scale.m_values[1];
@@ -347,6 +348,34 @@ Vector3 getRandomHorizonDirectVector()
     float x = cos(angle);
     float z = sin(angle);
     return Vector3(x,0,z);
+}
+
+//true 逆时针 false 顺时针
+Vector3 GetRotatedPos(const Vector3 c_pos, const Vector3 targetPos, float angle, bool isCounterClockwise = false)
+{
+    Vector3 dir = targetPos.subtract(c_pos);
+    float distance = dir.length();
+    
+    // 如果距离为0，直接返回圆心（防止除以0）
+    if (distance <= 0.0001f)
+    {
+        return c_pos;
+    }
+    
+    dir = dir.scale(1 / distance);
+    angle = angle * (3.1415f / 180.0f);
+    if (!isCounterClockwise)
+    {
+        angle = -angle; // 顺时针旋转
+    }
+    Vector3 rotatedDir = Vector3(
+        dir.x() * cos(angle) - dir.z() * sin(angle),
+        dir.y(),
+        dir.x() * sin(angle) + dir.z() * cos(angle)
+    );
+    
+    // 5. 计算新坐标（保持原始距离）
+    return c_pos.add(rotatedDir.scale(distance));
 }
 
 float getAimUnitDistance(float scale, Vector3 s_pos, Vector3 e_pos) {
@@ -855,6 +884,7 @@ void healCharacter(Metagame@ metagame,int characterId,int healnum) {
 
 void healRangedCharacters(Metagame@ metagame,Vector3 pos,int faction_id,float range,int healnum,string special_key="none",uint healcount=0) {
 	array<const XmlElement@>@ characters = getCharactersNearPosition(metagame, pos, faction_id, range);
+    if (characters is null) return;
 	if(healcount==0) {
 		_log("No special heal count requirement.");
 		healcount = characters.length;

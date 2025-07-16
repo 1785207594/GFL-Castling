@@ -6,8 +6,8 @@
         can_shoot_running="1"
         retrigger_time="-1.0" 
         accuracy_factor="0.8" 
-        sustained_fire_grow_step="4.0" 
-        sustained_fire_diminish_rate="2.0" 
+        sustained_fire_grow_step="3.0" 
+        sustained_fire_diminish_rate="10.0" 
         magazine_size="6" 
         can_shoot_standing="1" 
         suppressed="0" 
@@ -55,16 +55,14 @@
         <stance state_key="crouching" accuracy="1.1" />
         <stance state_key="prone" accuracy="1.1" />
         <stance state_key="over_wall" accuracy="1.1" />
-        <modifier class="detectability" value="0.3" />
-
     </weapon>
     <weapon file="two_hands_sg.animation_base" key="gkw_m1897_2505_skill.weapon">
         <!--Weapon specifications-->
         <specification 
         retrigger_time="-1.0" 
         accuracy_factor="0.9" 
-        sustained_fire_grow_step="4.0" 
-        sustained_fire_diminish_rate="2.0" 
+        sustained_fire_grow_step="3.0" 
+        sustained_fire_diminish_rate="10.0" 
         magazine_size="1" 
         can_shoot_standing="1" 
         suppressed="0" 
@@ -110,6 +108,5 @@
         <stance state_key="crouching" accuracy="0.75" />
         <stance state_key="prone" accuracy="0.85" />
         <stance state_key="over_wall" accuracy="0.85" />
-        <modifier class="detectability" value="0.3" />
     </weapon>
 </weapons>

@@ -285,8 +285,8 @@ class CommandSkill : Tracker {
                 case 89:{excuteSSG3000skill(cId,senderId,m_modifer);break;}
                 case 90:{excuteQBZ95skill(cId,senderId,m_modifer);break;}
                 case 91:{excuteSIGMCXSkill(cId,senderId,m_modifer);break;}
+                case 92:{excuteZasM21mod3Skill(cId,senderId,m_modifer);break;}
 
-                
 
                 
                 
@@ -391,7 +391,9 @@ class CommandSkill : Tracker {
 	void start() {
 		m_ended = false;
 	}
-
+	void gameContinuePreStart() {
+		m_ended = false;
+	}
     bool hasEnded() const {
 		// always on
 		return false;
@@ -2654,7 +2656,8 @@ class CommandSkill : Tracker {
                     for (uint i1=0;i1<affectedCharacter.length();i1++)	{
                         int luckyoneid = affectedCharacter[i1].getIntAttribute("id");
                         const XmlElement@ luckyoneC = getCharacterInfo(m_metagame, luckyoneid);
-                        if ((luckyoneC.getIntAttribute("id")!=-1)&&(luckyoneid!=characterId)){
+                        if (luckyoneC !is null && luckyoneC.getIntAttribute("id")!=-1 && luckyoneid!=characterId )
+                        {
                             string luckyonepos = luckyoneC.getStringAttribute("position");
                             Vector3 luckyoneposV = stringToVector3(luckyonepos);
                             CreateDirectProjectile(m_metagame,c_pos.add(Vector3(0,1.2,0)),luckyoneposV.add(Vector3(0,1.8,0)),"sat8_pizza.projectile",characterId,factionid,60);
@@ -2938,7 +2941,8 @@ class CommandSkill : Tracker {
                     for (uint i1=0;i1<affectedCharacter.length();i1++)	{
                         int luckyoneid = affectedCharacter[i1].getIntAttribute("id");
                         const XmlElement@ luckyoneC = getCharacterInfo(m_metagame, luckyoneid);
-                        if ((luckyoneC.getIntAttribute("id")!=-1)&&(luckyoneid!=characterId)){
+                        if (luckyoneC !is null && luckyoneC.getIntAttribute("id")!=-1 && luckyoneid!=characterId )
+                        {
                             string luckyonepos = luckyoneC.getStringAttribute("position");
                             Vector3 luckyoneposV = stringToVector3(luckyonepos);
                             CreateDirectProjectile(m_metagame,c_pos.add(Vector3(0,1.2,0)),luckyoneposV.add(Vector3(0,1.8,0)),"gkw_cz75_axe.projectile",characterId,factionid,60);
@@ -3952,26 +3956,6 @@ class CommandSkill : Tracker {
                     playAnimationKey(m_metagame,characterId,"recoil1, big",true,false);
                     c_pos=c_pos.add(Vector3(0,1,0));
 
-                    int affectedNumber =0;
-                    //获取技能影响的敌人数量
-                    array<int> enemyfaction = {0,1,2,3,4};
-                    for(int i =0;i<4;i++){
-                        if (enemyfaction[i] ==factionid){
-                            enemyfaction.removeAt(i);
-                        }
-                    }
-                    int n=enemyfaction.length-1;
-                    for(int i=0;i<n;i++){
-                        array<const XmlElement@> affectedCharacter = getCharactersNearPosition(m_metagame,aim_pos,enemyfaction[i],10.0f);
-                        affectedNumber += affectedCharacter.length;
-                    }
-
-                    Airstrike_strafer@ new_strike = Airstrike_strafer(characterId,factionid,16,c_pos.add(Vector3(0,50,0)),aim_pos);
-                    affectedNumber+=3;
-                    new_strike.setNum(affectedNumber);
-                    DelayDetailedCallRequest@ shot = DelayDetailedCallRequest(m_metagame,2.0,new_strike);
-                    TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                    tasker.add(shot);
                     if (checkFlatRange(c_pos,aim_pos,10)){
                         CreateDirectProjectile(m_metagame,c_pos,aim_pos,"std_aa_grenade.projectile",characterId,factionid,45);
                     }
@@ -3979,6 +3963,71 @@ class CommandSkill : Tracker {
                         CreateProjectile_H(m_metagame,c_pos,aim_pos,"std_aa_grenade.projectile",characterId,factionid,45.0,3.5);
                     }
                     addCooldown("zasm21",20,characterId,modifer);
+                }
+            }
+        }
+    }
+
+    void excuteZasM21mod3Skill(int characterId,int playerId,SkillModifer@ modifer){
+        bool ExistQueue = false;
+        int j=-1;
+        for (uint i=0;i<SkillArray.length();i++){
+            if (InCooldown(characterId,modifer,SkillArray[i]) && SkillArray[i].m_weapontype=="zasm21") {
+                ExistQueue=true;
+                j=i;
+            }
+        }
+        if (ExistQueue){
+            dictionary a;
+            a["%time"] = ""+SkillArray[j].m_time;
+            notify(m_metagame, "Hint - Skill Cooldown Hint", a, "misc", playerId, false, "", 1.0);
+            //_log("skill cooldown" + SkillArray[j].m_time);
+            return;
+        }
+        const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+        if (character !is null) {
+            const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+            if (player !is null){
+                if (player.hasAttribute("aim_target")) {
+                    string target = player.getStringAttribute("aim_target");
+                    Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                    Vector3 aim_pos= stringToVector3(target);
+                    int factionid = character.getIntAttribute("faction_id");
+                    array<string> Voice={
+                        "ZastavaM21_SKILL1_JP.wav",
+                        "ZastavaM21_SKILL2_JP.wav",
+                        "ZastavaM21_SKILL3_JP.wav"
+                    };
+                    playRandomSoundArray(m_metagame,Voice,factionid,c_pos.toString(),1);
+                    playAnimationKey(m_metagame,characterId,"recoil1, big",true,false);
+                    c_pos=c_pos.add(Vector3(0,1,0));
+
+                    int luckyGuyid = getNearbyRandomLuckyGuyId(m_metagame,factionid,aim_pos,10.0f);
+                    if(luckyGuyid==-1) 
+                    {
+                        luckyGuyid = getNearbyRandomLuckyGuyId(m_metagame,factionid,c_pos,15.0f);
+                    }
+                    if(luckyGuyid!=-1)
+                    {
+                        const XmlElement@ luckyoneC = getCharacterInfo(m_metagame, luckyGuyid);
+                        if (luckyoneC !is null)
+                        {
+                            string luckyonepos = luckyoneC.getStringAttribute("position");
+                            Vector3 targetPos = stringToVector3(luckyonepos);
+                            Vector3 pos_1 = GetRotatedPos(c_pos,targetPos,30.0f,true);
+                            Vector3 pos_2 = GetRotatedPos(c_pos,targetPos,30.0f,false);
+                            CreateProjectile_H(m_metagame,c_pos,targetPos,"hand_grenade_impact.projectile",characterId,factionid,60.0,3.5);
+                            CreateProjectile_H(m_metagame,c_pos,pos_1,"hand_grenade_impact.projectile",characterId,factionid,60.0,3.5);
+                            CreateProjectile_H(m_metagame,c_pos,pos_2,"hand_grenade_impact.projectile",characterId,factionid,60.0,3.5);
+                        } 
+                    }
+                    DelayC2PProjectileSet_H@ new_task1 = DelayC2PProjectileSet_H(m_metagame,0.5,characterId,factionid,"std_aa_grenade.projectile",aim_pos,45,6);
+                    DelayC2PProjectileSet_H@ new_task2 = DelayC2PProjectileSet_H(m_metagame,1.5,characterId,factionid,"std_aa_grenade.projectile",aim_pos,45,6);
+					TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+					tasker.add(new_task1);
+					tasker.add(new_task2);
+
+                    addCooldown("zasm21",30,characterId,modifer);
                 }
             }
         }
@@ -4336,12 +4385,14 @@ class CommandSkill : Tracker {
                     if(affectedCharacter.length()>=1){
                         int luckyoneid = affectedCharacter[getRandomIndex(affectedCharacter.length())].getIntAttribute("id");
                         const XmlElement@ luckyoneC = getCharacterInfo(m_metagame, luckyoneid);
-                        if ((luckyoneC.getIntAttribute("id")!=-1)&&(luckyoneid!=characterId)){
+                        if (luckyoneC !is null && luckyoneC.getIntAttribute("id")!=-1 && luckyoneid!=characterId )
+                        {
                             string luckyonepos = luckyoneC.getStringAttribute("position");
                             Vector3 targetPos = stringToVector3(luckyonepos);
                             CreateDirectProjectile(m_metagame,targetPos.add(Vector3(0,2,0)),targetPos,"ff_emp_bullet_stun.projectile",characterId,factionid,10);
                             CreateDirectProjectile(m_metagame,targetPos.add(Vector3(0,2,0)),targetPos,"ff_emp_bullet_kill.projectile",characterId,factionid,10);
-                        }	
+                        }
+
                     }
                     else{
                         CreateDirectProjectile(m_metagame,t_pos.add(Vector3(0,2,0)),t_pos,"ff_emp_bullet_stun.projectile",characterId,factionid,10);
@@ -4606,7 +4657,8 @@ class CommandSkill : Tracker {
                         if(affectedCharacter.length()>=1){
                             int luckyoneid = affectedCharacter[getRandomIndex(affectedCharacter.length())].getIntAttribute("id");
                             const XmlElement@ luckyoneC = getCharacterInfo(m_metagame, luckyoneid);
-                            if ((luckyoneC.getIntAttribute("id")!=-1)&&(luckyoneid!=characterId)){
+                            if (luckyoneC !is null && luckyoneC.getIntAttribute("id")!=-1 && luckyoneid!=characterId )
+                            {
                                 string luckyonepos = luckyoneC.getStringAttribute("position");
                                 Vector3 target = stringToVector3(luckyonepos);
                                 if (checkFlatRange(c_pos,target,15)){
