@@ -744,6 +744,8 @@
 
     <weapon key="gkw_zasm21.weapon" />
     <weapon key="gkw_zasm21_2104.weapon" />
+    <weapon key="gkw_zasm21mod3.weapon" />
+    <weapon key="gkw_zasm21mod3_2104.weapon" />
     <weapon key="gkw_ribeyrolles.weapon" />
     <weapon key="gkw_ribeyrolles_skill.weapon" />
     <weapon key="gkw_ribeyrollesmod3.weapon" />
@@ -1255,6 +1257,7 @@
     <weapon key="reinforcement_fairy_negev.weapon" />
 	<weapon key="reinforcement_fairy_palette.weapon" />
 	<weapon key="reinforcement_fairy_daybreak.weapon" />
+    <weapon key="reinforcement_fairy_manticore.weapon" />
     <weapon key="target_fairy.weapon" />
     <projectile key="fairy_command_defence_1.projectile" />
     <projectile key="fairy_command_defence_2.projectile" />
