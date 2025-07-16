@@ -642,6 +642,7 @@
     <text key="G11(MOD3)-[Stance of the Assaulter]" text="G11(MOD3)-[突击者姿态]" />
     <text key="UMP9 (MOD3)-[Snow Owl's Roar]" text="UMP9 (MOD3)-[白鸮轰鸣]" />
     <text key="Zastava M21" text="扎斯塔瓦M21突击步枪" />
+    <text key="Zastava M21(MOD3)" text="扎斯塔瓦M21突击步枪(MOD3)" />
     <text key="AN-94-[Doll Trigger]" text="AN-94-[人偶扳机]" />
     <text key="AN-94(MOD3)-[Doll Trigger]" text="AN-94(MOD3)-[人偶扳机]" />
     <text key="KS-23-[Damage Focus]" text="KS-23-[火力专注]" />
@@ -1228,6 +1229,7 @@
     <text key="RPK-16-['Renate']" text="RPK-16-['蕾娜特']" />
     <text key="RPK-16-['Renate']-[Wits of the Silver Fox]" text="RPK-16-['蕾娜特']-[银狐的狡黠]"/>
     <text key="Zastava M21-[Queen of the White Pieces]" text="扎斯塔瓦M21突击步枪-[白棋王后]" />
+    <text key="Zastava M21(MOD3)-[Queen of the White Pieces]" text="扎斯塔瓦M21突击步枪(MOD3)-[白棋王后]" />
     <text key="JS9-[Orca's Journey]" text="JS9-[逆戟之行]" />
     <text key="SPP-1-[Blue Lotus Night]" text="SPP-1-[蓝莲夜]"/>
     <text key="AK-74U-[Lily of the Valley]" text="AK-74U-[君影草]"/>

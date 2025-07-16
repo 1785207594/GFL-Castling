@@ -1757,12 +1757,18 @@
     <model filename="gkd_ar_97type_from_FUYU.xml">
         <requirement class="weapon" key="gkw_QBZ97_skill.weapon" slot="0" />
     </model>
-    <model filename="gkd_ar_zasm21_from_DUSK.xml">
+    <model filename="gkd_ar_zasm21.xml">
         <requirement class="weapon" key="gkw_zasm21.weapon" slot="0" />
     </model>
-    <model filename="gkd_zasm21_2104_from_DUSK.xml">
+    <model filename="gkd_ar_zasm21_2104.xml">
         <requirement class="weapon" key="gkw_zasm21_2104.weapon" slot="0" />
     </model>
+    <model filename="gkd_ar_zasm21_mod3.xml">
+        <requirement class="weapon" key="gkw_zasm21mod3.weapon" slot="0" />
+    </model>
+    <model filename="gkd_ar_zasm21_2104.xml">
+        <requirement class="weapon" key="gkw_zasm21mod3_2104.weapon" slot="0" />
+    </model>    
     <model filename="gkd_hg_pa15_from_Lindemann.xml">
         <requirement class="weapon" key="gkw_pa15.weapon" slot="0" />
     </model>

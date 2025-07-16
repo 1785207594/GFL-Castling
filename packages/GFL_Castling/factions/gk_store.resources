@@ -35,6 +35,7 @@
 	<weapon key="reinforcement_fairy_negev.weapon" />
 	<weapon key="reinforcement_fairy_palette.weapon" />
 	<weapon key="reinforcement_fairy_daybreak.weapon" />
+    <weapon key="reinforcement_fairy_manticore.weapon" />
 
 	<weapon key="vest_repair_plate.weapon" />
 	<weapon key="target_fairy.weapon" />
