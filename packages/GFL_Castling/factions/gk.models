@@ -3150,5 +3150,8 @@
     </model>   
     <model filename="gkd_ar_sig510.xml">
         <requirement class="weapon" key="gkw_sig510.weapon" slot="0" />
-    </model>      
+    </model>
+    <model filename="gkd_ar_insas.xml">
+        <requirement class="weapon" key="gkw_insas.weapon" slot="0" />
+    </model>    
 </models> 

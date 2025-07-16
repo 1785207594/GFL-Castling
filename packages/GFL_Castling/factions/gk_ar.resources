@@ -106,6 +106,7 @@
     <weapon key="gkw_cr21mod3.weapon" />
     <weapon key="gkw_sig510.weapon"/>
     <weapon key="gkw_l85a1.weapon"/>
+    <weapon key="gkw_insas.weapon"/>
 
     
 	<weapon key="medikit.weapon" />
