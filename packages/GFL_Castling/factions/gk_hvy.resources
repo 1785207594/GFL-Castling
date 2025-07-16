@@ -25,6 +25,10 @@
 	<weapon key="vest_repair.weapon" />
 	<weapon key="gkw_consume_at4.weapon"/>
 	<weapon key="gkw_88rocker.weapon" />
+    <weapon key="deploy_kit_tow.weapon"/>
+
+    <weapon key="gkw_deploy_bunker.weapon" />
+    <weapon key="gkw_deploy_bunker_tow.weapon" />
 
 	<projectile key="hand_88grenade.projectile" />
 	<projectile key="c4.projectile" />

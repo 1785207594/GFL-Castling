@@ -10,7 +10,7 @@
 		<visual class="chassis" mesh_filename="deploy_box.mesh" texture_filename="box2.png" />
 		<sky_diving chute_offset="0 2.75 0.0" trigger_height="20.0" gravity="-10" mesh_filename="chute_medium.mesh" texture_filename="chute.png" />
 	</vehicle>
-	<vehicle name="IOP Supply Chest" key="hvy_store" file="store.base_vehicle">
+	<vehicle name="IOP HVY Chest" key="hvy_store" file="store.base_vehicle">
 		<item_container class="armory" offset="0 0 0.0" soldier_group="player_hvy"/>
 		<visual class="chassis" mesh_filename="deploy_box.mesh" texture_filename="box2.png" />
 	</vehicle>

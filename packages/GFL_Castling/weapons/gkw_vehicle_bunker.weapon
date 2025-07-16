@@ -4,19 +4,20 @@
     <specification 
     slot="2" 
     retrigger_time="0.072"
-	accuracy_factor="0.95" 
-	spread_range ="0.3"
-	sustained_fire_grow_step="0.3" 
+	accuracy_factor="0.98" 
+	spread_range ="0.5"
+	sustained_fire_grow_step="0.25" 
 	sustained_fire_diminish_rate="2.0" 
-    sight_range_modifier="1.8"
-    ai_sight_range_modifier="1.05"
+    sight_range_modifier="2.0"
+    ai_sight_range_modifier="1.0"
     magazine_size="-1" 
     can_shoot_standing="0" 
     can_shoot_crouching="0" 
     suppressed="0" 
     name="Bunker MG" 
     class="0" 
-    projectile_speed="180.0" />
+    projectile_speed="180.0" 
+    />
     
     <sound key="fire" fileref="minigun_From_payday2.wav" pitch_variety="0.05" volume="0.1" />
     <sound key="magazine_out" fileref="mg_clip_out.wav" />
@@ -28,8 +29,44 @@
     <hud_icon filename="gkw_v_LM5.png" />
     <commonness value="0.0" />
     <weak_hand_hold offset="0.4" />
-    <projectile file="bullet_ai.projectile">
-        <result class="hit"  kill_probability="3.0"  kill_decay_start_time="2.00" kill_decay_end_time="3.60" />
+    <projectile file="bullet_ai.projectile" time_to_live="0.5">
+        <result class="hit"  kill_probability="5.5" kill_decay_start_time="1.00" kill_decay_end_time="1.00" />
+    </projectile>
+</weapon>
+
+<weapon key="bunker_mg2.weapon">
+    <specification 
+    slot="2" 
+    retrigger_time="0.12"
+	accuracy_factor="0.98" 
+	spread_range ="0.5"
+	sustained_fire_grow_step="0.25" 
+	sustained_fire_diminish_rate="2.0" 
+    sight_range_modifier="2.0"
+    ai_sight_range_modifier="1.0"
+    magazine_size="-1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+    suppressed="0" 
+    name="Bunker MG" 
+    class="0" 
+    projectile_speed="180.0" 
+    barrel_offset= "-0.4"
+    />
+    
+    <sound key="fire" fileref="m2hb_fire_FromFC5.wav" pitch_variety="0.05" volume="1.2" />
+    <sound key="magazine_out" fileref="mg_clip_out.wav" />
+    <sound key="magazine_in" fileref="mg_clip_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound class="impact" fileref="rifle_drop.wav" />
+    <model filename="" />
+
+    <hud_icon filename="gkw_v_LM5.png" />
+    <commonness value="0.0" />
+    <weak_hand_hold offset="0.4" />
+    <projectile file="bullet_ai.projectile" time_to_live="0.5">
+        <result class="hit" kill_probability="12.0" kill_decay_start_time="1.00" kill_decay_end_time="1.00" />
+        <trail probability="1.0" key="BulletApTrail_ct"/>
     </projectile>
 </weapon>
 

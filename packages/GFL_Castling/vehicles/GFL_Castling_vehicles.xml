@@ -44,6 +44,8 @@
 	
 	<!-- G&K -->
 	<vehicle file="gk_bunker.vehicle" />
+	<vehicle file="gk_bunker_tow.vehicle" />
+
 	<vehicle file="gk_store.vehicle" />
 	<vehicle file="gk_pierre.vehicle" />
 	<vehicle file="gk_chiara.vehicle" />
