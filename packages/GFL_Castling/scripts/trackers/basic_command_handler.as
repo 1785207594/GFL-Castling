@@ -452,7 +452,18 @@ class BasicCommandHandler : Tracker {
 			int characterId= playerInfo.getIntAttribute("character_id");			
 			playAnimationKey(m_metagame,characterId,"infinite_rotation",true,true);
 		}
-
+		else if (checkCommand(message, "action6")) {
+			const XmlElement@ playerInfo = getPlayerInfo(m_metagame, senderId);
+			if (playerInfo is null) return;
+			int characterId= playerInfo.getIntAttribute("character_id");			
+			playAnimationKey(m_metagame,characterId,"handstand",true,true);
+		}
+		else if (checkCommand(message, "action7")) {
+			const XmlElement@ playerInfo = getPlayerInfo(m_metagame, senderId);
+			if (playerInfo is null) return;
+			int characterId= playerInfo.getIntAttribute("character_id");			
+			playAnimationKey(m_metagame,characterId,"salute",true,true);
+		}        
 		else if (checkCommand(message, "help")) {
 			notify(m_metagame, "Help - command", dictionary(), "misc", senderId, true, "Help - command title", 1.0);
 		}

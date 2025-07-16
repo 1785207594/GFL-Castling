@@ -92,19 +92,22 @@
     <parameter class="min_distance_to_throw_grenade" value="1.0" />
     <parameter class="max_distance_to_throw_grenade" value="15.0" />
     <parameter class="min_number_of_enemies_to_throw_grenade" value="2.0" />
-    <parameter class="burst_time" value="2.0" />
+    <parameter class="burst_time" value="1.0" />
     <parameter class="burst_time_variance" value="0" />
-    <parameter class="longer_burst_time" value="2.0" />
+    <parameter class="longer_burst_time" value="1.0" />
     <parameter class="longer_burst_time_variance" value="0" />
     <parameter class="stab_range" value="6.5" />
-    <parameter class="melee_attack_wait_time" value="1.0" />
+    <parameter class="melee_range" value="6.5" />  
+    <parameter class="melee_attack_wait_time" value="0.0" />
+    <parameter class="wait_time" value="0.2" />
+	<parameter class="wait_time_variance" value="0" />
     <parameter class="fighting_melee_move_radius" value="2.0" />
     <parameter class="fighting_regular_move_radius" value="2.0" />
     <parameter class="reaction_time_after_choosing_target" value="-1.0" />
     <parameter class="global_separation_radius_factor" value="1.0" />
     <parameter class="default_fighting_separation" value="3.0" />
     <parameter class="boosted_fighting_separation" value="2.0" />
-    <parameter class="fighting_against_vehicle_separation" value="2.5" />
-    <parameter class="fighting_against_vehicle_move_radius" value="2.5" />
+    <parameter class="fighting_against_vehicle_separation" value="3.5" />
+    <parameter class="fighting_against_vehicle_move_radius" value="3.5" />
     <parameter class="willingness_to_charge" value="1.0" />
 </ai>
