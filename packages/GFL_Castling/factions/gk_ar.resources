@@ -34,7 +34,6 @@
 	<weapon key="gkw_hk416_agent_546.weapon" />
 	<weapon key="gkw_hk416mod.weapon" />
 	<weapon key="gkw_hk416mod3.weapon" />
-	<weapon key="gkw_l85a1.weapon" />
 	<weapon key="gkw_m16a1.weapon" />
 	<weapon key="gkw_m4a1.weapon" />
 	<weapon key="gkw_m4a1mod3.weapon" />
@@ -77,7 +76,6 @@
 	<weapon key="gkw_akalfa.weapon"/>
 	<weapon key="gkw_qbz191.weapon"/>
 	<weapon key="gkw_tar21.weapon"/>
-	<weapon key="gkw_l85a1.weapon"/>
 	<weapon key="gkw_ak15mod3.weapon"/>
 	<weapon key="gkw_galilmod3.weapon" />
 	<weapon key="gkw_k2.weapon" />
@@ -106,6 +104,8 @@
     <weapon key="gkw_cmr30.weapon" />
     <weapon key="gkw_cr21.weapon" />
     <weapon key="gkw_cr21mod3.weapon" />
+    <weapon key="gkw_sig510.weapon"/>
+    <weapon key="gkw_l85a1.weapon"/>
 
     
 	<weapon key="medikit.weapon" />

@@ -152,7 +152,6 @@
     <weapon key="gkw_hk416_6505.weapon" />
     <weapon key="gkw_hk416mod.weapon" />
     <weapon key="gkw_hk416mod3.weapon" />
-    <weapon key="gkw_l85a1.weapon" />
     <weapon key="gkw_m16a1.weapon" />
     <weapon key="gkw_m16a1_533.weapon" />
     <weapon key="gkw_m16a1_553.weapon" />
@@ -1185,7 +1184,9 @@
     <weapon key="gkw_mp41mod3.weapon" />  
     <weapon key="gkw_cmr30.weapon" />
 	<weapon key="gkw_l85a1.weapon"/>
+    <weapon key="gkw_sig510.weapon"/>
 
+    
     <!-- 重装梯队 -->
     <weapon key="gkw_hvy_qlz04.weapon" />
     <weapon key="gkw_hvy_qlz04_st.weapon" />
