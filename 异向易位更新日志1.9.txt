@@ -3,7 +3,15 @@
     希普卡
     MK-12
     CMR-30    
+    INSAS
+    SIG 510
+    ZASM21 MOD3
     CR21 MOD3
+}
+
+新地图
+{
+    谜境守卫
 }
 
 新皮肤
