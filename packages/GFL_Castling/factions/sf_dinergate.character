@@ -10,7 +10,10 @@
 	<!-- 上下梯子 -->
 	<parameter class="climbing_up_ladder" value="0.5" />
 	<parameter class="climbing_down_ladder" value="0.5" />
-	
+    <parameter class="throwing_self_over_initial_bounce" value="0.25" />
+	<parameter class="throwing_self_over_steer_amount" value="1" />
+	<parameter class="throwing_self_over_lift_up" value="0.1" />
+    
 	<!-- 背包物品使用开关 -->
   	<parameter class="can_use_inventory" value="0" />  
 	<!-- 载具开关 -->
@@ -27,8 +30,11 @@
 	<!-- 游泳平滑度 -->
 	<parameter class="swimming_steer_amount" value="0.1" />
 
+	<parameter class="ending_climbing_ladder_initial_bounce" value="0.05" />
+	<parameter class="ending_climbing_up_ladder_steer_amount" value="0.2" />
 	<parameter class="climbing_end_height_offset" value="0.25" />
 	<parameter class="climbing_with_jump_end_height_offset" value="0.25" />
+
 	<sound key="death" fileref="kill_sound_mechabot_01.wav" volume="0.4" pitch_variety="0.025" />
 	<sound key="death" fileref="kill_sound_mechabot_02.wav" volume="0.4" pitch_variety="0.025" />
 	<sound key="death" fileref="kill_sound_mechabot_03.wav" volume="0.4" pitch_variety="0.025" />
