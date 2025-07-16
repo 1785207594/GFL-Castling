@@ -65,6 +65,7 @@
 
     <text key="Fairy Command:Reinforcement--Day Break" text="妖精指令:增援--曙光小队[进攻型]" />
     <text key="Fairy Command:Reinforcement--Palette" text="妖精指令:增援--调色板小队[进攻型]" />
+    <text key="Fairy Command:Reinforcement--Manticore?[Cost 20 TP]" text="妖精指令:增援--强无敌?[进攻型][消耗20战术点]" />
 
     
     <text key="Fairy Command:Mine" text="妖精指令:布雷妖精" />
@@ -73,7 +74,10 @@
     <text key="Type 25 disposable rocket launcher" text="25式便携火箭筒" />
     <text key="Egor Lebedev" text="叶戈尔画像" />
     <text key="Construction Fairy:Bunker" text="工事妖精:碉堡"/>
-    <text key="Construction Fairy:Shelter" text="工事妖精:掩体"/>
+    <text key="Construction Fairy:Anti-Tank Bunker" text="工事妖精:反坦克碉堡"/>
+    <text key="Construction Fairy:Mortar Bunker" text="工事妖精:迫击炮碉堡"/>
+    <text key="Construction Fairy:Cannon Bunker" text="工事妖精:机炮碉堡"/>
+    <text key="Construction Fairy:Shelter" text="工事妖精:掩体路障"/>
     <text key="firework" text="大礼花"/>
     <text key="New Year Giftbox" text='"福袋女神的微笑"'/>
     <text key="Golyat" text="便携式歌莉娅"/>

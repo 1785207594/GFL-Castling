@@ -1960,6 +1960,9 @@ class call_event : Tracker {
         }
     }
 
+    protected void handleMatchEndEvent(const XmlElement@ event){
+        CallEvent_cooldown.resize(0);
+    }
 
     protected bool costTacticPoint(GFL_battleInfo@ battle_info,int num,int player_id)
     {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectile class="grenade" name="" key="fairy_command_manticore.projectile" slot="0" pulldown_in_air="0.0" can_be_detected_by_driver="0" can_be_detected_by_footmen="0" >
 
-    <result class="notify_script" key="fc_negev" />
+    <result class="notify_script" key="fc_manticore" />
     <trigger class="time" time_to_live="0.0"/>
     <rotation class="random" />
 

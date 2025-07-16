@@ -302,7 +302,49 @@ class fairyCommand : Tracker {
             addCastlingMarker(FairyRequest);
             m_taskQueue.add(DelayFairyCommand(m_metagame,0.5,factionId,"fc_daybreak",target,FairyRequest,characterId));
             CallEvent_cooldown.insertLast(Call_Cooldown(playerName,playerId,240.0,"fc_attack"));
-        }                         
+        } 
+        if(EventKeyGet == "fc_manticore"){
+            int characterId = event.getIntAttribute("character_id");
+            const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+            if (character is null) return;
+            int playerId = character.getIntAttribute("player_id");
+            int factionId= character.getIntAttribute("faction_id");
+            const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+            if (player is null) return;
+            if (!player.hasAttribute("aim_target")) return;
+            string playerName = player.getStringAttribute("name");
+            GFL_playerInfo@ m_playerinfo = getPlayerInfoFromList(playerName);
+            GFL_battleInfo@ battleInfo = m_playerinfo.getBattleInfo();
+            if(findCooldown(playerName,"fc_attack")){
+                dictionary a;
+                a["%time"] = ""+getCooldown(playerName,"fc_attack");                        
+                notify(m_metagame, "fairycommand_cooldown",a, "misc", playerId, false, "", 1.0);
+                addItemInBackpack(m_metagame,characterId,"weapon","reinforcement_fairy_manticore.weapon");
+                return;
+            }            
+            if (m_taskQueue.getSize() >= 3){
+                notify(m_metagame, "fairycommand_overload",dictionary(), "misc", playerId, false, "", 1.0);
+                addItemInBackpack(m_metagame,characterId,"weapon","reinforcement_fairy_manticore.weapon");
+                return;
+            }
+            if(!costTacticPoint(battleInfo,20,playerId))
+            {
+                addItemInBackpack(m_metagame,characterId,"weapon","reinforcement_fairy_manticore.weapon");
+                return;
+            }            
+            Vector3 target = stringToVector3(player.getStringAttribute("aim_target"));
+            Vector3 height = Vector3(0,50,0);
+            target = target.add(height);
+            CastlingMarker@ FairyRequest = CastlingMarker(characterId,factionId,target);
+            FairyRequest.setIconTypeKey("call_marker_drop");
+            FairyRequest.setIndex(4);
+            FairyRequest.setSize(0.5);
+            FairyRequest.setDummyId(m_DummyCallID);
+            m_DummyCallID++;                        
+            addCastlingMarker(FairyRequest);
+            m_taskQueue.add(DelayFairyCommand(m_metagame,5,factionId,"fc_medic",target,FairyRequest));
+            CallEvent_cooldown.insertLast(Call_Cooldown(playerName,playerId,300.0,"fc_attack"));
+        }                                
     }    
 
     bool hasEnded() const {
@@ -332,7 +374,27 @@ class fairyCommand : Tracker {
         m_metagame.getComms().send(command);
     }
 
-
+    protected bool costTacticPoint(GFL_battleInfo@ battle_info,int num,int player_id)
+    {
+        int m_tactic_point = battle_info.getTacticPoint();
+        int m_tactic_point_cost = m_tactic_point - num;
+        if ((m_tactic_point_cost) >=0)
+        {
+            battle_info.setTacticPoint(m_tactic_point_cost);
+            dictionary a;
+            a["%num"] = ""+m_tactic_point_cost;
+            a["%cost_num"] = ""+num;
+            notify(m_metagame, "call event,cost point", a, "misc", player_id, false, "", 1.0);
+            return true;
+        }
+        else
+        {
+            dictionary a;
+            a["%num"] = ""+(num-m_tactic_point);
+            notify(m_metagame, "call event,not enough point", a, "misc", player_id, false, "", 1.0);
+            return false;
+        }
+    }
     
 }
 
@@ -502,6 +564,10 @@ class DelayFairyCommand : Task {
             if(m_spawnkey == "fc_daybreak"){
                 playSoundAtLocation(m_metagame,"airstrike_flyby.wav",m_factionId,m_pos,1.5f);
                 createCallatPos(m_metagame,m_characterId,m_factionId,"gk_daybreak.call",m_pos);
+            }
+            if(m_spawnkey == "fc_manticore"){
+                playSoundAtLocation(m_metagame,"airstrike_flyby.wav",m_factionId,m_pos,1.5f);
+                createCallatPos(m_metagame,m_characterId,m_factionId,"manticore2.call",m_pos);
             }            
 		}
 
