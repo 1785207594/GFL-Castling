@@ -13,7 +13,7 @@
         stance_accuracy_rate="1.25"
         sight_range_modifier="1.0"
         suppressed="0" 
-        sustained_fire_diminish_rate="4.5" 
+        sustained_fire_diminish_rate="2.8" 
         sustained_fire_grow_step="0.6" />
     <animation state_key="reload" animation_key="reloading, magazine rifle 1.2" />
     <inventory encumbrance="35.0" buy_price="200.0" sell_price="200.0" />
@@ -25,7 +25,7 @@
     <sound key="magazine_in" fileref="Beowulf_mgz_in_FromCOD19.wav" volume="0.9" />
     <sound key="cycle" fileref="Beowulf_cycle_FromCOD19.wav" volume="0.9" />
     <sound class="impact" fileref="rifle_drop.wav" />
-        <sound key="dry_fire" fileref="dryfire_ar_1.wav" pitch_variety="0.05" volume="1.2" />
+    <sound key="dry_fire" fileref="dryfire_ar_1.wav" pitch_variety="0.05" volume="1.2" />
     <sound key="dry_fire" fileref="dryfire_ar_2.wav" pitch_variety="0.05" volume="1.2" />
     <sound key="dry_fire" fileref="dryfire_ar_3.wav" pitch_variety="0.05" volume="1.2" />
     <model filename="gkw_ar_beowulf.xml" />
@@ -58,7 +58,7 @@
     sight_range_modifier="1.0"
     suppressed="1" 
     spread_range="0.65"
-    sustained_fire_diminish_rate="4.5" 
+    sustained_fire_diminish_rate="2.8" 
     sustained_fire_grow_step="0.6" />
     <animation state_key="reload" animation_key="reloading, magazine rifle 1.2" />
     <inventory encumbrance="35.0" buy_price="200.0" sell_price="200.0" />

@@ -674,7 +674,10 @@ class ItemDropEvent : Tracker {
 
     protected void giveDigimindItem(int cId, int pId, string weapon_xml_name,string weapon_name){
         addItemInBackpack(m_metagame,cId,"weapon",weapon_xml_name);
-        m_craftQueue.removeAt(findQueueIndex(pId,weapon_name));
+        int index =findQueueIndex(pId,weapon_name);
+        if(index == -1 ) index = findQueueIndex(pId,"masterkey");
+        if(index == -1 ) return;
+        m_craftQueue.removeAt(index);
         playPrivateSound(m_metagame,"digimind_sfx2.wav",pId);
         //下面是自动录入功能
         GFL_playerInfo@ playerInfo = getPlayerInfoFromListbyPid(pId);
