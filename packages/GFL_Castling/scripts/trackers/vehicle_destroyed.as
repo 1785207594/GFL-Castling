@@ -30,10 +30,12 @@ dictionary included_vehicle = {
         {"mobile_armory.vehicle",10000},
         {"mortar_truck.vehicle",10000},
         {"gk_store",5000},
+        {"elmostore",5000},
         {"gk_stash",30000},
         {"hvy_store",5000},
         {"t6_store",5000},
         {"call_ui_store",5000},
+        {"armored_truck.vehicle",500000},
         {"",-1}
 };
 
@@ -82,7 +84,7 @@ class vehicle_destroyed : Tracker{
         const XmlElement@ vehicleInfo = getVehicleInfo(m_metagame, vehicle_id);
         if(vehicleInfo is null){return;}
 
-        float rp_punish = float(included_vehicle[vehicle_name]);
+        int rp_punish = int(included_vehicle[vehicle_name]);
 
         dictionary a;
         a["%count"] = ""+rp_punish;   

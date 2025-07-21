@@ -189,7 +189,6 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void setupNormalStages() {	
-        addStage(setupStagePolarizedLight01()); //
 		addStage(setupStage1_rust());     // map2_c by diling
 		// addStage(setupStageRace());          // DEJAHU
 		addStage(setupStage10());         // map10
@@ -197,7 +196,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		addStage(setupStageXmas()); 
 		addStage(setupStage21());
 		// addStage(setupStage14());         // map6_2
-		// addStage(setupStage7());          // map6c by diling
+		addStage(setupStage7());          // map6c by diling
 		addStage(setupStage8());          // map8
 		addStage(setupStage19());		  // map18    
 		addStage(setupStage6());          // map5
@@ -219,15 +218,16 @@ class StageConfiguratorInvasion : StageConfigurator {
 		addStage(setupStage104()); 		  // map105_1 zoneAttack by diling
 		addStage(setupStage105()); 		  // map105_2 shockzone by diling
 		addStage(setupDeadZone());	      // map105_3 deadzone by diling
-		addStage(setupStage3());		  // map3 c
 		addStage(setupStage16());         // map8_2
-		addStage(setupStage20());
+		addStage(setupStage20());         // goose city
+		addStage(setupStage1());          // map2
+		addStage(setupStage3());		  // map3 c
+        addStage(setupStagePolarizedLight01()); //
 		// addStage(setupStage14());         // map6_2
 		// addStage(setupStage5());          // map1
 		addStage(setupStage108());		  // xiaoxieshen by diling
 		// addStage(setupStage11());         // map13
 		addStage(setupStage4());          // map7
-		addStage(setupStage1());          // map2
 	}
 
 	// --------------------------------------------

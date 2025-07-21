@@ -999,7 +999,28 @@
 			<attribute weight="1.0" min="1000" max="1000" />
 		</attribute_config>
 	</soldier>
-
+	<soldier name="palette_squad" spawn_score="0" copy_from="default_ar">
+		<ai filename="gk_elite.ai" />
+		<character filename="default_gk_pmc.text_lines">
+			<parameter class="skydiving_gravity" value="-30.0" />
+		</character>
+		<resources file="gk_elite.resources">
+			<weapon key="gkw_ro635mod3.weapon" />
+			<weapon key="gkw_stenmod3.weapon" />
+			<weapon key="gkw_qsz92mod3.weapon" />
+			<weapon key="gkw_makarovmod3.weapon" />
+			<weapon key="gkw_aat52_skill.weapon" />
+			<weapon key="gkw_consume_at4.weapon" />
+			<projectile key="hand_grenade.projectile" />
+			<carry_item key="bp_t6.carry_item" />
+		</resources>
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.100" max="9.0" />
+		</attribute_config>
+		<attribute_config class="rp">
+			<attribute weight="1.0" min="1000" max="1000" />
+		</attribute_config>
+	</soldier>
 	<soldier name="ar_118_9a91" spawn_score="0.05" copy_from="default_ar">
 		<character filename="default_gk_pmc.text_lines">
 			<sound key="death" fileref="9A91_RETREAT_JP.wav" pitch_variety="0" volume="0.8" />

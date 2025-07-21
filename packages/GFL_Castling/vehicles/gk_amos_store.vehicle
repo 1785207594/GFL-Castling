@@ -6,10 +6,10 @@
 	time_to_live_unsteerable="120"
 	map_view_atlas_index="44" 
 	reserves_spawn_point="1" 
-	max_character_collision_speed_on_normal="18"
-	max_character_collision_speed="20"
+	max_character_collision_speed_on_normal="50"
+	max_character_collision_speed="50"
 	character_leave_request_mode="friendly" 
-	allow_ai_to_use="1"
+	allow_ai_to_use="0"
 	ai_driver_turns_to_target="1"
 	ai_abandon_when_unsteerable="0"
 	designated_squad_as_driver_only="0"
@@ -18,30 +18,30 @@
 	>
 	<tag name="truck" />
 	<tag name="any_tank" />
-	<tag name="metal_heavy" />
 	<tire_set offset="0.96 0 1.7" radius="0.48" />
 	<tire_set offset="0.96 0 -1.7" radius="0.48" />
-	<control 
-	max_speed="32.5" 
-	max_limiter_speed="15"
-	acceleration="7.0" 
-	max_reverse_speed="32.0" 
-	min_health_to_steer="2.5" 
-	max_rotation="0.5" 
-	max_water_depth="2.2" 
-	steer_smoothening="0.5" />
 
-	<modifier class="blast_damage" value="-2.0" />
+	<control 
+	max_speed="25.0" 
+	acceleration="75.0" 
+    max_reverse_speed="25.0" 
+	min_health_to_steer="2.5" 
+	max_rotation="0.0" 
+	max_water_depth="2.2" 
+    tracked="1" 
+	gears="1"/>
+
+	<modifier class="blast_damage" value="0" />
 	<modifier class="blast_range" value="-1.0" />
 
 	<physics 
-	max_health="125.0" 
+	max_health="100.0" 
 	mass="200.0" 
 	remove_collision_threshold="0.2"
 	extent="2.08 0.0 4.0" 
 	offset="0 0.0 0" 
 	top_offset="0 4.0 0" 
-	blast_damage_threshold="2.0"
+	blast_damage_threshold="4.0"
 	collision_model_pos="0 1.3 -0.2" 
 	collision_model_extent="2.56 3.0 5.44"
 	collision_response_factor="0.35"
@@ -56,7 +56,7 @@
 	<visual class="chassis" key="broken" mesh_filename="elmostore.mesh" texture_filename="humvee_broken.png" />
 	<visual class="tire" mesh_filename="" texture_filename="" />
 	<visual class="tire" key="broken" />
-	<item_container class="stash" offset="0.0 0.78 -2.4" />
+	<item_container class="armory" offset="0.0 0.78 -2.4" soldier_group="amos"/>
 	<spawn_point />
 	<character_slot type="driver" position="0.8 0.6 1.8" seat_position="0.5 1.2 1.8" rotation="0" exit_rotation="1.57" hiding="0" animation_id="36" />
 	<character_slot type="passenger" position="0.8 0.6 0.0" seat_position="-0.0 2.5 0.0" rotation="0" exit_rotation="1.57" rotation_range="6.283" hiding="0" animation_key="passenger, boat" marker_offset="0 0.35 0.2" />
@@ -68,7 +68,7 @@
 	<effect event_key="slide_hard" type="splat_map" surface_tag="road" size="2.0" atlas_index="5" layer="0" />
 	<effect event_key="slide" type="splat_map" surface_tag="dirt" size="1.0" atlas_index="2" layer="1" />
 	<effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="Burst" use_surface_color="1" />
-	<effect event_key="health" value="14." ref="SmallSmokeVehicle" offset="-0.32 1.28 +2.16" />
+	<effect event_key="health" value="14" ref="SmallSmokeVehicle" offset="-0.32 1.28 +2.16" />
 	<effect event_key="health" value="7.0" ref="SmallSmokeVehicle" offset="-0.32 1.28 +2.16" />
 	<effect event_key="health" value="7.0" ref="BrokenSparkle" post_processing="0" offset="-0.32 0.8 +2.16" />
 	<effect event_key="destroyed" ref="SmallSmokeVehicle" offset="0.0 1.68 -0.24" />
@@ -125,7 +125,7 @@
 		<trigger class="cleanup" />
 		<result class="spawn" instance_class="projectile" instance_key="debri_stun" min_amount="1" max_amount="1" offset="0 3.0 0" position_spread="0.0 0.0" direction_spread="0.0 0.0" />
 	</event>
-	    <effect event_key="slide" type="splat_map" surface_tag="road" size="3.0" atlas_index="5" layer="0" />
+    <effect event_key="slide" type="splat_map" surface_tag="road" size="3.0" atlas_index="5" layer="0" />
     <effect event_key="slide_hard" type="splat_map" surface_tag="road" size="3.0" atlas_index="5" layer="0" />
     <effect event_key="slide" type="splat_map" surface_tag="dirt" size="2.0" atlas_index="2" layer="1" />
     <effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="Burst" use_surface_color="1" />
