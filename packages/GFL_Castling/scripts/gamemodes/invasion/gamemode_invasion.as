@@ -56,6 +56,7 @@
 #include "GFLplayerlist.as"
 #include "save_system.as"
 #include "girl_index.as"
+#include "vehicle_destroyed.as"
 
 // --------------------------------------------
 class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
@@ -323,6 +324,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(call_event(this));
 		addTracker(GFL_playerlist_system(this,getUserSettings()));
 		addTracker(Save_System(this));
+		addTracker(vehicle_destroyed(this));  
 
 		
 	}
