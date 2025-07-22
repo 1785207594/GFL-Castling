@@ -6,7 +6,8 @@
     <tag name="bazooka"/>
     <specification 
 	can_shoot_standing="1" 
-	can_shoot_crouching="0"
+	can_shoot_crouching="1"
+    can_shoot_running="1"
 	can_shoot_prone="0"
 	suppressed="0" 
     magazine_size="-1" 
@@ -38,12 +39,12 @@
     <sound key="cycle" fileref="" />
     <sound key="reload_one" fileref=""/>
 
-    <sound key="stab" fileref="whoosh_melee_hvy_01.wav" pitch_variety="0.05" volume="2.5" />
-    <sound key="stab" fileref="whoosh_melee_hvy_02.wav" pitch_variety="0.05" volume="2.5" />
-    <sound key="fire" fileref="whoosh_melee_hvy_01.wav" pitch_variety="0.05" volume="2.5" />
-    <sound key="fire" fileref="whoosh_melee_hvy_02.wav" pitch_variety="0.05" volume="2.5" />
-    <sound key="effect" fileref="whoosh_melee_hvy_01.wav" pitch_variety="0.05" volume="2.5" />
-    <sound key="effect" fileref="whoosh_melee_hvy_02.wav" pitch_variety="0.05" volume="2.5" />
+    <sound key="stab" fileref="whoosh_melee_hvy_01.wav" pitch_variety="0.05" volume="2.2" />
+    <sound key="stab" fileref="whoosh_melee_hvy_02.wav" pitch_variety="0.05" volume="2.2" />
+    <sound key="fire" fileref="whoosh_melee_hvy_01.wav" pitch_variety="0.05" volume="2.2" />
+    <sound key="fire" fileref="whoosh_melee_hvy_02.wav" pitch_variety="0.05" volume="2.2" />
+    <sound key="effect" fileref="whoosh_melee_hvy_01.wav" pitch_variety="0.05" volume="2.2" />
+    <sound key="effect" fileref="whoosh_melee_hvy_02.wav" pitch_variety="0.05" volume="2.2" />
     <sound key="stab_hit" fileref="melee_impact_flesh1_fromFO4.wav" pitch_variety="0.05" volume="2.5" />
     <sound key="stab_hit" fileref="melee_impact_flesh2_fromFO4.wav" pitch_variety="0.05" volume="2.5" />
     <sound key="stab_hit" fileref="melee_impact_flesh3_fromFO4.wav" pitch_variety="0.05" volume="1.0" />

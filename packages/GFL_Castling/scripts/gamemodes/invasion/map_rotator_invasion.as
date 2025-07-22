@@ -33,6 +33,7 @@ array<string> BadAssMapList = {
 	"Rising Sand",
 	"Hell's High Way",
 	"Palo Island",
+	"Labyrinthine Defense",
 	"Operation Homecoming"
 };
 
@@ -271,6 +272,10 @@ class MapRotatorInvasion : MapRotator {
 
 				if (map_name=="Operation Homecoming"){		
 					rewardlist.insertLast(Resource("complete_box_arcticwarfare.carry_item","carry_item"));
+				}
+
+				if (map_name=="Labyrinthine Defense"){		
+					rewardlist.insertLast(Resource("complete_box_singularity.carry_item","carry_item"));
 				}
 
 				if (BadAssMapList.find(map_name)>-1){
