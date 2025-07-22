@@ -65,15 +65,16 @@
 	<visual class="turret" turret_index="9" key="broken" offset="0 100 0" mesh_filename="40mm.mesh" texture_filename="humvee_broken.png"/>
 	<visual class="turret" turret_index="10" key="broken" mesh_filename="m1a1_mgcannon.mesh" texture_filename="humvee_broken.png" />
 
-	<visual class="track" mesh_filename="m1a1_track_l.mesh" offset="1.57 0 0.6" >
-		<part texture_filename="is2_m1895_track.jpg" texture_animation="translate" factor="0.5" tire_binding="1" />
-		<part texture_filename="is2_m1895_track.jpg" texture_animation="translate" factor="0.5" tire_binding="1" />
+	<visual class="track" mesh_filename="m1a1_track_r.mesh" offset="-1.57 0.6 0.1" >
+		<part texture_filename="is2_m1895_track.jpg" texture_animation="translate" factor="-1" tire_binding="0" />
+		<part texture_filename="is2_m1895_wheel.jpg" texture_animation="rotate" tire_binding="0" />
+		<part texture_filename="is2_m1895_main.jpg" />
 	</visual>
 
-	<visual class="track" mesh_filename="m1a1_track_r.mesh" offset="-1.57 0 0.6" >
-		<part texture_filename="is2_m1895_track.jpg" texture_animation="translate" factor="0.5" tire_binding="0" />
-		<part texture_filename="is2_m1895_track.jpg" texture_animation="translate" factor="0.5" tire_binding="0" />
-
+	<visual class="track" mesh_filename="m1a1_track_r.mesh" offset="1.57 0.6 0.1" >
+		<part texture_filename="is2_m1895_track.jpg" texture_animation="translate" factor="-1" tire_binding="1" />
+		<part texture_filename="is2_m1895_wheel.jpg" texture_animation="rotate" tire_binding="1" />
+		<part texture_filename="is2_m1895_main.jpg" />
 	</visual>
 
 	<character_slot type="driver" enter_position="-1.8 0.2 2" seat_position="-1.0 0.1 2" rotation="0" exit_rotation="-1.57" hiding="1" animation_id="36" />
