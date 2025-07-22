@@ -12,7 +12,7 @@
     <parameter class="team_check_time" value="3.0" />
     <parameter class="check_alert_time" value="1.5" />
     <parameter class="check_reinforcement_need_time" value="30.0" />
-    <parameter class="choose_enemy_time" value="1.0" />
+    <parameter class="choose_enemy_time" value="0.1" />
     <parameter class="check_need_help_time" value="1.0" />
     <parameter class="fighting_time_fire_not_open" value="3.0" />
     <parameter class="cover_status_recheck_time" value="1.5" />
@@ -101,12 +101,12 @@
     <parameter class="melee_attack_wait_time" value="0.0" />
     <parameter class="wait_time" value="0.2" />
 	<parameter class="wait_time_variance" value="0" />
-    <parameter class="fighting_melee_move_radius" value="2.0" />
-    <parameter class="fighting_regular_move_radius" value="2.0" />
+    <parameter class="fighting_melee_move_radius" value="3.5" />
+    <parameter class="fighting_regular_move_radius" value="3.5" />
     <parameter class="reaction_time_after_choosing_target" value="-1.0" />
     <parameter class="global_separation_radius_factor" value="1.0" />
     <parameter class="default_fighting_separation" value="3.0" />
-    <parameter class="boosted_fighting_separation" value="2.0" />
+    <parameter class="boosted_fighting_separation" value="3.0" />
     <parameter class="fighting_against_vehicle_separation" value="3.5" />
     <parameter class="fighting_against_vehicle_move_radius" value="3.5" />
     <parameter class="willingness_to_charge" value="1.0" />

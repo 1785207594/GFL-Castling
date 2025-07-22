@@ -25,7 +25,7 @@
         <model filename="gkw_ar_cr21.xml" />
         <hud_icon filename="gkw_cr21.png" />
         <weak_hand_hold offset="0.2" />
-        <commonness value="0.2" in_stock="1" can_respawn_with="1" />
+        <commonness value="0.2" in_stock="0" can_respawn_with="1" />
         <projectile file="bullet.projectile">
             <result class="hit"  kill_probability="6.55" kill_decay_start_time="1" kill_decay_end_time="1.667" />
         </projectile>

@@ -80,6 +80,7 @@ class vehicle_destroyed : Tracker{
         const XmlElement@ characterInfo = getCharacterInfo(m_metagame, killer_cid);
         if(characterInfo is null){return;}
         int pid = characterInfo.getIntAttribute("player_id");
+        if(pid == -1) return;
 
         const XmlElement@ vehicleInfo = getVehicleInfo(m_metagame, vehicle_id);
         if(vehicleInfo is null){return;}
