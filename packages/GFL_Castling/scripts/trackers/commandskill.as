@@ -2535,7 +2535,7 @@ class CommandSkill : Tracker {
         bool ExistQueue = false;
         int j=-1;
         for (uint i=0;i<SkillArray.length();i++){
-            if (InCooldown(characterId,modifer,SkillArray[i]) && SkillArray[i].m_weapontype=="MG4MOD3") {
+            if (InCooldown(characterId,modifer,SkillArray[i],true) && SkillArray[i].m_weapontype=="MG4MOD3") {
                 ExistQueue=true;
                 j=i;
             }
@@ -4400,7 +4400,7 @@ class CommandSkill : Tracker {
                     }
                     if(!tryaddChargeCount("FF_Hunter",characterId,modifer,true)){
                         // _log("no new charge");
-                        addCooldown("FF_Hunter",15,characterId,modifer,"charge_recover_all");
+                        addCooldown("FF_Hunter",30,characterId,modifer,"charge_recover_all");
                     }
                     //Skill_ff_hunter@ shot = Skill_ff_hunter(m_metagame,1,characterId,factionid,t_pos);
                     //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
