@@ -215,6 +215,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_bombardment_fairy_82mm_mortar@ new_task = Event_call_bombardment_fairy_82mm_mortar(m_metagame,5.0,characterId,factionId,c_pos,stringToVector3(position),"bombardment_fairy_82mm_mortar_lv0",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -245,6 +246,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_bombardment_fairy_82mm_mortar@ new_task = Event_call_bombardment_fairy_82mm_mortar(m_metagame,5.0,characterId,factionId,c_pos,stringToVector3(position),"bombardment_fairy_82mm_mortar_lv0",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -268,6 +270,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_bombardment_fairy_82mm_mortar@ new_task = Event_call_bombardment_fairy_82mm_mortar(m_metagame,5.0,characterId,factionId,c_pos,stringToVector3(position),"bombardment_fairy_82mm_mortar_beta",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -291,6 +294,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_bombardment_fairy_82mm_mortar@ new_task = Event_call_bombardment_fairy_82mm_mortar(m_metagame,5.0,characterId,factionId,c_pos,stringToVector3(position),"bombardment_fairy_82mm_mortar_gamma",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -408,6 +412,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_bombardment_fairy_155mm_airburst@ new_task = Event_call_bombardment_fairy_155mm_airburst(m_metagame,7.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -431,6 +436,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_bombardment_fairy_155mm_airburst@ new_task = Event_call_bombardment_fairy_155mm_airburst(m_metagame,7.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -454,6 +460,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_bombardment_fairy_155mm_airburst@ new_task = Event_call_bombardment_fairy_155mm_airburst(m_metagame,1.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -477,6 +484,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_bombardment_fairy_155mm_airburst@ new_task = Event_call_bombardment_fairy_155mm_airburst(m_metagame,7.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -502,6 +510,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_cas@ new_task = Event_call_airstrike_fairy_cas(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_cas",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -524,6 +533,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_cas@ new_task = Event_call_airstrike_fairy_cas(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_cas",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -546,6 +556,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_cas@ new_task = Event_call_airstrike_fairy_cas(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_cas_beta",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -568,6 +579,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_cas@ new_task = Event_call_airstrike_fairy_cas(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_cas_gamma",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -596,6 +608,7 @@ class call_event : Tracker {
                                         m_DummyCallID++;
                                         Vector3 start_pos = call_cooldowninfo.getPos();
                                         const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                        if(character is null) break;
                                         Event_call_airstrike_fairy_cas_p2p@ new_task = Event_call_airstrike_fairy_cas_p2p(m_metagame,2.0,characterId,factionId,start_pos,stringToVector3(position),"airstrike_fairy_cas",flagId);
                                         TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                                         tasker.add(new_task);
@@ -630,6 +643,7 @@ class call_event : Tracker {
                                         m_DummyCallID++;
                                         Vector3 start_pos = call_cooldowninfo.getPos();
                                         const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                        if(character is null) break;
                                         Event_call_airstrike_fairy_cas_p2p@ new_task = Event_call_airstrike_fairy_cas_p2p(m_metagame,2.0,characterId,factionId,start_pos,stringToVector3(position),"airstrike_fairy_cas",flagId);
                                         TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                                         tasker.add(new_task);
@@ -664,6 +678,7 @@ class call_event : Tracker {
                                         m_DummyCallID++;
                                         Vector3 start_pos = call_cooldowninfo.getPos();
                                         const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                        if(character is null) break;
                                         Event_call_airstrike_fairy_cas_p2p@ new_task = Event_call_airstrike_fairy_cas_p2p(m_metagame,2.0,characterId,factionId,start_pos,stringToVector3(position),"airstrike_fairy_cas_beta",flagId);
                                         TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                                         tasker.add(new_task);
@@ -698,6 +713,7 @@ class call_event : Tracker {
                                         m_DummyCallID++;
                                         Vector3 start_pos = call_cooldowninfo.getPos();
                                         const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                        if(character is null) break;
                                         Event_call_airstrike_fairy_cas_p2p@ new_task = Event_call_airstrike_fairy_cas_p2p(m_metagame,2.0,characterId,factionId,start_pos,stringToVector3(position),"airstrike_fairy_cas_gamma",flagId);
                                         TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                                         tasker.add(new_task);
@@ -731,6 +747,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -754,6 +771,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise_alpha",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -777,6 +795,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,0.5,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -799,6 +818,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -816,6 +836,7 @@ class call_event : Tracker {
                                     int flagId = m_DummyCallID + 15000;
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_rocket_fairy_missile@ new_task = Event_call_rocket_fairy_missile(m_metagame,1.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -832,6 +853,7 @@ class call_event : Tracker {
                                     int flagId = m_DummyCallID + 15000;
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_rocket_fairy_missile@ new_task = Event_call_rocket_fairy_missile(m_metagame,1.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -848,6 +870,7 @@ class call_event : Tracker {
                                     int flagId = m_DummyCallID + 15000;
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_rocket_fairy_missile@ new_task = Event_call_rocket_fairy_missile(m_metagame,1.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -864,6 +887,7 @@ class call_event : Tracker {
                                     int flagId = m_DummyCallID + 15000;
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_rocket_fairy_missile@ new_task = Event_call_rocket_fairy_missile(m_metagame,1.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -908,6 +932,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_bomber@ new_task = Event_call_airstrike_fairy_bomber(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_bomber_lv0",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -931,6 +956,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_bomber@ new_task = Event_call_airstrike_fairy_bomber(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_bomber_alpha",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -961,6 +987,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_bomber@ new_task = Event_call_airstrike_fairy_bomber(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_bomber_lv0",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -983,6 +1010,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_bomber@ new_task = Event_call_airstrike_fairy_bomber(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_bomber_gamma",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1005,6 +1033,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_bombardment_fairy_170mm@ new_task = Event_call_bombardment_fairy_170mm(m_metagame,5.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1028,6 +1057,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_warrior_fairy_recon_heil@ new_task = Event_call_warrior_fairy_recon_heil(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1050,6 +1080,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_warrior_fairy_recon_heil@ new_task = Event_call_warrior_fairy_recon_heil(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"warrior_fairy_recon_heil_alpha",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1072,6 +1103,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_warrior_fairy_recon_heil@ new_task = Event_call_warrior_fairy_recon_heil(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"warrior_fairy_recon_heil_beta",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1094,6 +1126,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_warrior_fairy_recon_heil@ new_task = Event_call_warrior_fairy_recon_heil(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"warrior_fairy_recon_heil_gamma",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1117,6 +1150,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_warrior_fairy_VTOL@ new_task = Event_call_warrior_fairy_VTOL(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1140,6 +1174,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_rocket_fairy_strike@ new_task = Event_call_rocket_fairy_strike(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1165,6 +1200,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1189,6 +1225,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise_alpha",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1212,6 +1249,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,0.5,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1234,6 +1272,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1278,6 +1317,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_warrior_fairy_attack_heil@ new_task = Event_call_warrior_fairy_attack_heil(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1336,6 +1376,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_rocket_fairy_rush@ new_task = Event_call_rocket_fairy_rush(m_metagame,2.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1359,6 +1400,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_rocket_fairy_cover@ new_task = Event_call_rocket_fairy_cover(m_metagame,5.0,characterId,factionId,c_pos,stringToVector3(position),"",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1384,6 +1426,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1407,6 +1450,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise_alpha",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1430,6 +1474,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,0.5,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1452,6 +1497,7 @@ class call_event : Tracker {
                                     addCastlingMarker(FairyRequest);
                                     m_DummyCallID++;
                                     const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                                    if(character is null) break;
                                     Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));                                    
                                     Event_call_airstrike_fairy_precise@ new_task = Event_call_airstrike_fairy_precise(m_metagame,3.0,characterId,factionId,c_pos,stringToVector3(position),"airstrike_fairy_precise",flagId);
                                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
@@ -1593,6 +1639,7 @@ class call_event : Tracker {
                             CallEvent_cooldown.insertLast(Call_Cooldown(playerName,playerId,300.0,"TU160"));
                             sendFactionMessageKey(m_metagame,factionId,"rocketcallstarthint");
                             const XmlElement@ characterinfo = getCharacterInfo(m_metagame, characterId);
+                            if(characterinfo is null) break;
                             Vector3 player_pos = stringToVector3(characterinfo.getStringAttribute("position"));
                             insertCommonStrike(characterId,factionId,int(airstrikeIndex["TU160_bomb_strafe"]),player_pos,stringToVector3(position));
                         }
