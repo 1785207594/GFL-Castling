@@ -1865,30 +1865,21 @@ class call_event : Tracker {
                             addItemInBackpack(m_metagame,characterId,"weapon","fairy_vehicle_elmotruck.weapon");
                             break;                            
                         }
-                        GFL_playerInfo@ m_playerinfo = getPlayerInfoFromList(playerName);
-                        GFL_battleInfo@ battleInfo = m_playerinfo.getBattleInfo();
-                        if(!costTacticPoint(battleInfo,50,playerId))
-                        {
-                            addItemInBackpack(m_metagame,characterId,"weapon","fairy_vehicle_elmotruck.weapon");                            
-                            break;
-                        }
-                        else {
-                            Vector3 call_pos = stringToVector3(position);
-                            Vector3 v_offset = Vector3(0,50,0);
-                            call_pos = call_pos.add(v_offset);
-                            CallEvent_cooldown.insertLast(Call_Cooldown(playerName,playerId,300.0,"vehicle"));
-                            int flagId = m_DummyCallID + 15000;
-                            CastlingMarker@ FairyRequest = CastlingMarker(characterId,factionId,stringToVector3(position));
-                            FairyRequest.setIconTypeKey("call_marker_drop");
-                            FairyRequest.setIndex(8);
-                            FairyRequest.setSize(0.5);
-                            FairyRequest.setDummyId(flagId);
-                            TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                            tasker.add(TimerMarker(m_metagame,3,FairyRequest));
-                            m_DummyCallID++;
-                            float ori4 = rand(0.0,3.14);
-                            spawnVehicle(m_metagame,1,factionId,call_pos,Orientation(0,1,0,ori4),"elmostore.vehicle");
-                        }
+                        Vector3 call_pos = stringToVector3(position);
+                        Vector3 v_offset = Vector3(0,50,0);
+                        call_pos = call_pos.add(v_offset);
+                        CallEvent_cooldown.insertLast(Call_Cooldown(playerName,playerId,300.0,"vehicle"));
+                        int flagId = m_DummyCallID + 15000;
+                        CastlingMarker@ FairyRequest = CastlingMarker(characterId,factionId,stringToVector3(position));
+                        FairyRequest.setIconTypeKey("call_marker_drop");
+                        FairyRequest.setIndex(8);
+                        FairyRequest.setSize(0.5);
+                        FairyRequest.setDummyId(flagId);
+                        TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                        tasker.add(TimerMarker(m_metagame,3,FairyRequest));
+                        m_DummyCallID++;
+                        float ori4 = rand(0.0,3.14);
+                        spawnVehicle(m_metagame,1,factionId,call_pos,Orientation(0,1,0,ori4),"elmostore.vehicle");
                         break;
                     }                    
                     case 15:{

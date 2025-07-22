@@ -29,12 +29,12 @@ dictionary included_vehicle = {
         {"is2_m1895.vehicle",50000},
         {"mobile_armory.vehicle",10000},
         {"mortar_truck.vehicle",10000},
-        {"gk_store",5000},
+        // {"gk_store",5000},
         {"elmostore",5000},
-        {"gk_stash",30000},
-        {"hvy_store",5000},
-        {"t6_store",5000},
-        {"call_ui_store",5000},
+        // {"gk_stash",30000},
+        // {"hvy_store",5000},
+        // {"t6_store",5000},
+        // {"call_ui_store",5000},
         {"armored_truck.vehicle",500000},
         {"",-1}
 };
