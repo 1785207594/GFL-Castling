@@ -915,6 +915,8 @@ class BasicCommandHandler : Tracker {
 			spawnInstanceNearPlayer(senderId, "neosu_kuergants_boss.vehicle", "vehicle", 0);									
 		} else  if(checkCommand(message, "spawn pathfinder")) {
 			spawnInstanceNearPlayer(senderId, "kcco_pathfinder_factory.vehicle", "vehicle", 0);			
+		} else  if(checkCommand(message, "spawn aegis")) {
+			spawnInstanceNearPlayer(senderId, "kcco_aegis.vehicle", "vehicle", 0);			
 		} else  if(checkCommand(message, "spawn m1abrams")) {
 			spawnInstanceNearPlayer(senderId, "tank_m1_base.vehicle", "vehicle", 0);				
 		} else  if(checkCommand(message, "spawnm1a12")) {
