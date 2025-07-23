@@ -2,7 +2,7 @@
 <weapons>
 
 <weapon key="kcco_aegis_cannon">
-	<specification slot="1" accuracy_factor="0.9" retrigger_time="0.2" last_burst_retrigger_time="0.4" sustained_fire_grow_step="0.1" sustained_fire_diminish_rate="0.05" cooldown_start="0.04" cooldown_end="0.2" sight_range_modifier="1.25" ai_sight_range_modifier="1.05" barrel_offset_3d="10 0 0.8" magazine_size="-1" can_shoot_standing="0" can_shoot_crouching="0" suppressed="0" name="Aegis Rocket" class="0" projectile_speed="180.0"/>
+	<specification slot="2" accuracy_factor="0.9" retrigger_time="0.2" last_burst_retrigger_time="0.4" sustained_fire_grow_step="0.1" sustained_fire_diminish_rate="0.05" cooldown_start="0.04" cooldown_end="0" sight_range_modifier="1.75" ai_sight_range_modifier="1.05" barrel_offset_3d="0 0 0.8" magazine_size="-1" sight_height_offset="40" can_shoot_standing="0" can_shoot_crouching="0" suppressed="0" name="Aegis Rocket" class="0" projectile_speed="180.0"/>
 	<animation key="recoil" animation_key="recoil1"/>
 	<animation key="recoil" animation_key="recoil2"/>
 	<animation key="recoil" animation_key="recoil3"/>
