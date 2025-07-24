@@ -23,19 +23,21 @@ soldier_capacity_offset="20"
 	<tag name="truck" />    
 	<tag name="trans_truck" />    
 
-	<tire_set offset="1.2 0.0 1.5" radius="0.5" />
-	<tire_set offset="1.2 0.0 0" radius="0.5" />
-	<tire_set offset="1.2 0.0 -1.5" radius="0.5" />
+	<tire_set offset="1.35 0.0 1.35" radius="0.1" />
+	<tire_set offset="1.35 0.0 0" radius="0.1" />
+	<!-- 如果想做坦克这必须要做成三对轮胎，否则转弯时会各种翘 -->
+	<tire_set offset="1.35 0.0 -1.35" radius="0.1" />
 
 	<control 
 	max_speed="10" 
-	max_limiter_speed="5"
-	acceleration="10.0" 
-	max_reverse_speed="8.0" 
+	max_limiter_speed="10"
+	acceleration="12.0" 
+	max_reverse_speed="10.0" 
 	min_health_to_steer="5" 
 	max_rotation="0" 
 	max_water_depth="2.0" 
-	steer_smoothening="0.98" tracked="1" simulated_speed_factor="0.2"/>
+	steer_smoothening="0.98" tracked="1" simulated_speed_factor="0.2"
+	tracked_visual_tire_max_rotation="1.0" tracked_visual_tire_rotation_smoothening="1"/>
 
 	<physics 
 	max_health="100.0" 
@@ -55,17 +57,20 @@ soldier_capacity_offset="20"
     simulated_speed_factor="1.0"
 	visual_offset="0 0.5 0.5" /> 
 
-    <turret offset="1.1 2.2 0" weapon_key="kcco_aegis_cannon" weapon_offset="0.0 0.0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.0003" rotation_range="0.03" />
-    <turret offset="-1.1 2.2 0" weapon_key="kcco_aegis_cannon" weapon_offset="0.0 0.0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.0003" rotation_range="0.03" />
-    <turret offset="0 2.0 1.5" weapon_key="kcco_aegis_shotgun" weapon_offset="0.0 0.0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.0003" rotation_range="0.001" />
+    <turret offset="0 2.8 0" weapon_key="kcco_aegis_eye" weapon_offset="0.0 0.0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.003" rotation_range="6.28" />
+    <turret offset="1.1 2.2 0" weapon_key="kcco_aegis_cannon" weapon_offset="0.0 0.0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.003" rotation_range="0.03" />
+    <turret offset="-1.1 2.2 0" weapon_key="kcco_aegis_cannon" weapon_offset="0.0 0.0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.003" rotation_range="0.03" />
 
 	<visual class="chassis" mesh_filename="aegis_body.mesh" texture_filename="aegis_body.png" />
 	<visual class="chassis" key="broken" mesh_filename="aegis_body.mesh" texture_filename="armored_truck_broken.png" />
 
-	<visual  offset="0 0 0" class="turret" turret_index="0" mesh_filename="aegis_cannon.mesh" texture_filename="aegis_body.png" />
-	<visual  offset="0 0 0" class="turret" turret_index="0" key="broken" mesh_filename="aegis_cannon.mesh" texture_filename="humvee_broken.png" />
+	<visual class="turret" turret_index="0" offset="0 100 0" mesh_filename="40mm.mesh" texture_filename="balloon.png"/>
+	<visual class="turret" turret_index="0" offset="0 100 0" key="broken" mesh_filename="40mm.mesh" texture_filename="balloon.png"/>
+
 	<visual  offset="0 0 0" class="turret" turret_index="1" mesh_filename="aegis_cannon.mesh" texture_filename="aegis_body.png" />
 	<visual  offset="0 0 0" class="turret" turret_index="1" key="broken" mesh_filename="aegis_cannon.mesh" texture_filename="humvee_broken.png" />
+	<visual  offset="0 0 0" class="turret" turret_index="2" mesh_filename="aegis_cannon.mesh" texture_filename="aegis_body.png" />
+	<visual  offset="0 0 0" class="turret" turret_index="2" key="broken" mesh_filename="aegis_cannon.mesh" texture_filename="humvee_broken.png" />
 
 	<visual class="track" mesh_filename="aegis_track_l.mesh" offset="1.65 0.36 -0.09" >
 		<part texture_filename="is2_m1895_track.jpg" texture_animation="translate" factor="-0.1" tire_binding="1" />
@@ -84,7 +89,7 @@ soldier_capacity_offset="20"
 	<character_slot type="gunner" position="0 0.8 -1.8" seat_position="0 1.5 0" rotation="0" exit_rotation="3.14" hiding="1" >
 		<turret index="0" />
 		<turret index="1" />
-		<!-- <turret index="2" /> -->
+		<turret index="2" /> 
 	</character_slot>
 
 	<spawn_point />

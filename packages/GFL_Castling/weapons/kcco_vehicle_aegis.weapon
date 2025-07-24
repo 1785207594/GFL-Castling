@@ -2,7 +2,7 @@
 <weapons>
 
 <weapon key="kcco_aegis_cannon">
-	<specification slot="2" accuracy_factor="0.9" retrigger_time="0.2" last_burst_retrigger_time="0.4" sustained_fire_grow_step="0.1" sustained_fire_diminish_rate="0.05" cooldown_start="0.04" cooldown_end="0" sight_range_modifier="1.75" ai_sight_range_modifier="1.05" barrel_offset_3d="0 0 0.8" magazine_size="-1" sight_height_offset="40" can_shoot_standing="0" can_shoot_crouching="0" suppressed="0" name="Aegis Rocket" class="0" projectile_speed="180.0"/>
+	<specification slot="2" accuracy_factor="0.9" retrigger_time="0.2" last_burst_retrigger_time="0.4" sustained_fire_grow_step="0.1" sustained_fire_diminish_rate="0.07" cooldown_start="0.11" cooldown_end="0.02" sight_range_modifier="1.75" ai_sight_range_modifier="1.05" barrel_offset_3d="0 0 0.8" magazine_size="-1" sight_height_offset="10" can_shoot_standing="0" can_shoot_crouching="0" suppressed="0" name="Aegis Rocket" class="0" projectile_speed="180.0"/>
 	<animation key="recoil" animation_key="recoil1"/>
 	<animation key="recoil" animation_key="recoil2"/>
 	<animation key="recoil" animation_key="recoil3"/>
@@ -48,109 +48,25 @@
 	<trail probability="1" key="atgm_trail_heat"/>
 	</projectile>
 	<ballistics near_far_distance="10.0" speed_estimation_near="360.0" speed_estimation_far="360.0" max_speed="450.0" randomness="0.0" curve_height="3.6" tweak_factor="4.8"/>
-	<target_factors tag="" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5"/>
-	<target_factors tag="smg" distance="1.0" direction="0.0" squad_command="1.0" base_score="1.0"/>
-	<target_factors tag="melee" distance="1.0" direction="0.0" squad_command="1.0" base_score="3.0"/>
-	<target_factors tag="elite" distance="1.1" direction="0.0" squad_command="1.0" base_score="9.0"/>
-	<target_factors tag="bazooka" distance="1.2" direction="0.0" squad_command="1.0" base_score="20.0"/>
-	<target_factors tag="metal_thin" distance="1.1" direction="0.0" squad_command="1.0" base_score="20.0"/>
-	<target_factors tag="aceso" distance="1.2" direction="0.0" squad_command="1.0" base_score="20.0"/>
-	<target_factors tag="ifv" distance="1.2" direction="0.0" squad_command="1.0" base_score="20.0"/>
-	<target_factors tag="minigun_deploy" distance="1.2" direction="0.0" squad_command="1.0" base_score="20.0"/>
 </weapon>
 
-<weapon key="kcco_aegis_shotgun">
-<specification can_shoot_running="1" retrigger_time="0.2" accuracy_factor="0.9" sustained_fire_grow_step="2.1" sustained_fire_diminish_rate="0.45" magazine_size="-1" can_shoot_standing="1" suppressed="0" name="AA-12-[Dragon Breath Round]" class="0" reload_one_at_a_time="0" sight_range_modifier="1.0" projectile_speed="100" barrel_offset="0.5" projectiles_per_shot="8" stab_enabled="1" carry_in_two_hands="1" burst_shots="1" spread_range="0.15" last_burst_retrigger_time="-1" slot="0" use_basic_muzzle_smoke_effect="0"/>
-	<animation key="reload" animation_key="reloading, magazine rifle 1.8"/>
-	<sound key="magazine_out" fileref="aa12_mgz_out_FromCOD16.wav" volume="0.45"/>
-	<sound key="magazine_in" fileref="aa12_mgz_in_FromCOD16.wav" volume="0.35"/>
-	<sound key="cycle" fileref="aa12_cycle_FromCOD16.wav" volume="0.35"/>
-	<sound class="impact" fileref="rifle_drop.wav"/>
-	<commonness value="0" in_stock="0"/>
-	<inventory encumbrance="12.5" buy_price="75.0" sell_price="75.0"/>
+<weapon key="kcco_aegis_eye">
+	<specification slot="2" retrigger_time="0.08" accuracy_factor="1.4" sustained_fire_grow_step="0.0" sustained_fire_diminish_rate="2.0" sight_range_modifier="1.5" ai_sight_range_modifier="1.15" magazine_size="-1" can_shoot_standing="0" can_shoot_crouching="0" suppressed="1" name="KCCO Aegis Scanner" class="0" sight_height_offset="2.0" projectile_speed="0.0"/>
 	<model filename=""/>
-	<hud_icon filename="gkw_aa12only_skill.png"/>
-	<weak_hand_hold offset="0.3"/>
-	<projectile time_to_live="0.175" class="bullet" name="" slot="1" pulldown_in_air="18.0" key="dragons_flame2.projectile">
-	<result class="blast" radius="2.5" damage="1.1" push="0.1" decal="1" faction_compare="not_equal" character_state="death" make_vehicle_hit_sound="0"/>
-	<tag name="flamethrower_flame"/>
-	<trigger class="impact"/>
-	<rotation class="motion"/>
+	<hud_icon filename="gkw_v_LM5.png"/>
 	<commonness value="0.0"/>
-	<sound class="result" key="terrain" copy="other"/>
-	<sound class="result" key="static_object" copy="other"/>
-	<sound class="result" key="character" copy="other"/>
-	<sound class="result" key="terrain" fileref="ricochet1.wav"/>
-	<sound class="result" key="terrain" fileref="ricochet2.wav"/>
-	<sound class="result" key="terrain" fileref="ricochet3.wav"/>
-	<sound class="result" key="terrain" fileref="ricochet4.wav"/>
-	<sound class="result" key="shield" fileref="ricochet5.wav"/>
-	<sound class="result" key="shield" fileref="ricochet6.wav"/>
-	<sound class="result" key="shield" fileref="ricochet7.wav"/>
-	<sound class="result" key="character" fileref="impact_body2.wav" pitch_variety="0.4" volume="0.7"/>
-	<sound class="result" key="character" fileref="impact_body3.wav" pitch_variety="0.4" volume="0.7"/>
-	<sound class="result" key="character" fileref="impact_body4.wav" pitch_variety="0.4" volume="0.7"/>
-	<sound class="result" key="vehicle" copy="terrain"/>
-	<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_01.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_02.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_03.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_04.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_05.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_06.wav" pitch_variety="0.3" volume="0.6"/>
-	<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_07.wav" pitch_variety="0.3" volume="0.6"/>
-	<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_06.wav" pitch_variety="0.3" volume="0.6"/>
-	<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_07.wav" pitch_variety="0.3" volume="0.8"/>
-	<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_06.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_07.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_08.wav" pitch_variety="0.3" volume="0.7"/>
-	<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_08.wav" pitch_variety="0.3" volume="0.8"/>
-	<sound class="result" key="vehicle" tag="metal_heavy" file="metal_heavy_01.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="metal_heavy" file="metal_heavy_02.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="metal_heavy" file="metal_heavy_03.wav" pitch_variety="0.3" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="sandbag" file="barrier_bullet_01.wav" pitch_variety="0.3" volume="0.8"/>
-	<sound class="result" key="vehicle" tag="sandbag" file="barrier_bullet_02.wav" pitch_variety="0.3" volume="0.8"/>
-	<sound class="result" key="vehicle" tag="sandbag" file="barrier_bullet_03.wav" pitch_variety="0.3" volume="0.4"/>
-	<sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_01.wav" pitch_variety="0.4" volume="0.6"/>
-	<sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_01.wav" pitch_variety="0.4" volume="0.5"/>
-	<sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_02.wav" pitch_variety="0.4" volume="0.8"/>
-	<sound class="result" key="static_object" copy="terrain"/>
-	<effect class="activated" ref="DragonPropulsion" lighting="0"/>
-	<effect class="activated" ref="FlameSparkle" lighting="0"/>
-	<effect class="result" key="terrain" ref="FlamePropulsionEnd" lighting="0"/>
-	<effect class="result" key="terrain" ref="FlameSparkleEnd" lighting="0"/>
-	<effect class="result" key="terrain" ref="DragonSparkle" lighting="0"/>
-	<effect class="result" key="terrain" ref="DragonFlame2" lighting="0"/>
-	<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="4" layer="0"/>
-	<effect class="result" key="other" copy="terrain"/>
-	<effect class="result" key="vehicle" copy="terrain"/>
-	<effect class="result" key="static_object" copy="terrain"/>
-	<effect class="result" key="shield" ref="hitMetal"/>
-	<effect class="result" key="shield" ref="hitMetal_1"/>
-	<effect class="result" key="terrain" ref="Laser_Burnout"/>
-	<effect class="result" key="static_object" ref="Laser_Burnout_on_staticobject"/>
-	<effect class="result" key="character" ref="common_hit_effect_1" lighting="0"/>
-	<effect class="result" key="character" ref="common_hit_effect_2" lighting="0"/>
-	<trail probability="1.0" key="DragonTrail"/>
+	<weak_hand_hold offset="0.4"/>
+	<projectile pulldown_in_air="0.0" time_to_live_out_in_the_open="0.0" class="grenade" key="red_eye.projectile" slot="0" on_ground_up="0 1 0" can_be_disarmed="0" can_be_detected_by_driver="0" drop_count_factor_on_death="0.0" drop_count_factor_on_player_death="0.0">
+	<result class="hit" kill_probability="0" kill_decay_start_time="0.02" kill_decay_end_time="0.05"/>
+	<collision class="sticky"/>
+	<trigger class="time" time_to_live="0.3"/>
+	<rotation class="motion"/>
+	<model mesh_filename=""/>
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	<inventory encumbrance="2.0" price="100.0"/>
+	<capacity value="0" source="rank" source_value="0.0"/>
+	<effect class="activated" ref="TracerFlash" lighting="0"/>
 	</projectile>
-	<stance state_key="running" accuracy="0.85"/>
-	<stance state_key="walking" accuracy="0.85"/>
-	<stance state_key="crouch_moving" accuracy="0.85"/>
-	<stance state_key="prone_moving" accuracy="0.85"/>
-	<stance state_key="standing" accuracy="0.85"/>
-	<stance state_key="crouching" accuracy="0.85"/>
-	<stance state_key="prone" accuracy="0.85"/>
-	<stance state_key="over_wall" accuracy="0.85"/>
-	<modifier class="detectability" value="0.2"/>
-	<modifier class="speed" value="-0.25"/>
-	<tag name="shotgun"/>
-	<tag name="elite"/>
-	<capacity value="1" source="rank" source_value="0.0"/>
-	<target_factors tag="metal_heavy" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.0"/>
-	<target_factors tag="" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5"/>
-	<target_factors tag="smg" distance="1.0" direction="0.0" squad_command="1.0" base_score="1.0"/>
-	<target_factors tag="melee" distance="1.0" direction="0.0" squad_command="1.0" base_score="3.0"/>
-	<target_factors tag="elite" distance="1.0" direction="0.0" squad_command="1.0" base_score="3.0"/>
-	<target_factors tag="antiarmor" distance="1.0" direction="0.0" squad_command="1.0" base_score="2.0"/>
 </weapon>
 
 </weapons>
