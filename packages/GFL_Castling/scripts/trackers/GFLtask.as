@@ -436,6 +436,7 @@ class ConstantStaticProjectileEvent :Task{
 		m_timeLeft -= time;
 		if (m_timeLeft < 0)
 		{
+            m_timeLeft= m_time_internal;
 			if(m_strict_check)
 			{
 				const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
@@ -449,7 +450,6 @@ class ConstantStaticProjectileEvent :Task{
 				" position='" + m_pos.toString() + "'"+
 				" character_id='" + m_character_id + "' />";
 			m_metagame.getComms().send(c);
-			m_timeLeft= m_time_internal;
 			m_triggered_time++;
 		}
 	}
