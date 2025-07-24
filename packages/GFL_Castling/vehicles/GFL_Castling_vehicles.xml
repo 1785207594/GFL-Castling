@@ -20,6 +20,7 @@
 	<!-- <vehicle file="all_rabits.vehicle" /> -->
 
 	<!-- kcco -->
+	<vehicle file="kcco_aegis.vehicle" />
 	<vehicle file="kcco_coeus.vehicle" />
     <vehicle file="kcco_typhon.vehicle" />
     <vehicle file="kcco_sandstorm.vehicle" />

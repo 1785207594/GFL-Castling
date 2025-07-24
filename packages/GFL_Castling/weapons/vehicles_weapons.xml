@@ -31,6 +31,7 @@
 	<weapon file="kccow_vehicle_BFG.weapon"/>
 	<weapon file="kccow_vehicle_1130mg.weapon"/>	
 	<weapon file="kcco_vehicle_pathfinder.weapon"/>
+	<weapon file="kcco_vehicle_aegis.weapon"/>
 
 	<!-- Paradeus -->
 	<weapon file="parw_vehicle_uhlan.weapon"/>
