@@ -241,6 +241,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		// - adventure mode needs to listen for player spawning which happens right when match starts
 		// - usually it's good to add trackers only after match has started
 		addTracker(m_mapRotator);
+        this.setAntiAirStatus(false);
 
 	}
 
