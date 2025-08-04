@@ -20,7 +20,7 @@
 	burst_shots="1" />
     <inventory encumbrance="12.5" buy_price="50.0" sell_price="50.0" />
     <!--Animations-->
-    <animation key="reload" animation_key="reloading, magazine rifle 1.2" />
+    <animation key="reload" animation_key="reloading, magazine rifle 0.9" />
     <!--Sounds-->
     <sound key="fire" fileref="six12sd_fire_FromWF.WAV" volume="1.2" />
     <sound key="magazine_out" fileref="six12_mgz_out_FromR6S.wav" volume="0.6" />

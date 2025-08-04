@@ -5,6 +5,7 @@
 	magazine_size="1" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
+    can_shoot_running="1" 
     carry_in_two_hands="0" 
     name="I.O.P. Bulletproof Plates" 
     class="5" 

@@ -9,7 +9,7 @@
 	magazine_size="20" 
     spread_range="0.6"
     stance_accuracy_rate="1.5"
-    leave_crouch_accuracy_penalty="0.6"
+    leave_crouch_accuracy_penalty="0.2"
 	can_shoot_standing="1" 
 	suppressed="0" 
 	name="HK SL8" 
@@ -48,7 +48,7 @@
     <stance state_key="running" accuracy="0.2" />
     <stance state_key="walking" accuracy="0.4" />
     <stance state_key="crouch_moving" accuracy="0.95" />
-    <stance state_key="standing" accuracy="0.95" />
+    <stance state_key="standing" accuracy="0.99" />
     <stance state_key="crouching" accuracy="1.0" />
     <stance state_key="prone" accuracy="1.0" />
     <stance state_key="prone_moving" accuracy="1.0" />

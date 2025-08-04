@@ -3,7 +3,8 @@
 int getRPKillReward(string name) {
     if(RP_enemy_index.exists(name)) {
         int key = int(RP_enemy_index[name]);
-        return key;
+        int scale = 1;
+        return key * scale;
     }
     return 0;
 

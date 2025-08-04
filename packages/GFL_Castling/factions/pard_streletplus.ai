@@ -59,8 +59,8 @@
   <parameter class="guard_wait_time_max" value="15.0" />
   <parameter class="guard_steps" value="2" />
 
-  <parameter class="wait_time" value="0.4" />
-  <parameter class="wait_time_variance" value="0.1" />
+  <parameter class="wait_time" value="0.8" />
+  <parameter class="wait_time_variance" value="0.2" />
   <parameter class="burst_time" value="0.3" />
   <parameter class="burst_time_variance" value="0" />
   <parameter class="in_vehicle_burst_time" value="0.6" />

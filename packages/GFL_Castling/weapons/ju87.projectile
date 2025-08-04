@@ -22,8 +22,8 @@
 	<effect class="result" key="terrain" ref="SMS_vertical_smoke" lighting="0" post_processing="1"/> 
 	<effect class="result" key="terrain" ref="SMS_Ring_smoke" lighting="0" post_processing="1"/> 
 	<effect class="result" key="terrain" ref="SMS_up_spark" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_impact_leave_dirt" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_impact_leave_smoke" lighting="0" post_processing="1"/>   
+	<!-- <effect class="result" key="terrain" ref="SMS_impact_leave_dirt" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="SMS_impact_leave_smoke" lighting="0" post_processing="1"/>    -->
 
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
