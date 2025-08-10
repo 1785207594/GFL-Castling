@@ -2877,10 +2877,9 @@ class CommandSkill : Tracker {
             int factionid = character.getIntAttribute("faction_id");
             Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
             array<string> Voice={
-                "M200_SKILL1_JP.wav",
-                "M200_SKILL2_JP.wav",
-                "M200_SKILL3_JP.wav",
-                "M200_ATTACK_JP.wav"
+                "SSG3000_SKILL1_JP.wav",
+                "SSG3000_SKILL2_JP.wav",
+                "SSG3000_SKILL3_JP.wav"
             };
             playRandomSoundArray(m_metagame,Voice,factionid,c_pos.toString(),2.0);
             TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
