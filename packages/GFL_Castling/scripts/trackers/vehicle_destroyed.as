@@ -16,7 +16,7 @@ dictionary included_vehicle = {
         {"martina.vehicle",10000},
         {"chiara.vehicle",10000},
         {"pierre.vehicle",10000},
-        {"aek999.vehicle",5000},
+        // {"aek999.vehicle",5000},
         {"amos.vehicle",500000},
         {"tricycle.vehicle",10000},
         {"gk_bunker.vehicle",20000},

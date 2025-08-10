@@ -2,7 +2,7 @@
 <vehicle file="vehicle_base.vehicle"
 name="Typhon"
 key="typhon.vehicle"
-respawn_time="145"
+respawn_time="210"
 designated_squad_as_driver_only="0"
 time_to_live_unsteerable="90"
 map_view_atlas_index="46"

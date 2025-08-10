@@ -462,7 +462,7 @@ material Dust : alpha_blend_base
         }
         texture_unit{
             texture point_soft_edge_alpha.png 
-			alpha_op_ex modulate texture current
+			alpha_op_ex src_manual src_texture src_current
 			scroll_anim 0 0
 			tex_address_mode wrap
 	}

@@ -18,7 +18,7 @@
 	retrigger_time="6" 
 	last_burst_retrigger_time="0.5"
 	reload_one_at_a_time="0" 
-	sight_range_modifier="2.0" 
+	sight_range_modifier="1.5" 
 	suppressed="0" 
 	sustained_fire_diminish_rate="2.0"
 	sustained_fire_grow_step="0.75" />

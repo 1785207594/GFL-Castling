@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapons>
 <weapon time_to_live_out_in_the_open="0" drop_count_limit_in_range="3" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0.0" key="parw_rocket.weapon">
-    <tag name="bazooka" />
+    <tag name="bazooka"/>
+    <tag name="anti_tank"/>
     <specification 
     retrigger_time="-1" 
     accuracy_factor="1.0" 
@@ -42,8 +43,8 @@
     <sound key="cycle_in" fileref="" />
     <sound class="impact" fileref="rifle_drop.wav" />
     <model filename="parw_rocket.xml" />
-    <projectile file="parw_rocket_projectile.projectile">
-        <result class="blast" damage="15.0" radius="4.5" decal="1" push="0.75" character_state="death" faction_compare="not_equal" damage_origin_vehicle="0"/>
+    <projectile file="parw_rocket.projectile">
+        <result class="blast" damage="25.0" radius="4.5" decal="1" push="0.75" character_state="death" faction_compare="not_equal" damage_origin_vehicle="0"/>
     </projectile>
 	<ballistics
 	curve_height="4.5"
@@ -68,7 +69,8 @@
     <stance state_key="over_wall" accuracy="1" />
 </weapon>
 <weapon time_to_live_out_in_the_open="0" drop_count_limit_in_range="3" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0.0" key="parw_rocket_player.weapon">
-    <tag name="bazooka" />
+    <tag name="bazooka"/>
+    <tag name="anti_tank"/>
     <specification 
     retrigger_time="-1" 
     accuracy_factor="1.0" 
@@ -88,7 +90,7 @@
     slot="1" 
     projectiles_per_shot="1" />
     <inventory encumbrance="5.0" buy_price="20.0" sell_price="20.0" />
-    <capacity value="6" source="rank" source_value="0" />
+    <capacity value="8" source="rank" source_value="0" />
     <commonness value="0.1" in_stock="1" can_respawn_with="1" />
     <animation key="recoil" animation_key="recoil, law" />
     <animation key="cycle" animation_key="Brifle0.4" />
@@ -104,8 +106,8 @@
     <sound key="cycle_in" fileref="" />
     <sound class="impact" fileref="rifle_drop.wav" />
     <model filename="parw_rocket.xml" />
-    <projectile file="parw_rocket_projectile.projectile">
-        <result class="blast" damage="25.0" radius="4.5" decal="1" push="0.75" character_state="death" faction_compare="not_equal" damage_origin_vehicle="0"/>
+    <projectile file="parw_rocket.projectile">
+        <result class="blast" damage="50.0" radius="4.5" decal="1" push="0.75" character_state="death" faction_compare="not_equal" damage_origin_vehicle="0"/>
     </projectile>
 	<ballistics
 	curve_height="4.5"
