@@ -1,5 +1,5 @@
 <trail
-key="BulletApTrail_rf"
+key="BulletApTrail_default"
 material="BulletApTrail"
 trail_length="25.0"
 intensity_range="0.8 0.8"
