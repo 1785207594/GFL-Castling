@@ -487,11 +487,18 @@ void excuteRampageFairyAC130(GameMode@ metagame,GFL_event@ eventinfo){
     // 如果距离超过130范围或者没有索敌到敌人，重新索敌一次
     if (luckyGuyid!=-1) {
         const XmlElement@ testcharacterInfo = getCharacterInfo(metagame,luckyGuyid);
-        if(testcharacterInfo is null) return;
-        ac130_jud_pos = stringToVector3(testcharacterInfo.getStringAttribute("position")); 
-        if(getAimUnitDistance(1.0,ac130_jud_pos,eventinfo.m_pos)>(searchrange_origin+9.0f)) {
+        if(testcharacterInfo is null)
+        {
             ac130_pre_pos = eventinfo.m_pos;
             luckyGuyid = getNearbyRandomLuckyGuyId(metagame,eventinfo.m_factionid,ac130_pre_pos,searchrange_origin);
+        }
+        else
+        {
+            ac130_jud_pos = stringToVector3(testcharacterInfo.getStringAttribute("position")); 
+            if(getAimUnitDistance(1.0,ac130_jud_pos,eventinfo.m_pos)>(searchrange_origin+9.0f)) {
+                ac130_pre_pos = eventinfo.m_pos;
+                luckyGuyid = getNearbyRandomLuckyGuyId(metagame,eventinfo.m_factionid,ac130_pre_pos,searchrange_origin);
+            }
         }
     }
     else {
