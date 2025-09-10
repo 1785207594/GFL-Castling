@@ -1368,6 +1368,18 @@ bool existKeyinDataSet(string key)
     return false;
 }
 
+int getIndexFromKey(string key)
+{
+    for (uint i = 0; i < all_girls_information.length(); i++)
+    {
+        if (all_girls_information[i].weapon_key == key)
+        {
+            return all_girls_information[i].girl_index;
+        }
+    }
+    return -1;
+}
+
 bool existKeyinList(string key)
 {
     if (reverse_tdoll_complex_index.exists(key)) return true;

@@ -66,6 +66,7 @@ class player_data
         GFL_call_info("call_ui_t1_bombardment_fairy_155mm_air_burst")
 
     };
+    array<tdoll_intimacy_info@> m_tdoll_intimacy={};
 
 	player_data() {}
 
@@ -250,6 +251,40 @@ class player_data
             m_unlocked_call.insertLast(call);
         }  
     }
+
+    void addIntimacy(tdoll_intimacy_info@ info)
+    {
+        bool isDuplicate = false;
+        for (uint i = 0; i < m_tdoll_intimacy.length(); ++i)
+        {
+            if (m_tdoll_intimacy[i].m_girl_index == info.m_girl_index)
+            {
+                isDuplicate = true;
+                break;
+            }
+        }        
+        if (!isDuplicate)
+        {
+            m_tdoll_intimacy.insertLast(info);
+        }
+    }
+
+    void addKillforIntimacy(int index,int kill)
+    {
+        bool found = false;
+        for (uint i = 0; i < m_tdoll_intimacy.length(); ++i)
+        {
+            if (m_tdoll_intimacy[i].m_girl_index == index)
+            {
+                found = true;
+                m_tdoll_intimacy[i].addKill(kill);
+            }
+        }
+        if (!found)
+        {
+            m_tdoll_intimacy.insertLast(tdoll_intimacy_info(index,kill,0));
+        }
+    }
     
     string getCallKey(const string key)
     {
@@ -261,6 +296,39 @@ class player_data
             }
         }
         return "";
+    }
+}
+
+class tdoll_intimacy_info
+{
+    int m_girl_index;
+    int m_kill_count;
+    int m_match_count;
+    tdoll_intimacy_info(int index,int kill,int match)
+    {
+        m_girl_index = index;
+        m_kill_count = kill;
+        m_match_count = match;
+    }
+
+    void addKill(int kill)
+    {
+        m_kill_count += kill;
+    }
+    void addMatch()
+    {
+        m_match_count++;
+    }
+    void addMatch(int match)
+    {
+        m_match_count += match;
+    }
+
+    void mergeInfo(tdoll_intimacy_info@ info)
+    {
+        if (m_girl_index != info.m_girl_index) return;
+        m_kill_count += info.m_kill_count;
+        m_match_count += info.m_match_count;
     }
 }
 
@@ -341,9 +409,21 @@ XmlElement@ PlayerProfileSave(player_data@ player_info) {
         subroot_2.appendChild(e);
     }
 
+    //好感度
+    XmlElement subroot_3("intimacy");
+    for (uint i = 0; i < player_info.m_tdoll_intimacy.length(); i++) 
+    {
+        XmlElement e("doll");
+        e.setIntAttribute("index", player_info.m_tdoll_intimacy[i].m_girl_index);
+        e.setIntAttribute("kill_count", player_info.m_tdoll_intimacy[i].m_kill_count);
+        e.setIntAttribute("match_count", player_info.m_tdoll_intimacy[i].m_match_count);
+        subroot_3.appendChild(e);
+    }    
+
     root.appendChild(subroot_0);
     root.appendChild(subroot_1);
     root.appendChild(subroot_2);
+    root.appendChild(subroot_3);
     return root;
 }
 
@@ -412,6 +492,23 @@ player_data@ PlayerProfileLoad(const XmlElement@ player_profile){
     output.setCallSlot(1,call_slot_callkey_1);
     output.setCallSlot(2,call_slot_callkey_2);
     output.setCallSlot(3,call_slot_callkey_3);
+
+    const XmlElement@ tdoll_intimacy_dump = player_profile.getFirstElementByTagName("intimacy");
+    if(tdoll_intimacy_dump !is null)
+    {
+        array<const XmlElement@> tdoll_intimacy_list = tdoll_intimacy_dump.getElementsByTagName("doll");
+        if(tdoll_intimacy_list !is null)
+        {
+            for(uint i = 0; i < tdoll_intimacy_list.length();i++)
+            {
+                int index = tdoll_intimacy_list[i].getIntAttribute("index");
+                int kill_count = tdoll_intimacy_list[i].getIntAttribute("kill_count");
+                int match_count = tdoll_intimacy_list[i].getIntAttribute("match_count");
+                tdoll_intimacy_info@ new_doll_info= tdoll_intimacy_info(index,kill_count,match_count);
+                output.addIntimacy(new_doll_info);
+            }
+        }
+    }
 
     return output;
 }
