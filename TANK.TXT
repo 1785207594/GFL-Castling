@@ -1,0 +1,119 @@
+
+基础 模板 M1 Abrams
+abrams_base.vehicle
+HP 120
+阈值10
+主炮 vehicle_abrams_105mm 13x5 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+灵位 车长灵位
+
+前置升级 M1A1 Abrams
+abrams_m1a1.vehicle
+HP 140
+阈值10
+主炮 vehicle_abrams_120mm 15x5 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+车长灵位x1
+
+前置升级 M1A1 HC Abrams
+abrams_m1a1hc.vehicle
+HP 150
+阈值15
+装甲2
+主炮 vehicle_abrams_120mm 15x5 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+灵位 vehicle_m2hb
+车长灵位x1
+
+前置升级 M1A2 Abrams
+abrams_m1a2.vehicle
+HP 150
+阈值15
+装甲2
+炮塔转速加快
+主炮 vehicle_abrams_120mm 15x5 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+武器站 vehicle_m2hb 
+车长灵位x1
+
+分支前终点 M1A2 Abrams SEP
+abrams_m1a2sep.vehicle
+HP 160
+阈值15
+装甲3
+炮塔转速加快
+主炮 vehicle_abrams_120mm 15x5 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+武器站 vehicle_m2hb 双联M2HB
+车长灵位x1
+
+分支 M1A2 Abrams SEP Urban Assault
+abrams_m1a2sep_urban1.vehicle
+HP 180
+阈值15
+装甲3
+炮塔转速加快
+移速加快
+主炮 vehicle_abrams_120mm 15x5 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+武器站 vehicle_abrams_minigun 转轮机枪组
+武器站 vehicle_abrams_tow 陶陶
+
+分支 M1A2 Abrams SEP Urban Support
+abrams_m1a2sep_urban2.vehicle
+HP 160
+阈值15
+装甲3
+炮塔转速加快
+移速加快
+主炮 vehicle_abrams_120mm_fast 15x5 射速4s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+武器站 vehicle_grenade 榴弹发射器
+武器站 vehicle_abrams_mortar 迫击炮
+
+分支 M1A2 Abrams SEP Urban EW
+abrams_m1a2sep_urban3.vehicle
+HP 160
+阈值15
+装甲3
+炮塔转速加快
+移速加快
+禁用敌方支援(干扰器模型)
+主炮 vehicle_abrams_120mm 15x5 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+武器站 vehicle_m2hb 双联M2HB
+武器站 vehicle_electric_laser 电磁枪
+
+分支 M1A2 Abrams SEP Desert PanzerJager 
+abrams_m1a2sep_desert1.vehicle
+HP 160
+阈值15
+装甲5
+炮塔转速加快
+主炮 vehicle_abrams_120mm_APFSDS 100 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+武器站 vehicle_abrams_atgun 机炮
+武器站 vehicle_abrams_tow 陶陶
+
+分支 M1A2 Abrams SEP Desert Missile 
+abrams_m1a2sep_desert2.vehicle
+HP 160
+阈值15
+装甲5
+炮塔转速加快
+主炮 vehicle_abrams_120mm 15x5 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+武器站 vehicle_abrams_missile 导弹舱
+武器站 vehicle_abrams_turret 导弹机枪武器站
+
+分支 M1A2 Abrams SEP Desert Sweeper 
+abrams_m1a2sep_desert3.vehicle
+HP 160
+阈值15
+装甲5
+炮塔转速加快
+主炮 vehicle_abrams_120mm 15x5 射速5s
+同轴 vehicle_m240 3.5x2 900rpm 50发过热 3秒冷却
+武器站 vehicle_m2hb 双联M2HB
+武器站 vehicle_abrams_mortar 迫击炮
+车体 vehicle_abrams_atmissile 挂载反坦克导弹
