@@ -19,7 +19,7 @@
     barrel_offset="0" 
     projectiles_per_shot="1" 
 	spread_range="0.1"/>
-        <model mesh_filename="" texture_filename="balloon.png" />
+        <model mesh_filename="" texture_filename="none.png" />
         <!-- <model filename="l30p.xml" /> -->
         <hud_icon filename="uhlan_main_cannon.png" />
         <commonness value="0.0" />
@@ -59,7 +59,7 @@
     barrel_offset="0" 
     projectiles_per_shot="1" 
 	spread_range="0.1"/>
-        <model mesh_filename="" texture_filename="balloon.png" />
+        <model mesh_filename="" texture_filename="none.png" />
         <!-- <model filename="l30p.xml" /> -->
         <hud_icon filename="uhlan_main_cannon.png" />
         <commonness value="0.0" />

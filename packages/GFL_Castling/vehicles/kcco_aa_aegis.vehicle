@@ -65,8 +65,8 @@ soldier_capacity_offset="20"
 	<visual class="chassis" mesh_filename="aegis_body.mesh" texture_filename="aegis_body.png" />
 	<visual class="chassis" key="broken" mesh_filename="aegis_body.mesh" texture_filename="armored_truck_broken.png" />
 
-	<visual class="turret" turret_index="0" offset="0 100 0" mesh_filename="40mm.mesh" texture_filename="balloon.png"/>
-	<visual class="turret" turret_index="0" offset="0 100 0" key="broken" mesh_filename="40mm.mesh" texture_filename="balloon.png"/>
+	<visual class="turret" turret_index="0" offset="0 100 0" mesh_filename="empty.mesh" texture_filename="none.png"/>
+	<visual class="turret" turret_index="0" offset="0 100 0" key="broken" mesh_filename="empty.mesh" texture_filename="none.png"/>
 
 	<visual  offset="0 0 0" class="turret" turret_index="1" mesh_filename="aegis_cannon.mesh" texture_filename="aegis_body.png" />
 	<visual  offset="0 0 0" class="turret" turret_index="1" key="broken" mesh_filename="aegis_cannon.mesh" texture_filename="humvee_broken.png" />

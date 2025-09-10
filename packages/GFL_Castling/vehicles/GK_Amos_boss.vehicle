@@ -132,16 +132,16 @@
 	5
     <turret offset="-1.25 0.95 1.5" weapon_key="amos_mine.weapon" weapon_offset="0 0 0" parent_turret_index="0" rotation_range="0"/>
     <!-- 轮子 -->
-    <visual class="track" mesh_filename="Amos_front_wheel.mesh" texture_filename="balloon.png" offset="3 0.25 3.5" >
+    <visual class="track" mesh_filename="Amos_front_wheel.mesh" texture_filename="none.png" offset="3 0.25 3.5" >
         <part texture_filename="AMOS_base.png" />
     </visual>
-    <visual class="track" mesh_filename="Amos_back_wheel.mesh" texture_filename="balloon.png" offset="3 0.25 -5" >
+    <visual class="track" mesh_filename="Amos_back_wheel.mesh" texture_filename="none.png" offset="3 0.25 -5" >
         <part texture_filename="AMOS_base.png" />
     </visual>
-    <visual class="track" mesh_filename="Amos_front_wheel.mesh" texture_filename="balloon.png" offset="-3 0.25 3.5" >
+    <visual class="track" mesh_filename="Amos_front_wheel.mesh" texture_filename="none.png" offset="-3 0.25 3.5" >
         <part texture_filename="AMOS_base.png" />
     </visual>
-    <visual class="track" mesh_filename="Amos_back_wheel.mesh" texture_filename="balloon.png" offset="-3 0.25 -5" >
+    <visual class="track" mesh_filename="Amos_back_wheel.mesh" texture_filename="none.png" offset="-3 0.25 -5" >
         <part texture_filename="AMOS_base.png" />
     </visual>
     <!-- drone无人机 -->

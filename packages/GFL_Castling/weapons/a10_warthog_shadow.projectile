@@ -13,7 +13,7 @@
     <trigger class="time" time_to_live="3.0"/>
     <rotation class="none" />
 
-    <model mesh_filename="A10.mesh" texture_filename="balloon.png" />
+    <model mesh_filename="A10.mesh" texture_filename="none.png" />
 
     <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
