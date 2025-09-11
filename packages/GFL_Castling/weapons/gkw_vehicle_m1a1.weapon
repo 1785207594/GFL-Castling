@@ -193,8 +193,29 @@
 	<target_factors tag="elite" distance="1.0" direction="0.0" squad_command="1.0" base_score="3.0"/>
 	<target_factors tag="bazooka" distance="1.0" direction="0.0" squad_command="1.0" base_score="200.0"/>
 </weapon>  
-<weapon key="gkw_vehicle_m1a1_coax_laser.weapon" on_ground_up="0 0 1" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" time_to_live_out_in_the_open="0">
-	<specification  accuracy_factor="1.5" barrel_offset="1.4" can_shoot_standing="1" can_shoot_crouching="1" can_shoot_prone="0" class="0" slot="0" sight_range_modifier="1.5" burst_shots="1" magazine_size="-1" name="GK-Dreamer-[Nirvanic Demolition]" projectile_speed="500" spread_range="0.01" retrigger_time="0.02" last_burst_retrigger_time="1" suppressed="0" sustained_fire_grow_step="0.0036" sustained_fire_diminish_rate="0.1" cooldown_start="0.6" cooldown_end="0.0" projectiles_per_shot="1" use_basic_muzzle_smoke_effect="0"/>
+<weapon key="gkw_vehicle_m1a1_coax_laser.weapon" on_ground_up="0 0 1" drop_count_factor_on_death="0"  drop_count_factor_on_player_death="0" time_to_live_out_in_the_open="0">
+	<specification
+	accuracy_factor="1.5"
+	barrel_offset="0.5"
+	can_shoot_standing="1"
+	can_shoot_crouching="1"
+	can_shoot_prone="0"
+	can_shoot_running="1"
+	class="4"
+	sight_range_modifier="2"
+	slot="0"
+	spread_range="0.3"
+	burst_shots="1" 
+	magazine_size="-1"
+	name="GK-M1A1-Coax Laser"
+	projectile_speed="200"
+	retrigger_time="0.2"
+	last_burst_retrigger_time="0.214"
+	suppressed="0"
+	sustained_fire_diminish_rate="2.0"
+	sustained_fire_grow_step="0.35"
+    use_basic_muzzle_smoke_effect="0"
+	projectiles_per_shot="1" />
 	<sound key="fire" fileref="cherub_fire.wav" pitch_variety="0.00" volume="0.2"/>
 	<sound key="magazine_out" fileref="kccoar_mgz_out_FromINS.wav" volume="0.8"/>
 	<sound key="magazine_in" fileref="kccoar_mgz_in_FromINS.wav" volume="0.8"/>
@@ -204,9 +225,9 @@
 	<hud_icon filename="sfw_dreamer_skill2.png"/>
 	<effect class="muzzle" ref="dreamer"/>
 	<weak_hand_hold offset="0.4"/>
-	<projectile file="rocket_dreamer.projectile" radius="0.25" pulldown_in_air="2">
-	<trail probability="1.0" key="laser_dreamer"/>
-	<result class="spawn" instance_class="projectile" instance_key="laser_m1a1_dam3_5_rad4.projectile" min_amount="1" max_amount="1" offset="0 2.0 0" position_spread="2 0" direction_spread="0 0" damage_origin_vehicle="0"/>
+	<projectile file="bullet_dreamer.projectile" radius="0.25" pulldown_in_air="2">
+	<trail probability="1.0" key="red_m1a1_laser"/>
+	<result class="spawn" instance_class="projectile" instance_key="laser_m1a1_dam3_5_rad4.projectile" min_amount="2" max_amount="2" offset="0 2.0 0" position_spread="2 0" direction_spread="0 0" damage_origin_vehicle="0"/>
 	</projectile>
 	<tag name="elite"/>
 	<commonness value="0.0000001" in_stock="0" can_respawn_with="1"/>
