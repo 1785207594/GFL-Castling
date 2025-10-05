@@ -95,6 +95,7 @@ class GFL_playerInfo{
     GFL_equipment@ m_equipment; //玩家装备
     GFL_battleInfo@ m_battleinfo; //战斗信息
     array<kill_count@> m_killInfo; //技能的击杀信息
+    array<tdoll_intimacy_info@> m_tdoll_intimacy_buck={};//角色的击杀信息
 	string m_hash;
 	string m_sid;
     float m_xp_reward = 0; // xp奖励
@@ -263,6 +264,49 @@ class GFL_playerInfo{
     void addTacticPoint(int num)
     {
         m_battleinfo.addTacticPoint(num);
+    }
+
+    void addIndexKillCount(int num,int index)
+    {
+        bool found = false;
+        for (uint i = 0; i < m_tdoll_intimacy_buck.length(); ++i)
+        {
+            if (m_tdoll_intimacy_buck[i].m_girl_index == index)
+            {
+                found = true;
+                m_tdoll_intimacy_buck[i].addKill(num);
+            }
+        }
+        if (!found)
+        {
+            tdoll_intimacy_info@ index_info = tdoll_intimacy_info(index);
+            index_info.setKill(num);
+            m_tdoll_intimacy_buck.insertLast(index_info);
+        }
+    }
+
+    void addIndexWinCount(int num,int index)
+    {
+        bool found = false;
+        for (uint i = 0; i < m_tdoll_intimacy_buck.length(); ++i)
+        {
+            if (m_tdoll_intimacy_buck[i].m_girl_index == index)
+            {
+                found = true;
+                m_tdoll_intimacy_buck[i].addMatch(num);
+            }
+        }
+        if (!found)
+        {
+            tdoll_intimacy_info@ index_info = tdoll_intimacy_info(index);
+            index_info.setMatch(num);
+            m_tdoll_intimacy_buck.insertLast(index_info);
+        }        
+    }
+
+    void clearIndexBuck()
+    {
+        m_tdoll_intimacy_buck.resize(0);
     }
 }
 
@@ -820,6 +864,21 @@ class GFL_playerlist_system : Tracker {
 
                 player_data newdata = PlayerProfileLoad(readFile(m_metagame,p_name,profile_hash));
                 newdata.addDevPoint(m_dev_point_add);
+
+                string c_weaponType = playerInfo.getPlayerEquipment().getWeapon(0);
+                int index= getIndexFromKey(c_weaponType);
+                if(index > -1)
+                {
+                    playerInfo.addIndexWinCount(1,index);
+                }
+
+                for(uint i=0;i < playerInfo.m_tdoll_intimacy_buck.length();i++)
+                {
+                    newdata.addIntimacy(playerInfo.m_tdoll_intimacy_buck[i]);
+                }
+
+                playerInfo.clearIndexBuck();
+
                 string filename = ("save_" + profile_hash +".xml" );
                 writeXML(m_metagame,filename,PlayerProfileSave(newdata));
 
@@ -829,7 +888,7 @@ class GFL_playerlist_system : Tracker {
                 a["%current_num"] = ""+_current_dev_point;
                 notify(m_metagame, "complete reward, dev point", a, "misc", player_id, false, "", 1.0);        
 
-                string c_weaponType = playerInfo.getPlayerEquipment().getWeapon(0);
+
                 if(
                     c_weaponType == "gkw_98kmod3.weapon" ||
                     c_weaponType == "gkw_98kmod3_skill.weapon" ||

@@ -630,6 +630,15 @@ class kill_event : Tracker {
                 reduceAllCallCooldown(playerName,1.0);
             }
 
+            if(existKeyinList(c_weaponType))
+            {
+                int index= getIndexFromKey(c_weaponType);
+                if(index > -1)
+                {
+                    playerInfo.addIndexKillCount(1,index);
+                }
+            }
+
 
 
             //指定武器handle

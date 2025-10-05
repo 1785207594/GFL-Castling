@@ -260,6 +260,7 @@ class player_data
             if (m_tdoll_intimacy[i].m_girl_index == info.m_girl_index)
             {
                 isDuplicate = true;
+                m_tdoll_intimacy[i].mergeInfo(info);
                 break;
             }
         }        
@@ -282,7 +283,9 @@ class player_data
         }
         if (!found)
         {
-            m_tdoll_intimacy.insertLast(tdoll_intimacy_info(index,kill,0));
+            tdoll_intimacy_info@ index_info = tdoll_intimacy_info(index);
+            index_info.setKill(kill);
+            m_tdoll_intimacy.insertLast(index_info);
         }
     }
     
@@ -302,19 +305,21 @@ class player_data
 class tdoll_intimacy_info
 {
     int m_girl_index;
-    int m_kill_count;
-    int m_match_count;
-    tdoll_intimacy_info(int index,int kill,int match)
+    int m_kill_count = 0;
+    int m_match_count = 0;
+    tdoll_intimacy_info(int index)
     {
         m_girl_index = index;
-        m_kill_count = kill;
-        m_match_count = match;
     }
 
     void addKill(int kill)
     {
         m_kill_count += kill;
     }
+    void setKill(int kill)
+    {
+        m_kill_count = kill;
+    }    
     void addMatch()
     {
         m_match_count++;
@@ -322,6 +327,10 @@ class tdoll_intimacy_info
     void addMatch(int match)
     {
         m_match_count += match;
+    }
+    void setMatch(int match)
+    {
+        m_match_count = match;
     }
 
     void mergeInfo(tdoll_intimacy_info@ info)
@@ -504,7 +513,9 @@ player_data@ PlayerProfileLoad(const XmlElement@ player_profile){
                 int index = tdoll_intimacy_list[i].getIntAttribute("index");
                 int kill_count = tdoll_intimacy_list[i].getIntAttribute("kill_count");
                 int match_count = tdoll_intimacy_list[i].getIntAttribute("match_count");
-                tdoll_intimacy_info@ new_doll_info= tdoll_intimacy_info(index,kill_count,match_count);
+                tdoll_intimacy_info@ new_doll_info= tdoll_intimacy_info(index);
+                new_doll_info.setKill(kill_count);
+                new_doll_info.setMatch(match_count);
                 output.addIntimacy(new_doll_info);
             }
         }
