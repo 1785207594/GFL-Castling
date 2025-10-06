@@ -301,20 +301,24 @@ class kill_event : Tracker {
         {"gkw_mg36_4903_skill.weapon",3},
         {"666",-1}
     };
-    protected void updateHealByKillEvent(int characterid,int factionid,int killstoheal,int timeaddafterkill,string type="weapon",int killadd=1){
-        if (killstoheal<=0) return;
-        uint jud=0;
-        for(uint a=0;a<HealOnKill_track.length();a++)
-        {
-            if(HealOnKill_track[a].m_characterId==characterid && HealOnKill_track[a].m_type == type ){
-                HealOnKill_track[a].current_kills+= killadd;
-                HealOnKill_track[a].m_numtime = timeaddafterkill;
-                jud = 1;
+
+    protected void updateHealByKillEvent(int characterid, int factionid, int killstoheal, int timeaddafterkill, string type="weapon", int killadd=1) {
+        // ✅ 更严格的参数检查
+        if (killstoheal <= 0 || killadd <= 0 || timeaddafterkill <= 0) return;
+        if (type != "weapon" && type != "vest") return;  // 防止错误类型
+        
+        bool found = false;
+        for(uint a = 0; a < HealOnKill_track.length(); a++) {
+            if(HealOnKill_track[a].m_characterId == characterid && HealOnKill_track[a].m_type == type) {
+                HealOnKill_track[a].add(killadd, timeaddafterkill, type);
+                found = true;
                 break;
             }
         }
-
-        if(jud==0)HealOnKill_track.insertLast(HealOnKill_tracker(characterid,factionid,killstoheal,timeaddafterkill,type)); 
+        
+        if(!found) {
+            HealOnKill_track.insertLast(HealOnKill_tracker(characterid, factionid, killstoheal, timeaddafterkill, type, killadd)); 
+        }
     }
 
 	protected void handleCharacterKillEvent(const XmlElement@ event){
@@ -926,36 +930,49 @@ class kill_event : Tracker {
 
     }
 
-    void update(float time){
-        if(HealOnKill_track.length()>0){
+    void update(float time) {
+        if(HealOnKill_track.length() > 0) {
             for (int a = HealOnKill_track.length() - 1; a >= 0; a--) {
-                HealOnKill_track[a].m_time-=time;
-                if(HealOnKill_track[a].m_time<0){	
-					if (HealOnKill_track[a].m_numtime>=0){
+                HealOnKill_track[a].m_time -= time;
+                
+                if(HealOnKill_track[a].m_time < 0) {	
+                    if (HealOnKill_track[a].m_numtime >= 0) {
                         int vestrestore = 0;
-                        while(HealOnKill_track[a].current_kills>=HealOnKill_track[a].m_killstoheal){
-                            vestrestore++;
-                            HealOnKill_track[a].current_kills -= HealOnKill_track[a].m_killstoheal;                            
+                        int current_kills = HealOnKill_track[a].current_kills;
+                        int m_killstoheal = HealOnKill_track[a].m_killstoheal;
+                        
+                        if(m_killstoheal == 0) {
+                            HealOnKill_track.removeAt(a);
+                            continue;
                         }
-                        if(HealOnKill_track[a].current_kills<0){
-                            HealOnKill_track[a].current_kills = 0;
-                        }
-                        if(vestrestore>0){
+                        
+                        vestrestore = (current_kills + m_killstoheal - 1) / m_killstoheal;
+                        HealOnKill_track[a].current_kills = 0;
+                        
+                        if(vestrestore > 0) {
+                            // 发送回甲指令
                             string c = 
                                 "<command class='update_inventory'" +
                                 " untransform_count='"+ vestrestore +"'" +
                                 " character_id='" + HealOnKill_track[a].m_characterId + "' />";
                             m_metagame.getComms().send(c);
+                            
+                            // ✅ 回甲成功后才重置时间（仅限 weapon）
+                            if(HealOnKill_track[a].m_type == "weapon") {
+                                HealOnKill_track[a].m_numtime = HealOnKill_track[a].m_timeaddafterkill / HOK_TICK_INTERVAL;
+                            }
                         }
-					}
-					HealOnKill_track[a].m_numtime--;
-					HealOnKill_track[a].m_time=0.2;
-					if (HealOnKill_track[a].m_numtime<0){
-						HealOnKill_track.removeAt(a);
-					}
-				}			
-			}
-		}
+                    }
+                    
+                    HealOnKill_track[a].m_numtime--;
+                    HealOnKill_track[a].m_time = HOK_TICK_INTERVAL;
+                    
+                    if (HealOnKill_track[a].m_numtime < 0) {
+                        HealOnKill_track.removeAt(a);
+                    }
+                }			
+            }
+        }
     }
 
 	bool hasEnded() const {
@@ -970,23 +987,48 @@ class kill_event : Tracker {
 	}
 }
 
-class HealOnKill_tracker{
+const float HOK_TICK_INTERVAL = 0.2;
+const float HOK_VEST_DECAY_FACTOR = 2.0;  // 衰减速度倍数
+const float HOK_VEST_MAX_TICKS = 300.0;        // 60/0.2
+
+class HealOnKill_tracker {
     int m_characterId;
-	float m_time=0.2;
-	float m_numtime=0;
-	int m_factionid;
+    float m_time = HOK_TICK_INTERVAL;
+    float m_numtime = 0;
+    int m_factionid;
     int m_killstoheal;
-    int current_kills=0;
+    int current_kills = 0;
     string m_type;
-	HealOnKill_tracker(int characterId,int factionid,int killstoheal,int timeaddafterkill,string type)
-	{
-		m_characterId = characterId;
-		m_factionid= factionid;
-		m_killstoheal= killstoheal;
-        current_kills++;
-        m_numtime= timeaddafterkill/0.2;
+    int m_timeaddafterkill;  // ✅ 新增：存储续命时长
+    
+    HealOnKill_tracker(int characterId, int factionid, int killstoheal, int inittimeadd, string type, int initkilladd=1) {
+        m_characterId = characterId;
+        m_factionid = factionid;
+        m_killstoheal = killstoheal;
+        current_kills = initkilladd;
         m_type = type;
-	}
+        m_timeaddafterkill = inittimeadd;  // ✅ 保存参数
+        
+        // 初始化时间
+        if(type == "weapon") {
+            m_numtime = inittimeadd / HOK_TICK_INTERVAL;
+        } else if(type == "vest") {
+            m_numtime = inittimeadd / (HOK_TICK_INTERVAL * HOK_VEST_DECAY_FACTOR);
+            if(m_numtime >= HOK_VEST_MAX_TICKS) m_numtime = HOK_VEST_MAX_TICKS;
+        }
+    }
+    
+    void add(int killadd, int timeaddafterkill, string type) {
+        current_kills += killadd;
+        m_timeaddafterkill = timeaddafterkill;  // ✅ 更新续命时长
+        
+        // ✅ vest 类型仍然累加时间（行为不变）
+        if(type == "vest") {
+            m_numtime += timeaddafterkill / (HOK_TICK_INTERVAL * HOK_VEST_DECAY_FACTOR);
+            if(m_numtime >= HOK_VEST_MAX_TICKS) m_numtime = HOK_VEST_MAX_TICKS;
+        }
+        // weapon 类型不在这里处理时间
+    }
 }
 
 class kill_count{
