@@ -706,7 +706,7 @@ class kill_event : Tracker {
                 }
             }
             else if(startsWith(c_armorType,"exo_x_t6")){
-                updateHealByKillEvent(characterId,factionId,10,60,"vest",kill_to_heal_scale);
+                updateHealByKillEvent(characterId,factionId,10,20,"vest",kill_to_heal_scale);
             }
             else if(startsWith(c_armorType,"exo_t6") || startsWith(c_armorType,"dima_bunny")){
                 if(boss_list.find(solider_name)>-1){
@@ -720,26 +720,26 @@ class kill_event : Tracker {
             else if(startsWith(c_armorType,"tms_t6")){
                 if (c_weaponType=="gkw_hawk97mod3.weapon" || c_weaponType =="gkw_hawk97mod3_5805.weapon")
                 {
-                    updateHealByKillEvent(characterId,factionId,4,30,"vest",kill_to_heal_scale+1);
+                    updateHealByKillEvent(characterId,factionId,4,10,"vest",kill_to_heal_scale+1);
                 }
                 else
                 {
-                    updateHealByKillEvent(characterId,factionId,4,30,"vest",kill_to_heal_scale);
+                    updateHealByKillEvent(characterId,factionId,4,10,"vest",kill_to_heal_scale);
                 }
             }
 
             if(c_weaponType=="gkw_m1911_mod3.weapon" || c_weaponType=="gkw_m1911mod3_4514.weapon" || c_weaponType=="gkw_m1911mod3_8406.weapon" ){
                 if ((startsWith(c_armorType,"bp_")))
                 {
-                    updateHealByKillEvent(characterId,factionId,4,15,"weapon",kill_to_heal_scale*2);
+                    updateHealByKillEvent(characterId,factionId,4,5,"weapon",kill_to_heal_scale*2);
                 }
                 else
                 {
-                    updateHealByKillEvent(characterId,factionId,4,15,"weapon",kill_to_heal_scale);
+                    updateHealByKillEvent(characterId,factionId,4,5,"weapon",kill_to_heal_scale);
                 }
             }            
 
-            updateHealByKillEvent(characterId,factionId,int(healOnKillWeaponList[c_weaponType]),15,"weapon",kill_to_heal_scale);
+            updateHealByKillEvent(characterId,factionId,int(healOnKillWeaponList[c_weaponType]),10,"weapon",kill_to_heal_scale);
 
             if(KillerWeaponKey=="gkw_ppkmod3.weapon" || KillerWeaponKey=="gkw_ppkmod3_3905.weapon" || KillerWeaponKey=="gkw_ppkmod3_6109.weapon"){
                 // 乌鸦是猪，望周知
@@ -957,10 +957,10 @@ class kill_event : Tracker {
                                 " character_id='" + HealOnKill_track[a].m_characterId + "' />";
                             m_metagame.getComms().send(c);
                             
-                            // ✅ 回甲成功后才重置时间（仅限 weapon）
-                            if(HealOnKill_track[a].m_type == "weapon") {
-                                HealOnKill_track[a].m_numtime = HealOnKill_track[a].m_timeaddafterkill / HOK_TICK_INTERVAL;
-                            }
+                            // ✅ 回甲成功后才重置时间（仅限 weapon）【弃用】
+                            // if(HealOnKill_track[a].m_type == "weapon") {
+                            //     HealOnKill_track[a].m_numtime = HealOnKill_track[a].m_timeaddafterkill / HOK_TICK_INTERVAL;
+                            // }
                         }
                     }
                     
@@ -987,9 +987,9 @@ class kill_event : Tracker {
 	}
 }
 
-const float HOK_TICK_INTERVAL = 0.2;
-const float HOK_VEST_DECAY_FACTOR = 2.0;  // 衰减速度倍数
-const float HOK_VEST_MAX_TICKS = 300.0;        // 60/0.2
+const float HOK_TICK_INTERVAL = 0.5;       // 刷新间隔
+const float HOK_VEST_DECAY_FACTOR = 1.0;  // 衰减速度倍数
+// const float HOK_VEST_MAX_TICKS = 300.0;        // 60/0.2
 
 class HealOnKill_tracker {
     int m_characterId;
@@ -1014,19 +1014,22 @@ class HealOnKill_tracker {
             m_numtime = inittimeadd / HOK_TICK_INTERVAL;
         } else if(type == "vest") {
             m_numtime = inittimeadd / (HOK_TICK_INTERVAL * HOK_VEST_DECAY_FACTOR);
-            if(m_numtime >= HOK_VEST_MAX_TICKS) m_numtime = HOK_VEST_MAX_TICKS;
+            // if(m_numtime >= HOK_VEST_MAX_TICKS) m_numtime = HOK_VEST_MAX_TICKS;
         }
     }
     
     void add(int killadd, int timeaddafterkill, string type) {
         current_kills += killadd;
         m_timeaddafterkill = timeaddafterkill;  // ✅ 更新续命时长
+
+        // 改为造成击杀即可刷新
+        m_numtime = m_timeaddafterkill / HOK_TICK_INTERVAL;
         
-        // ✅ vest 类型仍然累加时间（行为不变）
-        if(type == "vest") {
-            m_numtime += timeaddafterkill / (HOK_TICK_INTERVAL * HOK_VEST_DECAY_FACTOR);
-            if(m_numtime >= HOK_VEST_MAX_TICKS) m_numtime = HOK_VEST_MAX_TICKS;
-        }
+        // ✅ vest 类型仍然累加时间（行为不变）【弃用】
+        // if(type == "vest") {
+        //     m_numtime += timeaddafterkill / (HOK_TICK_INTERVAL * HOK_VEST_DECAY_FACTOR);
+        //     if(m_numtime >= HOK_VEST_MAX_TICKS) m_numtime = HOK_VEST_MAX_TICKS;
+        // }
         // weapon 类型不在这里处理时间
     }
 }
