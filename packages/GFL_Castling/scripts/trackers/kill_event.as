@@ -440,6 +440,7 @@ class kill_event : Tracker {
 
             string c_weaponType = playerInfo.getPlayerEquipment().getWeapon(0);
             string c_armorType = playerInfo.getPlayerEquipment().getWeapon(3);
+            bool kill_is_boss = false;
 
             // 如果是栓动步枪 双倍积分获取
             if(gk_bolted_rf_list.find(KillerWeaponKey) > -1)
@@ -451,6 +452,7 @@ class kill_event : Tracker {
             {
                 handleKillEventToPlayerInfo(playerId,5 * kill_score_scale);
                 kill_to_heal_scale = 5;
+                kill_is_boss = true;
                 notify(m_metagame, "kill streak,boss reward", dictionary(), "misc", playerId, false, "", 1.0);
             }
             else if(reward_pool_key=="rare" || reward_pool_key=="elite")
@@ -630,12 +632,14 @@ class kill_event : Tracker {
                 reduceAllCallCooldown(playerName,1.0);
             }
 
+
+            //数据记录
             if(existKeyinList(c_weaponType))
             {
                 int index= getIndexFromKey(c_weaponType);
                 if(index > -1)
                 {
-                    playerInfo.addIndexKillCount(1,index);
+                    playerInfo.addIndexKillCount(1,index,kill_is_boss);
                 }
             }
 

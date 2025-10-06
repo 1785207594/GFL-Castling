@@ -922,7 +922,7 @@
 			<attribute weight="1.0" min="30.0" max="60.0" />
 		</attribute_config>
 	</soldier>
-	<soldier name="Paradeus_Hannibal" firstnames="Paradeus-SHIELD HEAVY ARMOR UNIT-" lastnames_file="Paradeus_last.name" spawn_score="0.1">
+	<soldier name="Paradeus_Hannibal" firstnames="Paradeus-SHIELD HEAVY ARMOR UNIT-" lastnames_file="Paradeus_last.name" spawn_score="0.03">
 		<model filename="pard_hannibal98.xml" />
 		<character filename="pard_hannibal.character" />
 		<ai filename="roarer.ai" />

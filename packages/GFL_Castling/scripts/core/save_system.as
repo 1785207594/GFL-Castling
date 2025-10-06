@@ -307,30 +307,61 @@ class tdoll_intimacy_info
     int m_girl_index;
     int m_kill_count = 0;
     int m_match_count = 0;
+    int m_vehicle_destroyed = 0;
+    int m_boss_killed = 0;
+
+
     tdoll_intimacy_info(int index)
     {
         m_girl_index = index;
     }
 
-    void addKill(int kill)
+    void addKill(int num)
     {
-        m_kill_count += kill;
+        m_kill_count += num;
     }
-    void setKill(int kill)
+    void setKill(int num)
     {
-        m_kill_count = kill;
+        m_kill_count = num;
     }    
+
     void addMatch()
     {
         m_match_count++;
     }
-    void addMatch(int match)
+    void addMatch(int num)
     {
-        m_match_count += match;
+        m_match_count += num;
     }
-    void setMatch(int match)
+    void setMatch(int num)
     {
-        m_match_count = match;
+        m_match_count = num;
+    }
+
+    void addVehicleDestroy()
+    {
+        m_vehicle_destroyed++;
+    }
+    void addVehicleDestroy(int num)
+    {
+        m_vehicle_destroyed += num;
+    }
+    void setVehicleDestroy(int num)
+    {
+        m_vehicle_destroyed = num;
+    }
+
+    void addBossKill()
+    {
+        m_boss_killed++;
+    }
+    void addBossKill(int num)
+    {
+        m_boss_killed += num;
+    }
+    void setBossKill(int num)
+    {
+        m_boss_killed = num;
     }
 
     void mergeInfo(tdoll_intimacy_info@ info)
@@ -338,6 +369,8 @@ class tdoll_intimacy_info
         if (m_girl_index != info.m_girl_index) return;
         m_kill_count += info.m_kill_count;
         m_match_count += info.m_match_count;
+        m_vehicle_destroyed += info.m_vehicle_destroyed;
+        m_boss_killed += info.m_boss_killed;
     }
 }
 
@@ -426,6 +459,8 @@ XmlElement@ PlayerProfileSave(player_data@ player_info) {
         e.setIntAttribute("index", player_info.m_tdoll_intimacy[i].m_girl_index);
         e.setIntAttribute("kill_count", player_info.m_tdoll_intimacy[i].m_kill_count);
         e.setIntAttribute("match_count", player_info.m_tdoll_intimacy[i].m_match_count);
+        e.setIntAttribute("vehicle_count", player_info.m_tdoll_intimacy[i].m_vehicle_destroyed);
+        e.setIntAttribute("boss_count", player_info.m_tdoll_intimacy[i].m_boss_killed);
         subroot_3.appendChild(e);
     }    
 
@@ -513,9 +548,13 @@ player_data@ PlayerProfileLoad(const XmlElement@ player_profile){
                 int index = tdoll_intimacy_list[i].getIntAttribute("index");
                 int kill_count = tdoll_intimacy_list[i].getIntAttribute("kill_count");
                 int match_count = tdoll_intimacy_list[i].getIntAttribute("match_count");
+                int vehicle_count = tdoll_intimacy_list[i].getIntAttribute("vehicle_count");
+                int boss_count = tdoll_intimacy_list[i].getIntAttribute("boss_count");                                
                 tdoll_intimacy_info@ new_doll_info= tdoll_intimacy_info(index);
                 new_doll_info.setKill(kill_count);
                 new_doll_info.setMatch(match_count);
+                new_doll_info.setVehicleDestroy(vehicle_count);
+                new_doll_info.setBossKill(boss_count);
                 output.addIntimacy(new_doll_info);
             }
         }

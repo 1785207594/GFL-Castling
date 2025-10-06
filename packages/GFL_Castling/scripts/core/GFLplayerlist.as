@@ -266,7 +266,7 @@ class GFL_playerInfo{
         m_battleinfo.addTacticPoint(num);
     }
 
-    void addIndexKillCount(int num,int index)
+    void addIndexKillCount(int num,int index,bool boss=false)
     {
         bool found = false;
         for (uint i = 0; i < m_tdoll_intimacy_buck.length(); ++i)
@@ -275,12 +275,14 @@ class GFL_playerInfo{
             {
                 found = true;
                 m_tdoll_intimacy_buck[i].addKill(num);
+                if(boss) m_tdoll_intimacy_buck[i].addBossKill(num);
             }
         }
         if (!found)
         {
             tdoll_intimacy_info@ index_info = tdoll_intimacy_info(index);
             index_info.setKill(num);
+            if(boss) index_info.setBossKill(num);
             m_tdoll_intimacy_buck.insertLast(index_info);
         }
     }
@@ -300,6 +302,25 @@ class GFL_playerInfo{
         {
             tdoll_intimacy_info@ index_info = tdoll_intimacy_info(index);
             index_info.setMatch(num);
+            m_tdoll_intimacy_buck.insertLast(index_info);
+        }        
+    }
+
+    void addIndexVehicleCount(int num,int index)
+    {
+        bool found = false;
+        for (uint i = 0; i < m_tdoll_intimacy_buck.length(); ++i)
+        {
+            if (m_tdoll_intimacy_buck[i].m_girl_index == index)
+            {
+                found = true;
+                m_tdoll_intimacy_buck[i].addVehicleDestroy(num);
+            }
+        }
+        if (!found)
+        {
+            tdoll_intimacy_info@ index_info = tdoll_intimacy_info(index);
+            index_info.setVehicleDestroy(num);
             m_tdoll_intimacy_buck.insertLast(index_info);
         }        
     }
@@ -1065,12 +1086,21 @@ class GFL_playerlist_system : Tracker {
             GFL_battleInfo@ battleInfo = playerInfo.getBattleInfo();
             battleInfo.addTacticPoint(reward_point_1);
             int m_tactic_point = battleInfo.getTacticPoint();
-
             dictionary a;
             a["%vehicle"] = ""+vehicle_name;
             a["%num"] = ""+reward_point_1;   
             a["%current_num"] = ""+m_tactic_point;
             notify(m_metagame, "vehicle destroy reward for personal", a, "misc", playerId, false, "", 1.0);
+
+            string c_weaponType = playerInfo.getPlayerEquipment().getWeapon(0);
+            if(existKeyinList(c_weaponType))
+            {
+                int index= getIndexFromKey(c_weaponType);
+                if(index > -1)
+                {
+                    playerInfo.addIndexVehicleCount(1,index);
+                }
+            }
         }
     }
 
