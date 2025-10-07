@@ -731,11 +731,11 @@ class kill_event : Tracker {
             if(c_weaponType=="gkw_m1911_mod3.weapon" || c_weaponType=="gkw_m1911mod3_4514.weapon" || c_weaponType=="gkw_m1911mod3_8406.weapon" ){
                 if ((startsWith(c_armorType,"bp_")))
                 {
-                    updateHealByKillEvent(characterId,factionId,4,5,"weapon",kill_to_heal_scale*2);
+                    updateHealByKillEvent(characterId,factionId,4,10,"weapon",kill_to_heal_scale*2);
                 }
                 else
                 {
-                    updateHealByKillEvent(characterId,factionId,4,5,"weapon",kill_to_heal_scale);
+                    updateHealByKillEvent(characterId,factionId,4,10,"weapon",kill_to_heal_scale);
                 }
             }            
 
