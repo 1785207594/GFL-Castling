@@ -82,4 +82,12 @@ Life Dev Point Gained:&#37;life_dev_point"/>
 	<text key="call_update_beta" text="[Choose Beta]"/>
 	<text key="call_update_gamma" text="[Choose Gamma]"/>
 
+    <text key="Waifu info query" text="Doll: &#37;waifu_name
+    Your combat experience with this doll is rated at LV &#37;waifu_scorelevel 
+    Defeated enemies: &#37;waifu_killnum
+    Defeated bosses: &#37;waifu_boss
+    Campaign victories: &#37;waifu_matchwin
+    Vehicles destroyed: &#37;waifu_vehicle"/>
+    <text key="Waifu info failed" text="Ah, it seems you're not very familiar with this doll yet. Spend more time with her!"/>
+    
 </translation>

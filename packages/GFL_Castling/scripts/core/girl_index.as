@@ -1197,7 +1197,20 @@ dictionary tdoll_complex_index = {
     {modded_key(401).toString(),"gkw_p50.weapon"},
     {modded_key(402).toString(),"gkw_martini.weapon"},
 
-
+    {modded_key(9000).toString(),"ff_agent.weapon"},
+    {modded_key(9001).toString(),"ff_alchemist.weapon"},
+    {modded_key(9002).toString(),"ff_destroyer.weapon"},
+    {modded_key(9002,1).toString(),"ff_destroyer_skin.weapon"},
+    {modded_key(9003).toString(),"ff_gager.weapon"},
+    {modded_key(9004).toString(),"ff_architect.weapon"},
+    {modded_key(9005).toString(),"ff_hunter.weapon"},
+    {modded_key(9006).toString(),"ff_Intruder.weapon"},
+    {modded_key(9007).toString(),"ff_justice.weapon"},
+    {modded_key(9008).toString(),"ff_scarecrow.weapon"},
+    {modded_key(9009).toString(),"ff_weaver.weapon"},
+    {modded_key(9010).toString(),"ff_dreamer.weapon"},
+    {modded_key(9011).toString(),"ff_parw_alina.weapon"},
+    {modded_key(9012).toString(),"ff_parw_nyto_black.weapon"},
 
     {"-1",""}
 };
