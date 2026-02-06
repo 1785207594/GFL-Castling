@@ -2093,6 +2093,13 @@
 您的战术人形收集率为&#37;doll_collect%"/>
     <text key="Dev info query" text="当前研发点数量:&#37;dev_point
 生涯研发点获得数量:&#37;life_dev_point"/>
+    <text key="Waifu info query" text="人形:&#37;waifu_name
+您与这位人形的作战经历获得了&#37;waifu_scorelevel星的评级
+击败敌军: &#37;waifu_killnum
+击败首领: &#37;waifu_boss
+战役胜利: &#37;waifu_matchwin
+载具摧毁: &#37;waifu_vehicle"/>
+    <text key="Waifu info failed" text="啊嘞,您好像和这位人形不是很熟的样子，再去多陪陪她吧!"/> 
     
     <text key="craft progression start" text="已确认可恢复的人形列表，请输入/craft 皮肤编号 模式 来恢复人形" />
     <text key="craft success" text="已从图鉴中将人形&#37;doll_name恢复成功" />

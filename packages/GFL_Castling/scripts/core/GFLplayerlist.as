@@ -893,9 +893,9 @@ class GFL_playerlist_system : Tracker {
                     playerInfo.addIndexWinCount(1,index);
                 }
 
-                for(uint i=0;i < playerInfo.m_tdoll_intimacy_buck.length();i++)
+                for(uint i1=0;i1 < playerInfo.m_tdoll_intimacy_buck.length();i1++)
                 {
-                    newdata.addIntimacy(playerInfo.m_tdoll_intimacy_buck[i]);
+                    newdata.addIntimacy(playerInfo.m_tdoll_intimacy_buck[i1]);
                 }
 
                 playerInfo.clearIndexBuck();

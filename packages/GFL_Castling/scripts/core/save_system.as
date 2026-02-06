@@ -288,6 +288,47 @@ class player_data
             m_tdoll_intimacy.insertLast(index_info);
         }
     }
+
+    float getIntimacyScoreFromKey(string key)
+    {
+        if(existKeyinList(key))
+        {
+            int index= getIndexFromKey(key);
+            if(index > -1)
+            {
+                for (uint i = 0; i < m_tdoll_intimacy.length(); ++i)
+                {
+                    if (m_tdoll_intimacy[i].m_girl_index == index)
+                    {
+                        return m_tdoll_intimacy[i].getScore();
+                    }                    
+                }
+                return 0;
+            }
+            return 0;
+        }
+        else return 0;
+    }
+
+    tdoll_intimacy_info@ getIntimacyFromKey(string key)
+    {
+        if(existKeyinList(key))
+        {
+            int index= getIndexFromKey(key);
+            if(index > -1)
+            {
+                for (uint i = 0; i < m_tdoll_intimacy.length(); ++i)
+                {
+                    if (m_tdoll_intimacy[i].m_girl_index == index)
+                    {
+                        return m_tdoll_intimacy[i];
+                    }                    
+                }
+                return null;
+            }
+        }
+        return null;
+    }
     
     string getCallKey(const string key)
     {
@@ -310,6 +351,7 @@ class tdoll_intimacy_info
     int m_vehicle_destroyed = 0;
     int m_boss_killed = 0;
 
+    tdoll_intimacy_info(){}
 
     tdoll_intimacy_info(int index)
     {
@@ -764,7 +806,33 @@ class Save_System : Tracker {
             a["%life_dev_point"] = "" + newdata.getDevPointLife();
             notify(m_metagame, "Dev info query", a, "misc", player_id, false, "", 1.0);
         }
-
+        if(checkCommand(message,"waifu")){
+            GFL_playerInfo@ playerInfo = getPlayerInfoFromList(p_name);            
+            if (playerInfo.getPlayerName() == default_string ) return;
+            string profile_hash = playerInfo.getHash();
+            string sid = playerInfo.getSid();
+            int player_id = playerInfo.getPlayerPid();
+            player_data newdata = PlayerProfileLoad(readFile(m_metagame,p_name,profile_hash)); 
+            const XmlElement@ player = getPlayerInfo(m_metagame,player_id);
+            if (player is null) return;
+            int cId = player.getIntAttribute("character_id");
+            string weaponkey = playerInfo.getPlayerEquipment().getWeapon(0);
+            tdoll_intimacy_info@ waifu_intimacy = newdata.getIntimacyFromKey(weaponkey);
+            if (waifu_intimacy is null) 
+            {
+                dictionary a;
+                notify(m_metagame, "Waifu info failed", a, "misc", player_id, false, "", 1.0);
+                return;
+            }
+            dictionary a;
+            a["%waifu_name"] = "" + getDefaultNamefromDict(weaponkey);
+            a["%waifu_scorelevel"] = "" + floor(waifu_intimacy.getScore());
+            a["%waifu_killnum"] = "" + waifu_intimacy.getKill();
+            a["%waifu_matchwin"] = "" + waifu_intimacy.getMatch();
+            a["%waifu_boss"] = "" + waifu_intimacy.getBossKill();
+            a["%waifu_vehicle"] = "" + waifu_intimacy.getVehicleDestroy();
+            notify(m_metagame, "Waifu info query", a, "misc", player_id, false, "", 1.0);
+        }
 
 		if (!m_metagame.getAdminManager().isAdmin(p_name, senderId) && !m_metagame.getModeratorManager().isModerator(p_name, senderId)) {
 			return;

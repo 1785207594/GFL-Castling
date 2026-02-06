@@ -1356,6 +1356,16 @@ string getNamefromDict(string key)
     return output;
 }
 
+string getDefaultNamefromDict(string key)
+{
+    int index = getIndexFromKey(key);
+    if(index == -1) return "";
+    string weaponkey = getKeyfromIndex(""+index);
+    if(weaponkey == "") return "";
+    string output = string(tdoll_name_dict[weaponkey]);
+    return output;
+}
+
 bool existKeyinDataSet(string key)
 {
     for (uint i = 0; i < all_girls_information.length(); i++)
