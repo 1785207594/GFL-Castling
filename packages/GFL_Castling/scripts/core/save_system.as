@@ -323,7 +323,11 @@ class tdoll_intimacy_info
     void setKill(int num)
     {
         m_kill_count = num;
-    }    
+    }
+    int getKill()
+    {
+        return m_kill_count;
+    }
 
     void addMatch()
     {
@@ -336,6 +340,10 @@ class tdoll_intimacy_info
     void setMatch(int num)
     {
         m_match_count = num;
+    }
+    int getMatch()
+    {
+        return m_match_count;
     }
 
     void addVehicleDestroy()
@@ -350,6 +358,10 @@ class tdoll_intimacy_info
     {
         m_vehicle_destroyed = num;
     }
+    int getVehicleDestroy()
+    {
+        return m_vehicle_destroyed;
+    }
 
     void addBossKill()
     {
@@ -363,6 +375,10 @@ class tdoll_intimacy_info
     {
         m_boss_killed = num;
     }
+    int getBossKill()
+    {
+        return m_boss_killed;
+    }
 
     void mergeInfo(tdoll_intimacy_info@ info)
     {
@@ -371,6 +387,16 @@ class tdoll_intimacy_info
         m_match_count += info.m_match_count;
         m_vehicle_destroyed += info.m_vehicle_destroyed;
         m_boss_killed += info.m_boss_killed;
+    }
+
+    float getScore()
+    {
+        float score=0;
+        score+= 0.001 * m_kill_count;
+        score+= 0.005 * m_boss_killed;
+        score+= 0.01 * m_match_count;
+        score+= 0.005 * m_vehicle_destroyed;
+        return score;
     }
 }
 
