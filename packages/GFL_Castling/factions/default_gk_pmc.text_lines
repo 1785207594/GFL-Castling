@@ -188,7 +188,6 @@
   <comment key="leader, enemy not seen, taking suppressed fire" text="全体卧倒！未知方向火力！" />
   <comment key="leader, enemy not seen, taking suppressed fire" text="我们受到火力压制！找掩护！"/>-
   <comment key="leader, enemy not seen, taking suppressed fire" text="散开！找掩体还击！"/>
-  <comment key="leader, enemy not seen, taking suppressed fire" text="报告指挥部！我方位于%base_name，受到敌人火力压制！"/>
   <comment key="Lone leader, enemy not seen, taking suppressed fire" text="受到攻击！" />
   <comment key="Lone leader, enemy not seen, taking suppressed fire" text="火力来袭！" />
   <comment key="Lone leader, enemy not seen, taking suppressed fire" text="搜索攻击方向！" />

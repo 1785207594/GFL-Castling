@@ -2099,7 +2099,7 @@
 击败首领: &#37;waifu_boss
 战役胜利: &#37;waifu_matchwin
 载具摧毁: &#37;waifu_vehicle"/>
-    <text key="Waifu info failed" text="啊嘞,您好像和这位人形不是很熟的样子，再去多陪陪她吧!"/> 
+    <text key="Waifu info failed" text="啊嘞,您好像和这位人形不是很熟的样子,再去多陪陪她吧!"/> 
     
     <text key="craft progression start" text="已确认可恢复的人形列表，请输入/craft 皮肤编号 模式 来恢复人形" />
     <text key="craft success" text="已从图鉴中将人形&#37;doll_name恢复成功" />
