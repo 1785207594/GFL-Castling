@@ -18,7 +18,7 @@
         projectile_speed="100" 
         barrel_offset="0.4" 
         projectiles_per_shot="20"
-        spread_range="0.27"
+        spread_range="0.25"
         stance_accuracy_rate="2.0"
         />
         <inventory encumbrance="12.5" buy_price="189.7" sell_price="189.7" />
@@ -40,9 +40,10 @@
         <hud_icon filename="gkw_m1897mod3.png" />
         <!--Ballistics-->
         <weak_hand_hold offset="0.3" />
-        <projectile file="bullet_sg.projectile">
+        <projectile file="bullet_sg.projectile" time_to_live="0.48">
             <result class="hit" 
         kill_probability="2.4" 
+        kill_probability_offset_on_successful_hit="1.0"
         kill_decay_start_time="0.3" 
         kill_decay_end_time="0.48" />
         </projectile>
@@ -74,7 +75,7 @@
         projectile_speed="120" 
         barrel_offset="0.4" 
         projectiles_per_shot="20"
-        spread_range="0.4"
+        spread_range="0.2"
         />
         <inventory encumbrance="12.5" buy_price="120.0" sell_price="120.0" />
         <commonness value="0" in_stock="0" can_respawn_with="1" />
