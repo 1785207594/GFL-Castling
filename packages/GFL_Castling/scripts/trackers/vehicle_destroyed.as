@@ -13,28 +13,28 @@
 //Author： rst
 
 dictionary included_vehicle = {
-        {"martina.vehicle",10000},
-        {"chiara.vehicle",10000},
-        {"pierre.vehicle",10000},
-        // {"aek999.vehicle",5000},
+        {"martina.vehicle",0},
+        {"chiara.vehicle",1000},
+        {"pierre.vehicle",1000},
+        {"aek999.vehicle",0},
         {"amos.vehicle",500000},
-        {"tricycle.vehicle",10000},
-        {"gk_bunker.vehicle",20000},
-        {"gk_bunker_tow.vehicle",20000},
-        {"gk_bunker_mortar.vehicle",20000},
-        {"gk_bunker_cannon.vehicle",20000},
+        {"tricycle.vehicle",1000},
+        {"gk_bunker.vehicle",10000},
+        {"gk_bunker_tow.vehicle",10000},
+        {"gk_bunker_mortar.vehicle",10000},
+        {"gk_bunker_cannon.vehicle",10000},
         {"radar_tower.vehicle",500000},
-        {"ogas_pulse_generator.vehicle",25000},
-        {"t14_gk.vehicle",50000},
-        {"is2_m1895.vehicle",50000},
-        {"mobile_armory.vehicle",10000},
-        {"mortar_truck.vehicle",10000},
-        // {"gk_store",5000},
+        {"ogas_pulse_generator.vehicle",5000},
+        {"t14_gk.vehicle",10000},
+        {"is2_m1895.vehicle",10000},
+        {"mobile_armory.vehicle",3000},
+        {"mortar_truck.vehicle",3000},
+        {"gk_store",0},
         {"elmostore",5000},
-        // {"gk_stash",30000},
-        // {"hvy_store",5000},
-        // {"t6_store",5000},
-        // {"call_ui_store",5000},
+        {"gk_stash",0},
+        {"hvy_store",0},
+        {"t6_store",0},
+        {"call_ui_store",0},
         {"armored_truck.vehicle",500000},
         {"",-1}
 };
@@ -90,7 +90,10 @@ class vehicle_destroyed : Tracker{
         dictionary a;
         a["%count"] = ""+rp_punish;   
         notify(m_metagame, "Hint - Vehicle Destoryed TK", a , "misc", pid, false, "", 1.0);
-        GiveRP(m_metagame,killer_cid,-rp_punish);
+        if(rp_punish > 0)
+        {
+            GiveRP(m_metagame,killer_cid,-rp_punish);
+        }
  	}    
 
 }
