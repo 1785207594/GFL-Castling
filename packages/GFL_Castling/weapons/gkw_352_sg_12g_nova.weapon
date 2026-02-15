@@ -40,7 +40,7 @@
     <hud_icon filename="gkw_nova.png"/>
     <weak_hand_hold offset="0.3"/>
     <projectile file="bullet_sg.projectile">
-        <result class="hit" kill_probability="2.0" kill_probability_offset_on_successful_hit="0.5" kill_decay_start_time="0.4" kill_decay_end_time="0.5"/>
+        <result class="hit" kill_probability="2.4" kill_probability_offset_on_successful_hit="1" kill_decay_start_time="0.4" kill_decay_end_time="0.5"/>
         <trail probability="1.0" key="bullet_buckshot"/>
     </projectile>
     <stance state_key="running" accuracy="0.8" />
@@ -119,7 +119,7 @@
     <hud_icon filename="gkw_nova_skill.png"/>
     <weak_hand_hold offset="0.3"/>
     <projectile file="bullet_sg.projectile">
-        <result class="hit" kill_probability="2.0" kill_probability_offset_on_successful_hit="0.5" kill_decay_start_time="0.4" kill_decay_end_time="0.5"/>
+        <result class="hit" kill_probability="2.4" kill_probability_offset_on_successful_hit="1" kill_decay_start_time="0.4" kill_decay_end_time="0.5"/>
         <trail probability="1.0" key="bullet_buckshot"/>
     </projectile>
     <stance state_key="running" accuracy="0.8" />

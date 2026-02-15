@@ -69,14 +69,14 @@
 		<effect class="muzzle" ref="MuzzleSmokeDual2" />
 		<!-- Ballistics -->
 		<weak_hand_hold offset="0.3" />
-		<projectile file="bullet_sg.projectile">
-			<result class="hit" 
-			kill_probability="2" 
-			kill_probability_offset_on_successful_hit="0.6"
-			kill_decay_start_time="0.4" 
-			kill_decay_end_time="0.5" />
-			<trail probability="1.0" key="bullet_buckshot"/>
-		</projectile>
+        <projectile file="bullet_sg.projectile" time_to_live="0.5">
+            <result class="hit" 
+            kill_probability="2.8" 
+            kill_probability_offset_on_successful_hit="1.0"
+            kill_decay_start_time="0.5" 
+            kill_decay_end_time="0.5" />
+            <trail probability="1.0" key="bullet_buckshot"/>
+        </projectile>
 		<!-- Accuracy, Movement speed -->
 		<shield offset="-0.60 0.0 0" extent="0.4 1.5 2.0" usable_for_cover="0"/>
 		<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
@@ -161,14 +161,14 @@
 		<hud_icon filename="gkw_m870_3803.png" />
 		<!-- Ballistics -->
 		<weak_hand_hold offset="0.3" />
-		<projectile file="bullet_sg.projectile">
-			<result class="hit" 
-			kill_probability="2" 
-			kill_probability_offset_on_successful_hit="0.6"
-			kill_decay_start_time="0.4" 
-			kill_decay_end_time="0.5" />
-			<trail probability="1.0" key="bullet_buckshot"/>
-		</projectile>
+        <projectile file="bullet_sg.projectile" time_to_live="0.5">
+            <result class="hit" 
+            kill_probability="2.8" 
+            kill_probability_offset_on_successful_hit="1.0"
+            kill_decay_start_time="0.5" 
+            kill_decay_end_time="0.5" />
+            <trail probability="1.0" key="bullet_buckshot"/>
+        </projectile>
 		<!-- Accuracy, Movement speed -->
 		<stance state_key="running" accuracy="0.5" />
 		<stance state_key="walking" accuracy="0.8" />

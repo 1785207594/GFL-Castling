@@ -16,7 +16,7 @@
         sight_range_modifier="1.0"
         projectile_speed="100"
         barrel_offset="0.4"
-        projectiles_per_shot="8"
+        projectiles_per_shot="5"
         stab_enabled="1"
         carry_in_two_hands="1"
         burst_shots="1"
@@ -39,8 +39,8 @@
         <model filename="gkw_sg_m26mass.xml"/>
         <hud_icon filename="gkw_m26mass.png"/>
         <weak_hand_hold offset="0.3"/>
-        <projectile file="bullet_sg.projectile">
-            <result class="hit" kill_probability="3.0" kill_probability_offset_on_successful_hit="1.0" kill_decay_start_time="0.3" kill_decay_end_time="0.6"/>
+        <projectile file="bullet_sg.projectile" time_to_live="0.4">
+            <result class="hit" kill_probability="6.0" kill_probability_offset_on_successful_hit="2.0" kill_decay_start_time="0.4" kill_decay_end_time="0.4"/>
         </projectile>
 
         <tag name="shotgun"/>

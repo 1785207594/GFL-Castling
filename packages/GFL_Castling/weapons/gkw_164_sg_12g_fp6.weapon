@@ -16,7 +16,7 @@
 	sight_range_modifier="1" 
 	projectile_speed="120" 
 	barrel_offset="0.4" 
-	projectiles_per_shot="6"
+	projectiles_per_shot="8"
 	spread_range="0.18"
 	 />
     <inventory encumbrance="12.5" buy_price="20.0" sell_price="20.0" />
@@ -43,7 +43,7 @@
         <result class="hit" 
         kill_probability="4.2" 
         kill_probability_offset_on_successful_hit="1.5"
-        kill_decay_start_time="0.25" 
+        kill_decay_start_time="0.5" 
         kill_decay_end_time="0.5" />
     </projectile>
     <!--Accuracy, Movement speed-->

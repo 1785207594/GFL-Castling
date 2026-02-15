@@ -13,7 +13,7 @@
 	class="0"
 	reload_one_at_a_time="0"
 	sight_range_modifier="1.0"
-	projectile_speed="100"
+	projectile_speed="140"
 	barrel_offset="0.5"
 	projectiles_per_shot="1"
 	spread_range="0.15"
@@ -36,7 +36,7 @@
 	<hud_icon filename="gkw_aa12only_skill.png"/>
 	<weak_hand_hold offset="0.3"/>
 	<projectile file="aa12_only.projectile">
-		<result class="blast" radius="3.5" damage="4.1" push="0.3" decal="1" faction_compare="not_equal"/>
+        <result class="spawn" instance_class="grenade" instance_key="blast_shard_rad_23mm_cas_beta.projectile" min_amount="2" max_amount="2" offset="0 0.2 0" position_spread="0 0" direction_spread="0.0 0.0" />   
 	</projectile>
 	<stance state_key="running" accuracy="0.7"/>
 	<stance state_key="walking" accuracy="0.8"/>
@@ -92,7 +92,7 @@
 	class="0"
 	reload_one_at_a_time="0"
 	sight_range_modifier="1.0"
-	projectile_speed="100"
+	projectile_speed="120"
 	barrel_offset="0.5"
 	projectiles_per_shot="8"
 	stab_enabled="1"

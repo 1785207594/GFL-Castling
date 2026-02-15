@@ -151,8 +151,8 @@
 		sight_range_modifier="1.0"
 		projectile_speed="100"
 		barrel_offset="0.52"
-		projectiles_per_shot="8"
-		spread_range="0.1"
+		projectiles_per_shot="15"
+		spread_range="0.15"
 		burst_shots="1"
 		last_burst_retrigger_time="0.2"
 		/>
@@ -217,7 +217,7 @@
 		<hud_icon filename="gkw_spas12_skill.png"/>
 		<weak_hand_hold offset="0.3"/>
         <projectile file="bullet_sg.projectile" time_to_live="0.3">
-			<result class="blast" radius="1.5" damage="1.1" push="0.1" decal="1" faction_compare="not_equal"/>
+			<result class="blast" radius="1.5" damage="2.1" push="0.1" decal="1" faction_compare="not_equal"/>
 		</projectile>
 		<modifier class="speed" value="-0.2"/>
 		<modifier class="detectability" value="+0.5"/>
