@@ -1211,6 +1211,7 @@ dictionary tdoll_complex_index = {
     {modded_key(9010).toString(),"ff_dreamer.weapon"},
     {modded_key(9011).toString(),"ff_parw_alina.weapon"},
     {modded_key(9012).toString(),"ff_parw_nyto_black.weapon"},
+    {modded_key(9013).toString(),"ff_excutioner_1.weapon"},
 
     {"-1",""}
 };
