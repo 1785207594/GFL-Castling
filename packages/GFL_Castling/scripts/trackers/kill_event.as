@@ -948,13 +948,13 @@ class kill_event : Tracker {
                         int current_kills = HealOnKill_track[a].current_kills;
                         int m_killstoheal = HealOnKill_track[a].m_killstoheal;
                         
-                        if(m_killstoheal == 0) {
-                            HealOnKill_track.removeAt(a);
-                            continue;
+                        while(HealOnKill_track[a].current_kills>=HealOnKill_track[a].m_killstoheal){
+                            vestrestore++;
+                            HealOnKill_track[a].current_kills -= HealOnKill_track[a].m_killstoheal;                            
                         }
-                        
-                        vestrestore = (current_kills + m_killstoheal - 1) / m_killstoheal;
-                        HealOnKill_track[a].current_kills = 0;
+                        if(HealOnKill_track[a].current_kills<0){
+                            HealOnKill_track[a].current_kills = 0;
+                        }
                         
                         if(vestrestore > 0) {
                             // 发送回甲指令
