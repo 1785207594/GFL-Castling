@@ -164236,7 +164236,7 @@
 	<trigger class="time" time_to_live="0.0001"/>
 	<rotation class="motion"/>
 	<model/>
-	<result class="spawn" instance_class="projectile" instance_key="blast_shard_rad21_dmg1_01_ap.projectile" min_amount="8" max_amount="8" offset="0 1.0 0" position_spread="0.0 0.0" direction_spread="0 0"/>
+	<result class="spawn" instance_class="projectile" instance_key="blast_shard_rad21_dmg1_01_ap.projectile" min_amount="10" max_amount="10" offset="0 1.0 0" position_spread="0.0 0.0" direction_spread="0 0"/>
 	<hud_icon filename="hud_at_mine.png"/>
 	<commonness value="0.0" can_respawn_with="0"/>
 	<capacity value="1" source="rank" source_value="0.2"/>
